@@ -16,6 +16,7 @@ public:
 	Pump(byte pin, unsigned int coolDownSeconds, byte pumpSeconds);
 
 	bool isHot();
+	unsigned long getLastPumpTime();
 	void pump();
 
 private:

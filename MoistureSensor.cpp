@@ -9,17 +9,21 @@
 
 #include <Arduino.h>
 
-MoistureSensor::MoistureSensor(byte voltagePin1, byte voltagePin2, byte sensorPin,
-		byte readCount, unsigned int readMillis) :
+MoistureSensor::MoistureSensor(byte voltagePin1, byte voltagePin2,
+		byte sensorPin, byte readCount, unsigned int readMillis) :
 		voltagePin1(voltagePin1), voltagePin2(voltagePin2), sensorPin(
 				sensorPin), readCount(readCount), readMillis(readMillis) {
 
 	pin1ToPin2 = true;
+
+	pinMode(sensorPin, INPUT);
+	pinMode(voltagePin1, OUTPUT);
+	pinMode(voltagePin2, OUTPUT);
 	standby();
 }
 
 int MoistureSensor::readMoisture() {
-	unsigned int sum = 0;
+	unsigned long sum = 0;
 	for (byte i = 0; i < readCount; i++) {
 		switchPolarity();
 		delay(readMillis);
@@ -32,7 +36,7 @@ int MoistureSensor::readMoisture() {
 
 int MoistureSensor::singleReadMoisture() {
 	int moisture = analogRead(sensorPin);
-	return pin1ToPin2 ? moisture : (1023 - moisture);
+	return pin1ToPin2 ? (1023 - moisture) : moisture;
 }
 
 void MoistureSensor::switchPolarity() {

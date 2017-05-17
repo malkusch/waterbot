@@ -11,6 +11,9 @@
 class TimeUnits {
 public:
 	static unsigned long secondsToMillis(unsigned int seconds);
+	static unsigned long minutesToMillis(unsigned int minutes);
+	static unsigned long hoursToMillis(unsigned int hours);
+	static unsigned long daysToMillis(unsigned int days);
 };
 
 #endif /* TIMEUNITS_H_ */

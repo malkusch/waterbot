@@ -10,3 +10,15 @@
 unsigned long TimeUnits::secondsToMillis(unsigned int seconds) {
 	return (long) seconds * 1000;
 }
+
+unsigned long TimeUnits::minutesToMillis(unsigned int minutes) {
+	return secondsToMillis(minutes * 60);
+}
+
+unsigned long TimeUnits::hoursToMillis(unsigned int hours) {
+	return minutesToMillis(hours * 60);
+}
+
+unsigned long TimeUnits::daysToMillis(unsigned int days) {
+	return hoursToMillis(days * 24);
+}

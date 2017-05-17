@@ -30,6 +30,10 @@ bool Pump::isHot() {
 	return earliestPumpTime > millis();
 }
 
+unsigned long Pump::getLastPumpTime() {
+	return lastPumpTime;
+}
+
 void Pump::turnOff() {
 	digitalWrite(pin, HIGH);
 }
