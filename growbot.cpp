@@ -13,7 +13,7 @@
 #define moistureVoltagePin1 6
 #define moistureVoltagePin2 7
 #define sensorPin 0
-#define moistureReadCount 100
+#define moistureReadCount 10
 #define moistureReadMillis 100
 #define moistureThreshold 200
 MoistureSensor moistureSensor(moistureVoltagePin1, moistureVoltagePin2,
@@ -25,13 +25,13 @@ sensorPin, moistureReadCount, moistureReadMillis);
 #define maxPumplessDays 5
 Pump pump(pumpPin, pumpCoolDownSeconds, pumpSeconds);
 
-#define pauseSeconds 600
+#define pauseSeconds 1200
 
 #define warnLED LED_BUILTIN
 Logger logger(LED(warnLED));
 
 void setup() {
-	Serial.begin(9600);
+	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
 }
 
 void loop() {
