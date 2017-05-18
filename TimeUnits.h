@@ -10,8 +10,8 @@
 
 class TimeUnits {
 public:
-	static unsigned long secondsToMillis(unsigned int seconds);
-	static unsigned long minutesToMillis(unsigned int minutes);
+	static unsigned long secondsToMillis(unsigned long seconds);
+	static unsigned long minutesToMillis(unsigned long minutes);
 	static unsigned long hoursToMillis(unsigned int hours);
 	static unsigned long daysToMillis(unsigned int days);
 };

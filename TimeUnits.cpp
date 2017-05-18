@@ -7,11 +7,11 @@
 
 #include "TimeUnits.h"
 
-unsigned long TimeUnits::secondsToMillis(unsigned int seconds) {
+unsigned long TimeUnits::secondsToMillis(unsigned long seconds) {
 	return (long) seconds * 1000;
 }
 
-unsigned long TimeUnits::minutesToMillis(unsigned int minutes) {
+unsigned long TimeUnits::minutesToMillis(unsigned long minutes) {
 	return secondsToMillis(minutes * 60);
 }
 

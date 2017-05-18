@@ -3,7 +3,6 @@
 #include "growbot.h"
 
 #include <Arduino.h>
-#include <WString.h>
 
 #include "Logger.h"
 #include "MoistureSensor.h"
@@ -52,7 +51,7 @@ bool isDry(SensorData data) {
 	if (millis() > maxPumplessTime) {
 		logger.warn(
 				"Sensors didn't report 'dry' for " + String(maxPumplessDays)
-						+ "days");
+						+ " days");
 		return true;
 	}
 
