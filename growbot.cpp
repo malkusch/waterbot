@@ -24,6 +24,7 @@ sensorPin, moistureReadCount, moistureReadMillis);
 #define maxPumplessDays 5
 Pump pump(pumpPin, pumpCoolDownSeconds, pumpSeconds);
 
+#define bootPauseSeconds 10
 #define pauseSeconds 1200
 
 #define warnLED LED_BUILTIN
@@ -31,6 +32,7 @@ Logger logger(LED(warnLED));
 
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
+	delay(TimeUnits::secondsToMillis(bootPauseSeconds)); // Reading the sensor instantly, reads a too low voltage
 }
 
 void loop() {
