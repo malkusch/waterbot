@@ -1,6 +1,6 @@
 n = 2;
 Data = csvread ("moist.log");
-x = Data(:,1);
+x = round(Data(:,1)/(1000*60))/60;
 y = Data(:,3);
 p = polyfit(x,y,n);
 f = polyval(p,x);
