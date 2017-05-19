@@ -8,12 +8,8 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
+#include "../../model/SensorData.h"
 #include <Arduino.h>
-
-#include "LED.h"
-#include "SensorData.h"
-
-class String;
 
 enum LogLevel {
 	INFO, WARN
@@ -21,16 +17,18 @@ enum LogLevel {
 
 class Logger {
 public:
-	Logger(LED);
-	void info(int potId, SensorData, bool pumping);
-	void warn(String const& message);
+	virtual ~Logger() {};
+	virtual void info(int potId, SensorData, bool pumping);
+	virtual void warn(String const& message);
+	virtual void log(LogLevel, const String& message);
 	static Logger* getLogger();
 	static void setLogger(Logger*);
 
+protected:
+	virtual void write(const String& message) = 0;
+
 private:
 	static Logger* logger;
-	const LED warnLED;
-	void log(LogLevel level, const String& message);
 };
 
 #endif /* LOGGER_H_ */

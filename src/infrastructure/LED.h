@@ -13,8 +13,8 @@
 class LED {
 public:
 	LED(const byte pin);
-	void turnOn() const;
-	void turnOff() const;
+	void turnOn();
+	void turnOff();
 
 private:
 	const byte pin;

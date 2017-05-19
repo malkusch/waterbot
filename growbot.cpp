@@ -4,13 +4,13 @@
 
 #include <Arduino.h>
 
-#include "LED.h"
-#include "Logger.h"
-#include "MoistureSensor.h"
-#include "Pot.h"
-#include "Pump.h"
-#include "TimeUnits.h"
-#include "Valve.h"
+#include "src/infrastructure/logger/SerialLogger.h"
+#include "src/infrastructure/LED.h"
+#include "src/infrastructure/onboard/OnboardMoistureSensor.h"
+#include "src/infrastructure/onboard/OnboardValve.h"
+#include "src/infrastructure/TimeUnits.h"
+#include "src/model/Pot.h"
+#include "src/model/Pump.h"
 
 #define pumpPin 5
 #define pumpSeconds 30
@@ -23,17 +23,18 @@ Pump pump(pumpPin, pumpSeconds);
 #define moisture1VoltagePin1 6
 #define moisture1VoltagePin2 7
 #define moistureSensor1Pin 0
-MoistureSensor moistureSensor1(moisture1VoltagePin1, moisture1VoltagePin2,
-moistureSensor1Pin, moistureReadCount, moistureReadMillis);
+OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
+		moisture1VoltagePin2,
+		moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 
 #define valve1Pin 8
-Valve valve1 = Valve(valve1Pin);
+OnboardValve valve1(valve1Pin);
 
 #define coolDownSeconds 21600 // 6h
 #define maxWaterlessDays 5
 
-Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, moistureSensor1,
-moistureThreshold, valve1, pump);
+Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor1,
+moistureThreshold, &valve1, pump);
 
 Pot pots[] = { pot1 };
 
@@ -41,7 +42,7 @@ Pot pots[] = { pot1 };
 #define pauseSeconds 1200
 
 #define warnLED LED_BUILTIN
-Logger logger(LED(warnLED));
+SerialLogger logger(LED(warnLED));
 
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.

@@ -6,11 +6,7 @@
  */
 
 #include "Logger.h"
-
-Logger::Logger(LED warnLED) :
-		warnLED(warnLED) {
-	Serial.begin(9600);
-}
+#include <Arduino.h>
 
 Logger* Logger::logger;
 
@@ -32,7 +28,6 @@ void Logger::info(int potId, SensorData data, bool pumping) {
 }
 
 void Logger::warn(const String& message) {
-	warnLED.turnOn();
 	log(WARN, message);
 }
 
@@ -51,5 +46,6 @@ void Logger::log(LogLevel level, const String& message) {
 		break;
 	}
 	logMessage += "," + message;
+	write(logMessage);
 	Serial.println(logMessage);
 }

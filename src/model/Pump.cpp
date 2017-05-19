@@ -7,7 +7,7 @@
 
 #include "Pump.h"
 
-#include "TimeUnits.h"
+#include "../infrastructure/TimeUnits.h"
 
 Pump::Pump(byte pin, byte pumpSeconds) :
 		pin(pin), pumpSeconds(pumpSeconds) {

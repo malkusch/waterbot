@@ -7,21 +7,21 @@
 
 #include "Pot.h"
 
-#include <Arduino.h>
+#include <WString.h>
 
-#include "Logger.h"
-#include "SensorData.h"
-#include "TimeUnits.h"
+#include "../infrastructure/logger/Logger.h"
+#include "../infrastructure/TimeUnits.h"
 
 byte Pot::nextId = 1;
 
 Pot::Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
-		MoistureSensor moistureSensor, int moistureThreshold, Valve valve,
+		MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
 		Pump pump) :
 		id(nextId++), maxWaterlessDays(maxWaterlessDays), coolDownSeconds(
 				coolDownSeconds), moistureSensor(moistureSensor), moistureThreshold(
 				moistureThreshold), valve(valve), pump(pump) {
 
+	valve->close();
 	lastWaterTime = millis();
 }
 
@@ -31,9 +31,9 @@ void Pot::waterIfNeeded() {
 
 	if (isDry(data) && !isHot()) {
 		pumping = true;
-		valve.open();
+		valve->open();
 		pump.pump();
-		valve.close();
+		valve->close();
 	}
 	Logger::getLogger()->info(id, data, pumping);
 }
@@ -58,6 +58,6 @@ bool Pot::isHot() {
 
 SensorData Pot::readSensors() {
 	SensorData data;
-	data.moisture = moistureSensor.readMoisture();
+	data.moisture = moistureSensor->readMoisture();
 	return data;
 }

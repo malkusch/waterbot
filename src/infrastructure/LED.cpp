@@ -14,11 +14,11 @@ LED::LED(const byte pin) :
 	turnOff();
 }
 
-void LED::turnOn() const {
+void LED::turnOn() {
 	digitalWrite(pin, HIGH);
 }
 
-void LED::turnOff() const {
+void LED::turnOff() {
 	digitalWrite(pin, LOW);
 }
 

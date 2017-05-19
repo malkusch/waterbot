@@ -5,11 +5,10 @@
  *      Author: malkusch
  */
 
-#include "MoistureSensor.h"
+#include "OnboardMoistureSensor.h"
 
-#include <Arduino.h>
 
-MoistureSensor::MoistureSensor(byte voltagePin1, byte voltagePin2,
+OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
 		byte sensorPin, byte readCount, unsigned int readMillis) :
 		voltagePin1(voltagePin1), voltagePin2(voltagePin2), sensorPin(
 				sensorPin), readCount(readCount), readMillis(readMillis) {
@@ -22,7 +21,7 @@ MoistureSensor::MoistureSensor(byte voltagePin1, byte voltagePin2,
 	standby();
 }
 
-int MoistureSensor::readMoisture() {
+int OnboardMoistureSensor::readMoisture() {
 	unsigned long sum = 0;
 	for (byte i = 0; i < readCount; i++) {
 		switchPolarity();
@@ -34,12 +33,12 @@ int MoistureSensor::readMoisture() {
 	return moisture;
 }
 
-int MoistureSensor::singleReadMoisture() {
+int OnboardMoistureSensor::singleReadMoisture() {
 	int moisture = analogRead(sensorPin);
 	return pin1ToPin2 ? (1023 - moisture) : moisture;
 }
 
-void MoistureSensor::switchPolarity() {
+void OnboardMoistureSensor::switchPolarity() {
 	if (pin1ToPin2) {
 		digitalWrite(voltagePin2, LOW);
 		digitalWrite(voltagePin1, HIGH);
@@ -50,7 +49,7 @@ void MoistureSensor::switchPolarity() {
 	pin1ToPin2 = !pin1ToPin2;
 }
 
-void MoistureSensor::standby() {
+void OnboardMoistureSensor::standby() {
 	digitalWrite(voltagePin1, LOW);
 	digitalWrite(voltagePin2, LOW);
 }
