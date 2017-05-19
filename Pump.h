@@ -13,16 +13,11 @@
 class Pump {
 
 public:
-	Pump(byte pin, unsigned int coolDownSeconds, byte pumpSeconds);
-
-	bool isHot();
-	unsigned long getLastPumpTime();
+	Pump(byte pin, byte pumpSeconds);
 	void pump();
 
 private:
-	unsigned long lastPumpTime;
 	const byte pin;
-	const unsigned int coolDownSeconds;
 	const byte pumpSeconds;
 
 	void turnOff();

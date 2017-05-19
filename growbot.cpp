@@ -4,25 +4,38 @@
 
 #include <Arduino.h>
 
+#include "LED.h"
 #include "Logger.h"
 #include "MoistureSensor.h"
+#include "Pot.h"
 #include "Pump.h"
 #include "TimeUnits.h"
-
-#define moistureVoltagePin1 6
-#define moistureVoltagePin2 7
-#define sensorPin 0
-#define moistureReadCount 10
-#define moistureReadMillis 100
-#define moistureThreshold 200
-MoistureSensor moistureSensor(moistureVoltagePin1, moistureVoltagePin2,
-sensorPin, moistureReadCount, moistureReadMillis);
+#include "Valve.h"
 
 #define pumpPin 5
 #define pumpSeconds 30
-#define pumpCoolDownSeconds 21600 // 6h
-#define maxPumplessDays 5
-Pump pump(pumpPin, pumpCoolDownSeconds, pumpSeconds);
+Pump pump(pumpPin, pumpSeconds);
+
+#define moistureReadCount 10
+#define moistureReadMillis 100
+#define moistureThreshold 200
+
+#define moisture1VoltagePin1 6
+#define moisture1VoltagePin2 7
+#define moistureSensor1Pin 0
+MoistureSensor moistureSensor1(moisture1VoltagePin1, moisture1VoltagePin2,
+moistureSensor1Pin, moistureReadCount, moistureReadMillis);
+
+#define valve1Pin 8
+Valve valve1 = Valve(valve1Pin);
+
+#define coolDownSeconds 21600 // 6h
+#define maxWaterlessDays 5
+
+Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, moistureSensor1,
+moistureThreshold, valve1, pump);
+
+Pot pots[] = { pot1 };
 
 #define bootPauseSeconds 10
 #define pauseSeconds 1200
@@ -32,41 +45,18 @@ Logger logger(LED(warnLED));
 
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
+	Logger::setLogger(&logger);
 	delay(TimeUnits::secondsToMillis(bootPauseSeconds)); // Reading the sensor instantly, reads a too low voltage
 }
 
 void loop() {
-	const SensorData data = readSensors();
-	bool pumping = false;
-
-	if (isDry(data) && !pump.isHot()) {
-		pumping = true;
-		pump.pump();
+	for (auto & pot : pots) {
+		pot.waterIfNeeded();
 	}
-	logger.info(data, pumping);
 	pause();
-}
-
-bool isDry(SensorData data) {
-	unsigned long maxPumplessTime = pump.getLastPumpTime()
-			+ TimeUnits::daysToMillis(maxPumplessDays);
-	if (millis() > maxPumplessTime) {
-		logger.warn(
-				"Sensors didn't report 'dry' for " + String(maxPumplessDays)
-						+ " days");
-		return true;
-	}
-
-	return data.moisture < moistureThreshold;
 }
 
 void pause() {
 	delay(TimeUnits::secondsToMillis(pauseSeconds));
-}
-
-SensorData readSensors() {
-	SensorData data;
-	data.moisture = moistureSensor.readMoisture();
-	return data;
 }
 

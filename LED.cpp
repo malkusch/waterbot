@@ -7,9 +7,7 @@
 
 #include "LED.h"
 
-#include <Arduino.h>
-
-LED::LED(byte pin) :
+LED::LED(const byte pin) :
 		pin(pin) {
 
 	pinMode(pin, OUTPUT);

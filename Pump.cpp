@@ -9,29 +9,17 @@
 
 #include "TimeUnits.h"
 
-Pump::Pump(byte pin, unsigned int coolDownSeconds, byte pumpSeconds) :
-		pin(pin), coolDownSeconds(coolDownSeconds), pumpSeconds(pumpSeconds) {
+Pump::Pump(byte pin, byte pumpSeconds) :
+		pin(pin), pumpSeconds(pumpSeconds) {
 
 	pinMode(pin, OUTPUT);
 	turnOff();
-	lastPumpTime = millis();
 }
 
 void Pump::pump() {
-	lastPumpTime = millis();
 	turnOn();
 	delay(TimeUnits::secondsToMillis(pumpSeconds));
 	turnOff();
-}
-
-bool Pump::isHot() {
-	unsigned long earliestPumpTime = lastPumpTime
-			+ TimeUnits::secondsToMillis(coolDownSeconds);
-	return earliestPumpTime > millis();
-}
-
-unsigned long Pump::getLastPumpTime() {
-	return lastPumpTime;
 }
 
 void Pump::turnOff() {

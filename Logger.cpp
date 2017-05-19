@@ -7,15 +7,25 @@
 
 #include "Logger.h"
 
-#include <Arduino.h>
-
 Logger::Logger(LED warnLED) :
 		warnLED(warnLED) {
 	Serial.begin(9600);
 }
 
-void Logger::info(SensorData data, bool pumping) {
+Logger* Logger::logger;
+
+Logger* Logger::getLogger() {
+	return logger;
+}
+
+void Logger::setLogger(Logger* logger) {
+	Logger::logger = logger;
+}
+
+void Logger::info(int potId, SensorData data, bool pumping) {
 	String message = String(data.moisture);
+	message += ",";
+	message += potId;
 	message += ",";
 	message += pumping;
 	log(INFO, message);

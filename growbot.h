@@ -15,9 +15,7 @@
 
 //add your function definitions for the project growbot here
 
-SensorData readSensors();
 void pause();
-bool isDry(SensorData data);
 
 //Do not add code below this line
 #endif /* _growbot_H_ */

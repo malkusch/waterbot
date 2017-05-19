@@ -21,11 +21,14 @@ enum LogLevel {
 
 class Logger {
 public:
-	Logger(LED warnLED);
-	void info(SensorData data, bool pumping);
-	void warn(const String& message);
+	Logger(LED);
+	void info(int potId, SensorData, bool pumping);
+	void warn(String const& message);
+	static Logger* getLogger();
+	static void setLogger(Logger*);
 
 private:
+	static Logger* logger;
 	const LED warnLED;
 	void log(LogLevel level, const String& message);
 };
