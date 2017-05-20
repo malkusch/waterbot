@@ -7,6 +7,9 @@
 
 #include "OnboardMoistureSensor.h"
 
+#include "../../../libraries/QuickStats/QuickStats.h"
+#include "../logger/Logger.h"
+
 OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
 		byte sensorPin, byte readCount, unsigned int readMillis) :
 		voltagePin1(voltagePin1), voltagePin2(voltagePin2), sensorPin(
@@ -21,18 +24,44 @@ OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
 }
 
 int OnboardMoistureSensor::readMoisture() {
-	unsigned long sum = 0;
+	float data[readCount];
 	for (byte i = 0; i < readCount; i++) {
-		switchPolarity();
-		delay(readMillis);
-		sum += singleReadMoisture();
+		data[i] = singleReadMoisture();
 	}
 	standby();
-	int moisture = sum / readCount;
-	return moisture;
+
+	QuickStats stats;
+	float median = stats.median(data, readCount);
+	float error = stats.stderror(data, readCount);
+
+	String debugError;
+	debugError += "Sensor at pin " + String(sensorPin) + " has " + error
+			+ " error";
+	Logger::getLogger()->debug(debugError);
+
+	if (median < 10) {
+		String warning;
+		warning += "Sensor " + String(sensorPin) + " reads too low: " + median;
+		Logger::getLogger()->warn(warning);
+	}
+	if (median > 1023 - 10) {
+		String warning;
+		warning += "Sensor " + String(sensorPin) + " reads too high: " + median;
+		Logger::getLogger()->warn(warning);
+	}
+	if (error > 50) {
+		String warning;
+		warning += "Sensor " + String(sensorPin) + " has too much error: "
+				+ error;
+		Logger::getLogger()->warn(warning);
+	}
+
+	return median;
 }
 
 int OnboardMoistureSensor::singleReadMoisture() {
+	switchPolarity();
+	delay(readMillis);
 	int moisture = analogRead(sensorPin);
 	return pin1ToPin2 ? (1023 - moisture) : moisture;
 }

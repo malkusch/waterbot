@@ -1,3 +1,6 @@
 [submodule "libraries/MemoryFree"]
 	path = libraries/MemoryFree
 	url = https://github.com/McNeight/MemoryFree.git
+[submodule "libraries/QuickStats"]
+	path = libraries/QuickStats
+	url = https://github.com/dndubins/QuickStats.git
