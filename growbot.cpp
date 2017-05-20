@@ -12,37 +12,60 @@
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
-#define pumpPin 5
+#define moistureReadCount 10
+#define moistureReadMillis 100
+#define moistureThreshold 200
+#define valveDelayMillis 500
+#define coolDownSeconds 21600 // 6h
+#define maxWaterlessDays 5
+#define bootPauseSeconds 10
+#define pauseSeconds 1200
+
+#define pumpPin 12
 #define pumpSeconds 30
 #define pumpTurnOffDelayMillis 500
 Pump pump(pumpPin, pumpSeconds, pumpTurnOffDelayMillis);
 
-#define moistureReadCount 10
-#define moistureReadMillis 100
-#define moistureThreshold 200
-
-#define valveDelayMillis 500
-
-#define moisture1VoltagePin1 6
-#define moisture1VoltagePin2 7
+#define moisture1VoltagePin1 2
+#define moisture1VoltagePin2 3
 #define moistureSensor1Pin 0
 OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
 moisture1VoltagePin2,
 moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 
-#define valve1Pin 8
+#define valve1Pin 4
 OnboardValve valve1(valve1Pin, valveDelayMillis);
-
-#define coolDownSeconds 21600 // 6h
-#define maxWaterlessDays 5
 
 Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor1,
 moistureThreshold, &valve1, pump);
 
-Pot pots[] = { pot1 };
+#define moisture2VoltagePin1 6
+#define moisture2VoltagePin2 7
+#define moistureSensor2Pin 1
+OnboardMoistureSensor moistureSensor2(moisture2VoltagePin1,
+moisture2VoltagePin2,
+moistureSensor2Pin, moistureReadCount, moistureReadMillis);
 
-#define bootPauseSeconds 10
-#define pauseSeconds 1200
+#define valve2Pin 8
+OnboardValve valve2(valve2Pin, valveDelayMillis);
+
+Pot pot2 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor2,
+moistureThreshold, &valve2, pump);
+
+#define moisture3VoltagePin1 9
+#define moisture3VoltagePin2 10
+#define moistureSensor3Pin 2
+OnboardMoistureSensor moistureSensor3(moisture3VoltagePin1,
+moisture3VoltagePin2,
+moistureSensor3Pin, moistureReadCount, moistureReadMillis);
+
+#define valve3Pin 11
+OnboardValve valve3(valve3Pin, valveDelayMillis);
+
+Pot pot3 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor3,
+moistureThreshold, &valve3, pump);
+
+Pot pots[] = { pot1, pot2, pot3 };
 
 #define warnLED LED_BUILTIN
 SerialLogger logger(LED(warnLED));

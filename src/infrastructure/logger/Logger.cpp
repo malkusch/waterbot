@@ -47,5 +47,4 @@ void Logger::log(LogLevel level, const String& message) {
 	}
 	logMessage += "," + message;
 	write(logMessage);
-	Serial.println(logMessage);
 }
