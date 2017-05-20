@@ -14,7 +14,7 @@ Pump::Pump(byte pin, byte pumpSeconds, unsigned int turnOffDelayMillis) :
 				turnOffDelayMillis) {
 
 	pinMode(pin, OUTPUT);
-	turnOff();
+	turnOffWithoutDelay(); // You can't delay within a constructor
 }
 
 void Pump::pump() {
@@ -24,8 +24,12 @@ void Pump::pump() {
 }
 
 void Pump::turnOff() {
-	digitalWrite(pin, HIGH);
+	turnOffWithoutDelay();
 	delay(turnOffDelayMillis);
+}
+
+void Pump::turnOffWithoutDelay() {
+	digitalWrite(pin, HIGH);
 }
 
 void Pump::turnOn() {

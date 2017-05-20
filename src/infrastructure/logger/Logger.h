@@ -12,7 +12,7 @@
 #include <Arduino.h>
 
 enum LogLevel {
-	INFO, WARN
+	DEBUG, INFO, WARN
 };
 
 class Logger {
@@ -20,6 +20,7 @@ public:
 	virtual ~Logger() {};
 	virtual void info(int potId, SensorData, bool pumping);
 	virtual void warn(String const& message);
+	virtual void debug(String const& message);
 	virtual void log(LogLevel, const String& message);
 	static Logger* getLogger();
 	static void setLogger(Logger*);

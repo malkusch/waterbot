@@ -21,7 +21,6 @@ Pot::Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
 				coolDownSeconds), moistureSensor(moistureSensor), moistureThreshold(
 				moistureThreshold), valve(valve), pump(pump) {
 
-	valve->close();
 	lastWaterTime = millis();
 }
 

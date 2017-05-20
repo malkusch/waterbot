@@ -23,6 +23,7 @@ protected:
 private:
 	const byte pin;
 	const unsigned int delayMillis;
+	void closeWithoutDelay();
 };
 
 #endif /* INFRASTRUCTURE_ONBOARD_ONBOARDVALVE_H_ */

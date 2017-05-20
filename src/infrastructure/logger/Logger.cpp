@@ -27,6 +27,10 @@ void Logger::info(int potId, SensorData data, bool pumping) {
 	log(INFO, message);
 }
 
+void Logger::debug(const String& message) {
+	log(DEBUG, message);
+}
+
 void Logger::warn(const String& message) {
 	log(WARN, message);
 }
@@ -35,11 +39,14 @@ void Logger::log(LogLevel level, const String& message) {
 	String logMessage = String(millis());
 	logMessage += ",";
 	switch (level) {
-	case WARN:
-		logMessage += "WARN";
+	case DEBUG:
+		logMessage += "DEBUG";
 		break;
 	case INFO:
 		logMessage += "INFO";
+		break;
+	case WARN:
+		logMessage += "WARN";
 		break;
 	default:
 		logMessage += level;

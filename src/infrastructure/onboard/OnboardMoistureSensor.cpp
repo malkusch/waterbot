@@ -7,7 +7,6 @@
 
 #include "OnboardMoistureSensor.h"
 
-
 OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
 		byte sensorPin, byte readCount, unsigned int readMillis) :
 		voltagePin1(voltagePin1), voltagePin2(voltagePin2), sensorPin(

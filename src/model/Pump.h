@@ -22,6 +22,7 @@ private:
 	const unsigned int turnOffDelayMillis;
 
 	void turnOff();
+	void turnOffWithoutDelay();
 	void turnOn();
 
 };

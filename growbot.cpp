@@ -21,19 +21,22 @@
 #define bootPauseSeconds 10
 #define pauseSeconds 1200
 
+#define warnLED LED_BUILTIN
+SerialLogger logger(LED(warnLED));
+
 #define pumpPin 12
 #define pumpSeconds 30
 #define pumpTurnOffDelayMillis 500
 Pump pump(pumpPin, pumpSeconds, pumpTurnOffDelayMillis);
 
-#define moisture1VoltagePin1 2
-#define moisture1VoltagePin2 3
+#define moisture1VoltagePin1 4
+#define moisture1VoltagePin2 5
 #define moistureSensor1Pin 0
 OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
 moisture1VoltagePin2,
 moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 
-#define valve1Pin 4
+#define valve1Pin 3
 OnboardValve valve1(valve1Pin, valveDelayMillis);
 
 Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor1,
@@ -66,9 +69,6 @@ Pot pot3 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor3,
 moistureThreshold, &valve3, pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
-
-#define warnLED LED_BUILTIN
-SerialLogger logger(LED(warnLED));
 
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.

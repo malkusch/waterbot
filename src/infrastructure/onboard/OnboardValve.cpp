@@ -11,7 +11,7 @@ OnboardValve::OnboardValve(byte pin, unsigned int delayMillis) :
 		pin(pin), delayMillis(delayMillis) {
 
 	pinMode(pin, OUTPUT);
-	close();
+	closeWithoutDelay(); // You can't delay within a constructor
 }
 
 void OnboardValve::open() {
@@ -20,6 +20,10 @@ void OnboardValve::open() {
 }
 
 void OnboardValve::close() {
-	digitalWrite(pin, LOW);
+	closeWithoutDelay();
 	delay(delayMillis);
+}
+
+void OnboardValve::closeWithoutDelay() {
+	digitalWrite(pin, LOW);
 }
