@@ -14,7 +14,7 @@
 
 class OnboardValve: public Valve {
 public:
-	OnboardValve(byte pin);
+	OnboardValve(byte pin, unsigned int delayMillis);
 
 protected:
 	virtual void open();
@@ -22,6 +22,7 @@ protected:
 
 private:
 	const byte pin;
+	const unsigned int delayMillis;
 };
 
 #endif /* INFRASTRUCTURE_ONBOARD_ONBOARDVALVE_H_ */

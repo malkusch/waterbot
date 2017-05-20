@@ -7,8 +7,8 @@
 
 #include "OnboardValve.h"
 
-OnboardValve::OnboardValve(byte pin) :
-		pin(pin) {
+OnboardValve::OnboardValve(byte pin, unsigned int delayMillis) :
+		pin(pin), delayMillis(delayMillis) {
 
 	pinMode(pin, OUTPUT);
 	close();
@@ -16,8 +16,10 @@ OnboardValve::OnboardValve(byte pin) :
 
 void OnboardValve::open() {
 	digitalWrite(pin, HIGH);
+	delay(delayMillis);
 }
 
 void OnboardValve::close() {
 	digitalWrite(pin, LOW);
+	delay(delayMillis);
 }

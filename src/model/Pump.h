@@ -13,12 +13,13 @@
 class Pump {
 
 public:
-	Pump(byte pin, byte pumpSeconds);
+	Pump(byte pin, byte pumpSeconds, unsigned int turnOffDelayMillis);
 	void pump();
 
 private:
 	const byte pin;
 	const byte pumpSeconds;
+	const unsigned int turnOffDelayMillis;
 
 	void turnOff();
 	void turnOn();

@@ -9,8 +9,9 @@
 
 #include "../infrastructure/TimeUnits.h"
 
-Pump::Pump(byte pin, byte pumpSeconds) :
-		pin(pin), pumpSeconds(pumpSeconds) {
+Pump::Pump(byte pin, byte pumpSeconds, unsigned int turnOffDelayMillis) :
+		pin(pin), pumpSeconds(pumpSeconds), turnOffDelayMillis(
+				turnOffDelayMillis) {
 
 	pinMode(pin, OUTPUT);
 	turnOff();
@@ -24,6 +25,7 @@ void Pump::pump() {
 
 void Pump::turnOff() {
 	digitalWrite(pin, HIGH);
+	delay(turnOffDelayMillis);
 }
 
 void Pump::turnOn() {

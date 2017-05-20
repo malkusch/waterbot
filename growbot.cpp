@@ -14,21 +14,24 @@
 
 #define pumpPin 5
 #define pumpSeconds 30
-Pump pump(pumpPin, pumpSeconds);
+#define pumpTurnOffDelayMillis 500
+Pump pump(pumpPin, pumpSeconds, pumpTurnOffDelayMillis);
 
 #define moistureReadCount 10
 #define moistureReadMillis 100
 #define moistureThreshold 200
 
+#define valveDelayMillis 500
+
 #define moisture1VoltagePin1 6
 #define moisture1VoltagePin2 7
 #define moistureSensor1Pin 0
 OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
-		moisture1VoltagePin2,
-		moistureSensor1Pin, moistureReadCount, moistureReadMillis);
+moisture1VoltagePin2,
+moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 
 #define valve1Pin 8
-OnboardValve valve1(valve1Pin);
+OnboardValve valve1(valve1Pin, valveDelayMillis);
 
 #define coolDownSeconds 21600 // 6h
 #define maxWaterlessDays 5
