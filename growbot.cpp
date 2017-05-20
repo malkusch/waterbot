@@ -4,6 +4,7 @@
 
 #include <Arduino.h>
 
+#include "libraries/MemoryFree/MemoryFree.h"
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
@@ -77,6 +78,10 @@ void setup() {
 }
 
 void loop() {
+	String message = "Free memory: ";
+	message += freeMemory();
+	Logger::getLogger()->debug(message);
+
 	for (auto & pot : pots) {
 		pot.waterIfNeeded();
 	}
