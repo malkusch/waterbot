@@ -9,17 +9,16 @@
 
 #include "../infrastructure/TimeUnits.h"
 
-Pump::Pump(byte pin, byte pumpSeconds, unsigned int turnOffDelayMillis) :
-		pin(pin), pumpSeconds(pumpSeconds), turnOffDelayMillis(
-				turnOffDelayMillis) {
+Pump::Pump(byte pin, unsigned int turnOffDelayMillis) :
+		pin(pin), turnOffDelayMillis(turnOffDelayMillis) {
 
 	pinMode(pin, OUTPUT);
 	turnOffWithoutDelay(); // You can't delay within a constructor
 }
 
-void Pump::pump() {
+void Pump::pump(byte seconds) {
 	turnOn();
-	delay(TimeUnits::secondsToMillis(pumpSeconds));
+	delay(TimeUnits::secondsToMillis(seconds));
 	turnOff();
 }
 

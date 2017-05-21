@@ -10,17 +10,18 @@
 
 #include <Arduino.h>
 
-#include "MoistureSensor.h"
-#include "Pump.h"
 #include "SensorData.h"
+#include "Pump.h"
 #include "Valve.h"
+#include "MoistureSensor.h"
 
 class Pot {
 public:
 	Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
 			MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
-			Pump* pump);
+			Pump* pump, byte waterSeconds);
 	void waterIfNeeded();
+	void water(byte seconds);
 
 private:
 	const byte id;
@@ -31,6 +32,7 @@ private:
 	const int moistureThreshold;
 	Valve* valve;
 	Pump* pump;
+	const byte waterSeconds;
 	unsigned long lastWaterTime;
 
 	bool isHot();bool isDry(SensorData data);

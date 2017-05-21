@@ -19,6 +19,7 @@
 #define valveDelayMillis 500
 #define coolDownSeconds 21600 // 6h
 #define maxWaterlessDays 5
+#define waterSeconds 10
 #define bootPauseSeconds 10
 #define pauseSeconds 1200
 
@@ -26,9 +27,8 @@
 SerialLogger logger(LED(warnLED));
 
 #define pumpPin 12
-#define pumpSeconds 30
 #define pumpTurnOffDelayMillis 500
-Pump pump(pumpPin, pumpSeconds, pumpTurnOffDelayMillis);
+Pump pump(pumpPin, pumpTurnOffDelayMillis);
 
 #define moisture1VoltagePin1 4
 #define moisture1VoltagePin2 5
@@ -41,7 +41,7 @@ moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 OnboardValve valve1(valve1Pin, valveDelayMillis);
 
 Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor1,
-moistureThreshold, &valve1, &pump);
+moistureThreshold, &valve1, &pump, waterSeconds);
 
 #define moisture2VoltagePin1 6
 #define moisture2VoltagePin2 7
@@ -54,7 +54,7 @@ moistureSensor2Pin, moistureReadCount, moistureReadMillis);
 OnboardValve valve2(valve2Pin, valveDelayMillis);
 
 Pot pot2 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor2,
-moistureThreshold, &valve2, &pump);
+moistureThreshold, &valve2, &pump, waterSeconds);
 
 #define moisture3VoltagePin1 9
 #define moisture3VoltagePin2 10
@@ -67,7 +67,7 @@ moistureSensor3Pin, moistureReadCount, moistureReadMillis);
 OnboardValve valve3(valve3Pin, valveDelayMillis);
 
 Pot pot3 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor3,
-moistureThreshold, &valve3, &pump);
+moistureThreshold, &valve3, &pump, waterSeconds);
 
 Pot pots[] = { pot1, pot2, pot3 };
 

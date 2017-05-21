@@ -12,13 +12,16 @@
 
 class Pump {
 
+	friend class Pot;
+
 public:
-	Pump(byte pin, byte pumpSeconds, unsigned int turnOffDelayMillis);
-	void pump();
+	Pump(byte pin, unsigned int turnOffDelayMillis);
+
+protected:
+	void pump(byte seconds);
 
 private:
 	const byte pin;
-	const byte pumpSeconds;
 	const unsigned int turnOffDelayMillis;
 
 	void turnOff();
