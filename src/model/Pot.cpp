@@ -16,7 +16,7 @@ byte Pot::nextId = 1;
 
 Pot::Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
 		MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
-		Pump pump) :
+		Pump* pump) :
 		id(nextId++), maxWaterlessDays(maxWaterlessDays), coolDownSeconds(
 				coolDownSeconds), moistureSensor(moistureSensor), moistureThreshold(
 				moistureThreshold), valve(valve), pump(pump) {
@@ -31,7 +31,7 @@ void Pot::waterIfNeeded() {
 	if (isDry(data) && !isHot()) {
 		pumping = true;
 		valve->open();
-		pump.pump();
+		pump->pump();
 		valve->close();
 	}
 	Logger::getLogger()->info(id, data, pumping);
