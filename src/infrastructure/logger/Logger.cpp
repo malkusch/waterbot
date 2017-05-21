@@ -48,9 +48,6 @@ void Logger::log(LogLevel level, const String& message) {
 	case WARN:
 		logMessage += "WARN";
 		break;
-	default:
-		logMessage += level;
-		break;
 	}
 	logMessage += "," + message;
 	write(logMessage);
