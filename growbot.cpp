@@ -5,6 +5,7 @@
 #include <Arduino.h>
 
 #include "libraries/MemoryFree/MemoryFree.h"
+#include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
@@ -35,6 +36,8 @@ Pump pump(pumpPin, pumpTurnOffDelayMillis);
 AutomaticWaterService automaticWaterService(waterSeconds, coolDownSeconds,
 maxWaterlessDays);
 
+ThresholdDryStrategy thresholdDryStrategy(moistureThreshold);
+
 #define moisture1VoltagePin1 4
 #define moisture1VoltagePin2 5
 #define moistureSensor1Pin 0
@@ -45,7 +48,7 @@ moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 #define valve1Pin 3
 OnboardValve valve1(valve1Pin, valveDelayMillis);
 
-Pot pot1 = Pot(&moistureSensor1, moistureThreshold, &valve1, &pump);
+Pot pot1 = Pot(&moistureSensor1, &thresholdDryStrategy, &valve1, &pump);
 
 #define moisture2VoltagePin1 6
 #define moisture2VoltagePin2 7
@@ -57,7 +60,7 @@ moistureSensor2Pin, moistureReadCount, moistureReadMillis);
 #define valve2Pin 8
 OnboardValve valve2(valve2Pin, valveDelayMillis);
 
-Pot pot2 = Pot(&moistureSensor2, moistureThreshold, &valve2, &pump);
+Pot pot2 = Pot(&moistureSensor2, &thresholdDryStrategy, &valve2, &pump);
 
 #define moisture3VoltagePin1 9
 #define moisture3VoltagePin2 10
@@ -69,7 +72,7 @@ moistureSensor3Pin, moistureReadCount, moistureReadMillis);
 #define valve3Pin 11
 OnboardValve valve3(valve3Pin, valveDelayMillis);
 
-Pot pot3 = Pot(&moistureSensor3, moistureThreshold, &valve3, &pump);
+Pot pot3 = Pot(&moistureSensor3, &thresholdDryStrategy, &valve3, &pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
 

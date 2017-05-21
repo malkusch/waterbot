@@ -14,10 +14,11 @@
 #include "Pump.h"
 #include "Valve.h"
 #include "MoistureSensor.h"
+#include  "DryStrategy.h"
 
 class Pot {
 public:
-	Pot(MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
+	Pot(MoistureSensor* moistureSensor, DryStrategy* dryStrategy, Valve* valve,
 			Pump* pump);
 	void water(byte seconds);
 	unsigned long getLastWaterTime() const;
@@ -27,7 +28,7 @@ private:
 	const byte id;
 	MoistureSensor* moistureSensor;
 	static byte nextId;
-	const int moistureThreshold;
+	DryStrategy* dryStrategy;
 	Valve* valve;
 	Pump* pump;
 	unsigned long lastWaterTime;

@@ -14,10 +14,10 @@
 
 byte Pot::nextId = 1;
 
-Pot::Pot(MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
+Pot::Pot(MoistureSensor* moistureSensor, DryStrategy* dryStrategy, Valve* valve,
 		Pump* pump) :
-		id(nextId++), moistureSensor(moistureSensor), moistureThreshold(
-				moistureThreshold), valve(valve), pump(pump) {
+		id(nextId++), moistureSensor(moistureSensor), dryStrategy(dryStrategy), valve(
+				valve), pump(pump) {
 
 	lastWaterTime = millis();
 }
@@ -39,7 +39,7 @@ unsigned long Pot::getLastWaterTime() const {
 
 bool Pot::isDry() {
 	SensorData data = readSensors();
-	return data.moisture < moistureThreshold;
+	return dryStrategy->isDry(data);
 }
 
 SensorData Pot::readSensors() {
