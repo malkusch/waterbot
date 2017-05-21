@@ -14,58 +14,32 @@
 
 byte Pot::nextId = 1;
 
-Pot::Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
-		MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
-		Pump* pump, byte waterSeconds) :
-		id(nextId++), maxWaterlessDays(maxWaterlessDays), coolDownSeconds(
-				coolDownSeconds), moistureSensor(moistureSensor), moistureThreshold(
-				moistureThreshold), valve(valve), pump(pump), waterSeconds(
-				waterSeconds) {
+Pot::Pot(MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
+		Pump* pump) :
+		id(nextId++), moistureSensor(moistureSensor), moistureThreshold(
+				moistureThreshold), valve(valve), pump(pump) {
 
 	lastWaterTime = millis();
-}
-
-void Pot::waterIfNeeded() {
-	if (isHot()) {
-		char message[30];
-		sprintf(message, "Pot %d is still hot", id);
-		Logger::getLogger()->debug(message);
-		return;
-	}
-
-	const SensorData data = readSensors();
-	bool pumping = false;
-
-	if (isDry(data)) {
-		pumping = true;
-		water(waterSeconds);
-	}
-	Logger::getLogger()->info(id, data, pumping);
 }
 
 void Pot::water(byte seconds) {
-	lastWaterTime = millis();
 	valve->open();
 	pump->pump(seconds);
 	valve->close();
+	lastWaterTime = millis();
 }
 
-bool Pot::isDry(SensorData data) {
-	unsigned long maxWaterlessTime = lastWaterTime
-			+ TimeUnits::daysToMillis(maxWaterlessDays);
-	if (millis() > maxWaterlessTime) {
-		String warning = "Sensors didn't report 'dry' for ";
-		warning += String(maxWaterlessDays) + " days in pot" + String(id);
-		Logger::getLogger()->warn(warning);
-		return true;
-	}
+byte Pot::getId() {
+	return id;
+}
+
+unsigned long Pot::getLastWaterTime() const {
+	return lastWaterTime;
+}
+
+bool Pot::isDry() {
+	SensorData data = readSensors();
 	return data.moisture < moistureThreshold;
-}
-
-bool Pot::isHot() {
-	unsigned long earliestWaterTime = lastWaterTime
-			+ TimeUnits::secondsToMillis(coolDownSeconds);
-	return earliestWaterTime > millis();
 }
 
 SensorData Pot::readSensors() {

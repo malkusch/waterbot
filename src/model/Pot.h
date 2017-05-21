@@ -17,25 +17,21 @@
 
 class Pot {
 public:
-	Pot(byte maxWaterlessDays, unsigned int coolDownSeconds,
-			MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
-			Pump* pump, byte waterSeconds);
-	void waterIfNeeded();
+	Pot(MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
+			Pump* pump);
 	void water(byte seconds);
+	unsigned long getLastWaterTime() const;bool isDry();
+	byte getId();
 
 private:
 	const byte id;
-	const byte maxWaterlessDays;
-	const unsigned int coolDownSeconds;
 	MoistureSensor* moistureSensor;
 	static byte nextId;
 	const int moistureThreshold;
 	Valve* valve;
 	Pump* pump;
-	const byte waterSeconds;
 	unsigned long lastWaterTime;
 
-	bool isHot();bool isDry(SensorData data);
 	SensorData readSensors();
 };
 

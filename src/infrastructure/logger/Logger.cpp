@@ -18,12 +18,7 @@ void Logger::setLogger(Logger* logger) {
 	Logger::logger = logger;
 }
 
-void Logger::info(int potId, SensorData data, bool pumping) {
-	String message = String(data.moisture);
-	message += ",";
-	message += potId;
-	message += ",";
-	message += pumping;
+void Logger::info(String const& message) {
 	log(INFO, message);
 }
 

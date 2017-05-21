@@ -18,7 +18,7 @@ enum LogLevel {
 class Logger {
 public:
 	virtual ~Logger() {};
-	virtual void info(int potId, SensorData, bool pumping);
+	virtual void info(String const& message);
 	virtual void warn(String const& message);
 	virtual void debug(String const& message);
 	virtual void log(LogLevel, const String& message);

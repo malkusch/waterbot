@@ -10,6 +10,7 @@
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/TimeUnits.h"
+#include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
@@ -30,6 +31,9 @@ SerialLogger logger(LED(warnLED));
 #define pumpTurnOffDelayMillis 500
 Pump pump(pumpPin, pumpTurnOffDelayMillis);
 
+AutomaticWaterService automaticWaterService(waterSeconds, coolDownSeconds,
+		maxWaterlessDays);
+
 #define moisture1VoltagePin1 4
 #define moisture1VoltagePin2 5
 #define moistureSensor1Pin 0
@@ -40,8 +44,7 @@ moistureSensor1Pin, moistureReadCount, moistureReadMillis);
 #define valve1Pin 3
 OnboardValve valve1(valve1Pin, valveDelayMillis);
 
-Pot pot1 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor1,
-moistureThreshold, &valve1, &pump, waterSeconds);
+Pot pot1 = Pot(&moistureSensor1, moistureThreshold, &valve1, &pump);
 
 #define moisture2VoltagePin1 6
 #define moisture2VoltagePin2 7
@@ -53,8 +56,7 @@ moistureSensor2Pin, moistureReadCount, moistureReadMillis);
 #define valve2Pin 8
 OnboardValve valve2(valve2Pin, valveDelayMillis);
 
-Pot pot2 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor2,
-moistureThreshold, &valve2, &pump, waterSeconds);
+Pot pot2 = Pot(&moistureSensor2, moistureThreshold, &valve2, &pump);
 
 #define moisture3VoltagePin1 9
 #define moisture3VoltagePin2 10
@@ -66,8 +68,7 @@ moistureSensor3Pin, moistureReadCount, moistureReadMillis);
 #define valve3Pin 11
 OnboardValve valve3(valve3Pin, valveDelayMillis);
 
-Pot pot3 = Pot(maxWaterlessDays, coolDownSeconds, &moistureSensor3,
-moistureThreshold, &valve3, &pump, waterSeconds);
+Pot pot3 = Pot(&moistureSensor3, moistureThreshold, &valve3, &pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
 
@@ -83,7 +84,7 @@ void loop() {
 	Logger::getLogger()->debug(message);
 
 	for (auto & pot : pots) {
-		pot.waterIfNeeded();
+		automaticWaterService.waterIfNeeded(&pot);
 	}
 	pause();
 }
