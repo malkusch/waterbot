@@ -394,3 +394,39 @@
 
 25298653,INFO,281,4,0
 
+26498658,DEBUG,Free memory: 1346
+
+26499660,DEBUG,Sensor at pin 0 has 4.62 error
+
+26499661,INFO,483,1,0
+
+26500669,DEBUG,Sensor at pin 1 has 2.75 error
+
+26500670,INFO,335,2,0
+
+26501677,DEBUG,Sensor at pin 2 has 8.39 error
+
+26501678,INFO,462,3,0
+
+26502685,DEBUG,Sensor at pin 3 has 3.30 error
+
+26502686,INFO,283,4,0
+
+27702690,DEBUG,Free memory: 1346
+
+27703694,DEBUG,Sensor at pin 0 has 4.78 error
+
+27703695,INFO,476,1,0
+
+27704701,DEBUG,Sensor at pin 1 has 2.52 error
+
+27704702,INFO,328,2,0
+
+27705710,DEBUG,Sensor at pin 2 has 8.41 error
+
+27705711,INFO,461,3,0
+
+27706718,DEBUG,Sensor at pin 3 has 3.04 error
+
+27706719,INFO,284,4,0
+

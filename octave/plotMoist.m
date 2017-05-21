@@ -1,5 +1,9 @@
 
-Data = csvread ("moist5.log");
+Data1 = csvread ("moist4.log");
+Data2 = csvread ("moist5.log");
+Data2(:,1) = Data2(:,1) + max(Data1(:,1));
+
+Data = [Data1;Data2];
 sensors = max(Data(:,4));
 n = 2;
 sensorColumn = 4;
