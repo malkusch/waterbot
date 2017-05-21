@@ -45,5 +45,10 @@ bool Pot::isDry() {
 SensorData Pot::readSensors() {
 	SensorData data;
 	data.moisture = moistureSensor->readMoisture();
+
+	char message[10];
+	sprintf(message, "%d, %d", data.moisture, id);
+	Logger::getLogger()->info(message);
+
 	return data;
 }

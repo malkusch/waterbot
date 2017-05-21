@@ -18,7 +18,7 @@ void Logger::setLogger(Logger* logger) {
 	Logger::logger = logger;
 }
 
-void Logger::info(String const& message) {
+void Logger::info(const String& message) {
 	log(INFO, message);
 }
 

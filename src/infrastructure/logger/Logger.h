@@ -17,10 +17,12 @@ enum LogLevel {
 
 class Logger {
 public:
-	virtual ~Logger() {};
-	virtual void info(String const& message);
-	virtual void warn(String const& message);
-	virtual void debug(String const& message);
+	virtual ~Logger() {
+	}
+	;
+	virtual void info(const String& message);
+	virtual void warn(const String& message);
+	virtual void debug(const String& message);
 	virtual void log(LogLevel, const String& message);
 	static Logger* getLogger();
 	static void setLogger(Logger*);

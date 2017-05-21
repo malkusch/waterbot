@@ -5,8 +5,8 @@
  *      Author: malkusch
  */
 
-#ifndef POT_H_
-#define POT_H_
+#ifndef MODEL_POT_H_
+#define MODEL_POT_H_
 
 #include <Arduino.h>
 
@@ -20,8 +20,8 @@ public:
 	Pot(MoistureSensor* moistureSensor, int moistureThreshold, Valve* valve,
 			Pump* pump);
 	void water(byte seconds);
-	unsigned long getLastWaterTime() const;bool isDry();
-	byte getId();
+	unsigned long getLastWaterTime() const;
+	byte getId();bool isDry();
 
 private:
 	const byte id;

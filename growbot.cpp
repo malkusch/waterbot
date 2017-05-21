@@ -21,6 +21,7 @@
 #define coolDownSeconds 21600 // 6h
 #define maxWaterlessDays 5
 #define waterSeconds 10
+#define bootWaterSeconds 3
 #define bootPauseSeconds 10
 #define pauseSeconds 1200
 
@@ -32,7 +33,7 @@ SerialLogger logger(LED(warnLED));
 Pump pump(pumpPin, pumpTurnOffDelayMillis);
 
 AutomaticWaterService automaticWaterService(waterSeconds, coolDownSeconds,
-		maxWaterlessDays);
+maxWaterlessDays);
 
 #define moisture1VoltagePin1 4
 #define moisture1VoltagePin2 5
@@ -75,6 +76,12 @@ Pot pots[] = { pot1, pot2, pot3 };
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
 	Logger::setLogger(&logger);
+
+	// Water all pots, as a visual self test
+	for (auto & pot : pots) {
+		pot.water(bootWaterSeconds);
+	}
+
 	delay(TimeUnits::secondsToMillis(bootPauseSeconds)); // Reading the sensor instantly, reads a too low voltage
 }
 
