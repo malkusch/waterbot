@@ -23,6 +23,10 @@ Pot::Pot(MoistureSensor* moistureSensor, DryStrategy* dryStrategy, Valve* valve,
 }
 
 void Pot::water(byte seconds) {
+	char message[16];
+	sprintf(message, "Watering pot %d", id);
+	Logger::getLogger()->info(message);
+
 	valve->open();
 	pump->pump(seconds);
 	valve->close();
