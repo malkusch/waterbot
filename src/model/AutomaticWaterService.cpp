@@ -45,13 +45,11 @@ void AutomaticWaterService::waterIfNeeded(Pot *pot) {
 }
 
 bool AutomaticWaterService::isHot(const Pot *pot) {
-	unsigned long earliestWaterTime = pot->getLastWaterTime()
-			+ TimeUnits::secondsToMillis(coolDownSeconds);
-	return earliestWaterTime > millis();
+	return millis() - pot->getLastWaterTime()
+			< TimeUnits::secondsToMillis(coolDownSeconds);
 }
 
 bool AutomaticWaterService::isTooLongWaterLess(const Pot *pot) {
-	unsigned long maxWaterlessTime = pot->getLastWaterTime()
-			+ TimeUnits::daysToMillis(maxWaterlessDays);
-	return millis() > maxWaterlessTime;
+	return millis() - pot->getLastWaterTime()
+			> TimeUnits::daysToMillis(maxWaterlessDays);
 }
