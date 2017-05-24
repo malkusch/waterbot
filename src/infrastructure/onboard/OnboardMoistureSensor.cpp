@@ -63,6 +63,14 @@ int OnboardMoistureSensor::singleReadMoisture() {
 	switchPolarity();
 	delay(readMillis);
 	int moisture = analogRead(sensorPin);
+
+	/*
+	 *  It turns out the wires save some energy which affects the next
+	 *  reading. A short delay should remove that energy to ground.
+	 */
+	standby();
+	delay(readMillis * 5);
+
 	return pin1ToPin2 ? (1023 - moisture) : moisture;
 }
 
