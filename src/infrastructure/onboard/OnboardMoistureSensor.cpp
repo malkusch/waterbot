@@ -11,24 +11,36 @@
 #include "../logger/Logger.h"
 
 OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
-		byte sensorPin, byte readCount, unsigned int readMillis) :
+		byte sensorPin, byte halfReadCount, unsigned int voltageDelayMillis) :
 		voltagePin1(voltagePin1), voltagePin2(voltagePin2), sensorPin(
-				sensorPin), readCount(readCount), readMillis(readMillis) {
+				sensorPin), halfReadCount(halfReadCount), voltageDelayMillis(
+				voltageDelayMillis) {
 
 	pin1ToPin2 = true;
 
 	pinMode(sensorPin, INPUT);
 	pinMode(voltagePin1, OUTPUT);
 	pinMode(voltagePin2, OUTPUT);
-	standby();
+	turnOffVoltageWithoutDelay();
 }
 
 int OnboardMoistureSensor::readMoisture() {
+	const byte readCount = halfReadCount * 2;
 	float data[readCount];
-	for (byte i = 0; i < readCount; i++) {
+
+	turnOnVoltage();
+
+	for (byte i = 0; i < halfReadCount; i++) {
 		data[i] = singleReadMoisture();
 	}
-	standby();
+
+	switchPolarity();
+
+	for (byte i = halfReadCount; i < readCount; i++) {
+		data[i] = singleReadMoisture();
+	}
+
+	turnOffVoltage();
 
 	QuickStats stats;
 	float median = stats.median(data, readCount);
@@ -60,21 +72,11 @@ int OnboardMoistureSensor::readMoisture() {
 }
 
 int OnboardMoistureSensor::singleReadMoisture() {
-	switchPolarity();
-	delay(readMillis);
 	int moisture = analogRead(sensorPin);
-
-	/*
-	 *  It turns out the wires save some energy which affects the next
-	 *  reading. A short delay should remove that energy to ground.
-	 */
-	standby();
-	delay(readMillis * 5);
-
 	return pin1ToPin2 ? (1023 - moisture) : moisture;
 }
 
-void OnboardMoistureSensor::switchPolarity() {
+void OnboardMoistureSensor::turnOnVoltage() {
 	if (pin1ToPin2) {
 		digitalWrite(voltagePin2, LOW);
 		digitalWrite(voltagePin1, HIGH);
@@ -82,10 +84,30 @@ void OnboardMoistureSensor::switchPolarity() {
 		digitalWrite(voltagePin1, LOW);
 		digitalWrite(voltagePin2, HIGH);
 	}
-	pin1ToPin2 = !pin1ToPin2;
+
+	/*
+	 * Wait until any capacitive or inductive effects of the wire
+	 * are eliminated.
+	 */
+	delay(voltageDelayMillis);
 }
 
-void OnboardMoistureSensor::standby() {
+void OnboardMoistureSensor::switchPolarity() {
+	turnOffVoltage();
+	pin1ToPin2 = !pin1ToPin2;
+	turnOnVoltage();
+}
+
+void OnboardMoistureSensor::turnOffVoltage() {
+	turnOffVoltageWithoutDelay();
+	/*
+	 * Wait until any capacitive or inductive effects of the wire
+	 * are eliminated.
+	 */
+	delay(voltageDelayMillis);
+}
+
+void OnboardMoistureSensor::turnOffVoltageWithoutDelay() {
 	digitalWrite(voltagePin1, LOW);
 	digitalWrite(voltagePin2, LOW);
 }

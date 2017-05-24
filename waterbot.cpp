@@ -17,7 +17,7 @@
 #include "src/model/Pump.h"
 
 #define moistureReadCount 10
-#define moistureReadMillis 100
+#define moistureVoltageDelayMillis 1000
 #define moistureThreshold 200
 #define valveDelayMillis 500
 #define coolDownSeconds 21600 // 6h
@@ -43,7 +43,7 @@ ThresholdDryStrategy thresholdDryStrategy(moistureThreshold);
 #define moistureSensor1Pin 0
 OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
 moisture1VoltagePin2,
-moistureSensor1Pin, moistureReadCount, moistureReadMillis);
+moistureSensor1Pin, moistureReadCount, moistureVoltageDelayMillis);
 
 #define valve1Pin 3
 OnboardValve valve1(valve1Pin, valveDelayMillis);
@@ -55,7 +55,7 @@ Pot pot1 = Pot(&moistureSensor1, &thresholdDryStrategy, &valve1, &pump);
 #define moistureSensor2Pin 1
 OnboardMoistureSensor moistureSensor2(moisture2VoltagePin1,
 moisture2VoltagePin2,
-moistureSensor2Pin, moistureReadCount, moistureReadMillis);
+moistureSensor2Pin, moistureReadCount, moistureVoltageDelayMillis);
 
 #define valve2Pin 8
 OnboardValve valve2(valve2Pin, valveDelayMillis);
@@ -67,7 +67,7 @@ Pot pot2 = Pot(&moistureSensor2, &thresholdDryStrategy, &valve2, &pump);
 #define moistureSensor3Pin 2
 OnboardMoistureSensor moistureSensor3(moisture3VoltagePin1,
 moisture3VoltagePin2,
-moistureSensor3Pin, moistureReadCount, moistureReadMillis);
+moistureSensor3Pin, moistureReadCount, moistureVoltageDelayMillis);
 
 #define valve3Pin 11
 OnboardValve valve3(valve3Pin, valveDelayMillis);

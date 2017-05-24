@@ -14,19 +14,21 @@ class OnboardMoistureSensor: public MoistureSensor {
 
 public:
 	OnboardMoistureSensor(byte voltagePin1, byte voltagePin2, byte sensorPin,
-			byte readCount, unsigned int readMillis);
+			byte halfReadCount, unsigned int voltageDelayMillis);
 	virtual int readMoisture();
 
 private:
 	const byte voltagePin1;
 	const byte voltagePin2;
 	const byte sensorPin;
-	const byte readCount;
-	const unsigned int readMillis;bool pin1ToPin2;
+	const byte halfReadCount;
+	const unsigned int voltageDelayMillis;bool pin1ToPin2;
 
 	int singleReadMoisture();
-	void standby();
+	void turnOnVoltage();
 	void switchPolarity();
+	void turnOffVoltage();
+	void turnOffVoltageWithoutDelay();
 };
 
 #endif /* ONBOARD_MOISTURESENSOR_H_ */
