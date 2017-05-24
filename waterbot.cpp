@@ -100,6 +100,15 @@ void loop() {
 }
 
 void pause() {
-	delay(TimeUnits::secondsToMillis(pauseSeconds));
+	byte fraction = 100;
+	for (byte i = 0; i < fraction; i++) {
+		int sensor3 = analogRead(moistureSensor3Pin);
+		int sensor2 = analogRead(moistureSensor2Pin);
+		int sensor1 = analogRead(moistureSensor1Pin);
+		char debug[20];
+		sprintf(debug, "pause, %d,%d,%d", sensor1, sensor2, sensor3);
+		Logger::getLogger()->debug(debug);
+		delay(TimeUnits::secondsToMillis(pauseSeconds) / fraction);
+	}
 }
 
