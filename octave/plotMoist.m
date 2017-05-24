@@ -1,9 +1,11 @@
 
-Data1 = csvread ("moist4.log");
-Data2 = csvread ("moist5.log");
-Data2(:,1) = Data2(:,1) + max(Data1(:,1));
+Data = csvread ("moist4.log");
+for session = 5:9
+	Data2 = csvread (sprintf("moist%d.log", session))(:,1:5);
+	Data2(:,1) = Data2(:,1) + max(Data(:,1));
+	Data = [Data;Data2];
+endfor
 
-Data = [Data1;Data2];
 sensors = max(Data(:,4));
 n = 2;
 sensorColumn = 4;
@@ -14,7 +16,7 @@ day = 24 * 3;
 
 for sensor = 1:sensors
 
-	A = Data(Data(:,sensorColumn)==sensor,:);
+	A = Data(and(Data(:,sensorColumn)==sensor, Data(:,2)==Inf), :);
 	x = round(A(:,1)/(1000*60))/60;
 	y = A(:,dataColumn);
 

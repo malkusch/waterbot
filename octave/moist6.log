@@ -1,0 +1,73 @@
+
+10000,DEBUG,Free memory: 1346
+
+11003,DEBUG,Sensor at pin 0 has 6.23 error
+
+11003,INFO,387,1,0
+
+12007,DEBUG,Sensor at pin 1 has 2.00 error
+
+12008,INFO,331,2,0
+
+13010,DEBUG,Sensor at pin 2 has 10.38 error
+
+13011,INFO,456,3,0
+
+14014,DEBUG,Sensor at pin 3 has 7.56 error
+
+14015,INFO,277,4,0
+
+1214016,DEBUG,Free memory: 1346
+
+1215019,DEBUG,Sensor at pin 0 has 4.83 error
+
+1215020,INFO,373,1,0
+
+1216025,DEBUG,Sensor at pin 1 has 1.89 error
+
+1216026,INFO,326,2,0
+
+1217031,DEBUG,Sensor at pin 2 has 10.79 error
+
+1217032,INFO,451,3,0
+
+1218038,DEBUG,Sensor at pin 3 has 7.96 error
+
+1218039,INFO,276,4,0
+
+2418041,DEBUG,Free memory: 1346
+
+2419045,DEBUG,Sensor at pin 0 has 4.67 error
+
+2419046,INFO,367,1,0
+
+2420050,DEBUG,Sensor at pin 1 has 1.97 error
+
+2420051,INFO,321,2,0
+
+2421057,DEBUG,Sensor at pin 2 has 10.94 error
+
+2421058,INFO,442,3,0
+
+2422065,DEBUG,Sensor at pin 3 has 8.55 error
+
+2422065,INFO,275,4,0
+
+3622068,DEBUG,Free memory: 1346
+
+3623071,DEBUG,Sensor at pin 0 has 4.61 error
+
+3623072,INFO,362,1,0
+
+3624077,DEBUG,Sensor at pin 1 has 1.85 error
+
+3624078,INFO,318,2,0
+
+3625083,DEBUG,Sensor at pin 2 has 10.79 error
+
+3625084,INFO,438,3,0
+
+3626090,DEBUG,Sensor at pin 3 has 8.11 error
+
+3626091,INFO,274,4,0
+
