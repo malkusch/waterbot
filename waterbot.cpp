@@ -5,6 +5,7 @@
 #include <Arduino.h>
 
 #include "libraries/MemoryFree/MemoryFree.h"
+#include "libraries/Sleep_n0m1/Sleep_n0m1.h"
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
@@ -23,7 +24,6 @@
 #define maxWaterlessDays 5
 #define waterSeconds 10
 #define bootWaterSeconds 3
-#define bootPauseSeconds 10
 #define pauseSeconds 1200
 
 #define warnLED LED_BUILTIN
@@ -76,6 +76,8 @@ Pot pot3 = Pot(&moistureSensor3, &thresholdDryStrategy, &valve3, &pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
 
+Sleep sleep;
+
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
 	Logger::setLogger(&logger);
@@ -84,8 +86,6 @@ void setup() {
 	for (auto & pot : pots) {
 		pot.water(bootWaterSeconds);
 	}
-
-	delay(TimeUnits::secondsToMillis(bootPauseSeconds)); // Reading the sensor instantly, reads a too low voltage
 }
 
 void loop() {
@@ -96,19 +96,13 @@ void loop() {
 	for (auto & pot : pots) {
 		automaticWaterService.waterIfNeeded(&pot);
 	}
-	pause();
+	pause(pauseSeconds);
 }
 
-void pause() {
-	byte fraction = 100;
-	for (byte i = 0; i < fraction; i++) {
-		int sensor3 = analogRead(moistureSensor3Pin);
-		int sensor2 = analogRead(moistureSensor2Pin);
-		int sensor1 = analogRead(moistureSensor1Pin);
-		char debug[20];
-		sprintf(debug, "pause, %d,%d,%d", sensor1, sensor2, sensor3);
-		Logger::getLogger()->debug(debug);
-		delay(TimeUnits::secondsToMillis(pauseSeconds) / fraction);
-	}
+void pause(unsigned long seconds) {
+	byte delaySleepMillis = 100;
+	delay(delaySleepMillis); // Give serial data some time to print
+	sleep.pwrDownMode();
+	sleep.sleepDelay(TimeUnits::secondsToMillis(seconds) - delaySleepMillis);
 }
 

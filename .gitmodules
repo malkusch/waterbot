@@ -7,3 +7,6 @@
 [submodule "test/libraries/Catch"]
 	path = test/libraries/Catch
 	url = https://github.com/philsquared/Catch.git
+[submodule "libraries/Sleep_n0m1"]
+	path = libraries/Sleep_n0m1
+	url = https://github.com/n0m1/Sleep_n0m1.git
