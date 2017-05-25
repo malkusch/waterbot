@@ -1,0 +1,102 @@
+4500,INFO,Watering pot 2
+
+0,INFO,Watering pot 1
+
+4500,INFO,Watering pot 2
+
+9000,INFO,Watering pot 3
+
+13501,INFO,Watering pot 4
+
+18001,DEBUG,Free memory: 1201
+
+22007,DEBUG,Sensor at pin 0 has 0.23 error
+
+22008,INFO,455, 1
+
+26012,DEBUG,Sensor at pin 1 has 1.61 error
+
+26013,INFO,269, 2
+
+30019,DEBUG,Sensor at pin 2 has 6.87 error
+
+30020,INFO,429, 3
+
+34027,DEBUG,Sensor at pin 3 has 0.67 error
+
+34027,INFO,313, 4
+
+34028,DEBUG,pause, 2,1,1,14
+
+46056,DEBUG,pause, 1,0,0,0
+
+58057,DEBUG,pause, 0,0,0,0
+
+70057,DEBUG,pause, 0,0,0,0
+
+82059,DEBUG,pause, 1,0,0,0
+
+94060,DEBUG,pause, 0,0,0,0
+
+106061,DEBUG,pause, 0,0,0,0
+
+118063,DEBUG,pause, 0,0,0,0
+
+130064,DEBUG,pause, 0,0,0,0
+
+142065,DEBUG,pause, 0,0,0,0
+
+154066,DEBUG,pause, 0,0,0,0
+
+166068,DEBUG,pause, 0,0,0,0
+
+178069,DEBUG,pause, 1,0,0,0
+
+190069,DEBUG,pause, 0,0,0,0
+
+202071,DEBUG,pause, 0,0,0,0
+
+214072,DEBUG,pause, 0,0,0,0
+
+226073,DEBUG,pause, 0,0,0,0
+
+238074,DEBUG,pause, 0,0,0,0
+
+250076,DEBUG,pause, 1,0,0,0
+
+262077,DEBUG,pause, 0,0,0,0
+
+274078,DEBUG,pause, 0,0,0,0
+
+286080,DEBUG,pause, 1,0,0,0
+
+298081,DEBUG,pause, 0,0,0,0
+
+310081,DEBUG,pause, 0,0,0,0
+
+322082,DEBUG,pause, 0,0,0,0
+
+334084,DEBUG,pause, 2,0,0,0
+
+346085,DEBUG,pause, 2,0,0,0
+
+358086,DEBUG,pause, 0,0,0,0
+
+370087,DEBUG,pause, 0,0,0,0
+
+382089,DEBUG,pause, 0,0,0,0
+
+394090,DEBUG,pause, 0,0,0,0
+
+406091,DEBUG,pause, 0,0,0,0
+
+418093,DEBUG,pause, 0,0,0,0
+
+430093,DEBUG,pause, 0,0,0,0
+
+442094,DEBUG,pause, 1,0,0,0
+
+454095,DEBUG,pause, 0,0,0,0
+
+466097,DEBUG,pause, 0,0,0,0
+

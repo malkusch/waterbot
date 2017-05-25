@@ -1,8 +1,11 @@
 
 Data = csvread ("moist4.log");
-for session = 5:9
+for session = 5:11
 	Data2 = csvread (sprintf("moist%d.log", session))(:,1:5);
 	Data2(:,1) = Data2(:,1) + max(Data(:,1));
+	if (session == 10)
+		Data2(:,3)=1023-Data2(:,3);
+	endif
 	Data = [Data;Data2];
 endfor
 
