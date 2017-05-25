@@ -4,9 +4,9 @@
 
 #include <Arduino.h>
 
-#include "libraries/MemoryFree/MemoryFree.h"
 #include "libraries/Sleep_n0m1/Sleep_n0m1.h"
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
+#include "src/infrastructure/Debugger.h"
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
@@ -81,6 +81,7 @@ Sleep sleep;
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
 	Logger::setLogger(&logger);
+	Debugger::logAndClearResetReason();
 
 	// Water all pots, as a visual self test
 	for (auto & pot : pots) {
@@ -89,9 +90,7 @@ void setup() {
 }
 
 void loop() {
-	String message = "Free memory: ";
-	message += freeMemory();
-	Logger::getLogger()->debug(message);
+	Debugger::logMemory();
 
 	for (auto & pot : pots) {
 		automaticWaterService.waterIfNeeded(&pot);

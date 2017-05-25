@@ -33,17 +33,21 @@ void Logger::warn(const String& message) {
 void Logger::log(LogLevel level, const String& message) {
 	String logMessage = String(millis());
 	logMessage += ",";
+
+	const char* printableLevel;
 	switch (level) {
 	case DEBUG:
-		logMessage += "DEBUG";
+		printableLevel = "DEBUG";
 		break;
 	case INFO:
-		logMessage += "INFO";
+		printableLevel = "INFO";
 		break;
 	case WARN:
-		logMessage += "WARN";
+		printableLevel = "WARN";
 		break;
 	}
+	logMessage += printableLevel;
+
 	logMessage += "," + message;
 	write(logMessage);
 }
