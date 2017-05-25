@@ -14,6 +14,7 @@ public:
 	static unsigned long minutesToMillis(unsigned long minutes);
 	static unsigned long hoursToMillis(unsigned int hours);
 	static unsigned long daysToMillis(unsigned int days);
+	static unsigned long millisSince(unsigned long millis);
 };
 
 #endif /* TIMEUNITS_H_ */
