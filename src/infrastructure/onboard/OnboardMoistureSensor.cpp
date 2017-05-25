@@ -73,7 +73,7 @@ int OnboardMoistureSensor::readMoisture() {
 
 int OnboardMoistureSensor::singleReadMoisture() {
 	int moisture = analogRead(sensorPin);
-	return pin1ToPin2 ? (1023 - moisture) : moisture;
+	return pin1ToPin2 ? moisture : (1023 - moisture);
 }
 
 void OnboardMoistureSensor::turnOnVoltage() {
