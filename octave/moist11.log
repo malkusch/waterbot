@@ -100,3 +100,1895 @@
 
 466097,DEBUG,pause, 0,0,0,0
 
+478098,DEBUG,pause, 0,0,0,0
+
+490099,DEBUG,pause, 1,0,0,0
+
+502100,DEBUG,pause, 0,0,0,0
+
+514102,DEBUG,pause, 0,0,0,0
+
+526103,DEBUG,pause, 0,0,0,0
+
+538104,DEBUG,pause, 0,0,0,0
+
+550106,DEBUG,pause, 0,0,0,0
+
+562106,DEBUG,pause, 0,0,0,0
+
+574107,DEBUG,pause, 0,0,0,0
+
+586108,DEBUG,pause, 1,0,0,0
+
+598110,DEBUG,pause, 0,0,0,0
+
+610111,DEBUG,pause, 0,0,0,0
+
+622112,DEBUG,pause, 0,0,0,0
+
+634114,DEBUG,pause, 0,0,0,0
+
+646115,DEBUG,pause, 1,0,0,0
+
+658116,DEBUG,pause, 0,0,0,0
+
+670117,DEBUG,pause, 0,0,0,0
+
+682118,DEBUG,pause, 0,0,0,0
+
+694119,DEBUG,pause, 0,0,0,0
+
+706120,DEBUG,pause, 1,0,0,0
+
+718121,DEBUG,pause, 1,0,0,0
+
+730123,DEBUG,pause, 0,0,0,0
+
+742124,DEBUG,pause, 0,0,0,0
+
+754125,DEBUG,pause, 0,0,0,0
+
+766127,DEBUG,pause, 0,0,0,0
+
+778128,DEBUG,pause, 0,0,0,0
+
+790129,DEBUG,pause, 0,0,0,0
+
+802130,DEBUG,pause, 0,0,0,0
+
+814131,DEBUG,pause, 0,0,0,0
+
+826132,DEBUG,pause, 0,0,0,0
+
+838133,DEBUG,pause, 0,0,0,0
+
+850135,DEBUG,pause, 0,0,0,0
+
+862136,DEBUG,pause, 0,0,0,0
+
+874137,DEBUG,pause, 0,0,0,0
+
+886138,DEBUG,pause, 0,0,0,0
+
+898140,DEBUG,pause, 1,0,0,0
+
+910141,DEBUG,pause, 0,0,0,0
+
+922142,DEBUG,pause, 0,0,0,0
+
+934142,DEBUG,pause, 0,0,0,0
+
+946144,DEBUG,pause, 0,0,0,0
+
+958145,DEBUG,pause, 1,0,0,0
+
+970146,DEBUG,pause, 1,0,0,0
+
+982148,DEBUG,pause, 0,0,0,0
+
+994149,DEBUG,pause, 1,0,0,0
+
+1006150,DEBUG,pause, 0,0,0,0
+
+1018151,DEBUG,pause, 1,0,0,0
+
+1030153,DEBUG,pause, 0,0,0,0
+
+1042154,DEBUG,pause, 1,0,0,0
+
+1054155,DEBUG,pause, 0,0,0,0
+
+1066157,DEBUG,pause, 1,0,0,0
+
+1078157,DEBUG,pause, 0,0,0,0
+
+1090158,DEBUG,pause, 0,0,0,0
+
+1102159,DEBUG,pause, 0,0,0,0
+
+1114161,DEBUG,pause, 0,0,0,0
+
+1126162,DEBUG,pause, 1,0,0,0
+
+1138163,DEBUG,pause, 0,0,0,0
+
+1150164,DEBUG,pause, 0,0,0,0
+
+1162166,DEBUG,pause, 1,0,0,0
+
+1174167,DEBUG,pause, 0,0,0,0
+
+1186168,DEBUG,pause, 0,0,0,0
+
+1198170,DEBUG,pause, 0,0,0,0
+
+1210171,DEBUG,pause, 0,0,0,0
+
+1222172,DEBUG,pause, 0,0,0,0
+
+1234172,DEBUG,Free memory: 1201
+
+1238177,DEBUG,Sensor at pin 0 has 1.78 error
+
+1238178,INFO,452, 1
+
+1242185,DEBUG,Sensor at pin 1 has 2.08 error
+
+1242186,INFO,270, 2
+
+1246193,DEBUG,Sensor at pin 2 has 18.48 error
+
+1246193,INFO,427, 3
+
+1250201,DEBUG,Sensor at pin 3 has 0.23 error
+
+1250202,INFO,316, 4
+
+1250204,DEBUG,pause, 0,0,0,0
+
+1262235,DEBUG,pause, 0,0,0,0
+
+1274236,DEBUG,pause, 0,0,0,0
+
+1286238,DEBUG,pause, 0,0,0,0
+
+1298239,DEBUG,pause, 0,0,0,0
+
+1310240,DEBUG,pause, 0,0,0,0
+
+1322242,DEBUG,pause, 0,0,0,0
+
+1334243,DEBUG,pause, 0,0,0,0
+
+1346244,DEBUG,pause, 0,0,0,0
+
+1358245,DEBUG,pause, 1,0,0,0
+
+1370247,DEBUG,pause, 0,0,0,0
+
+1382248,DEBUG,pause, 0,0,0,0
+
+1394249,DEBUG,pause, 0,0,0,0
+
+1406251,DEBUG,pause, 0,0,0,0
+
+1418252,DEBUG,pause, 0,0,0,0
+
+1430253,DEBUG,pause, 1,0,0,0
+
+1442253,DEBUG,pause, 0,0,0,0
+
+1454255,DEBUG,pause, 1,0,0,0
+
+1466256,DEBUG,pause, 1,0,0,0
+
+1478257,DEBUG,pause, 1,0,0,0
+
+1490258,DEBUG,pause, 1,1,0,0
+
+1502260,DEBUG,pause, 0,0,0,0
+
+1514261,DEBUG,pause, 0,0,0,0
+
+1526262,DEBUG,pause, 0,0,0,0
+
+1538264,DEBUG,pause, 0,0,0,0
+
+1550265,DEBUG,pause, 0,0,0,0
+
+1562266,DEBUG,pause, 0,0,0,0
+
+1574267,DEBUG,pause, 0,0,0,1
+
+1586269,DEBUG,pause, 0,0,0,0
+
+1598270,DEBUG,pause, 0,0,0,0
+
+1610271,DEBUG,pause, 0,0,0,0
+
+1622272,DEBUG,pause, 0,0,0,0
+
+1634273,DEBUG,pause, 0,0,0,0
+
+1646274,DEBUG,pause, 0,0,0,0
+
+1658275,DEBUG,pause, 0,0,0,0
+
+1670277,DEBUG,pause, 0,0,0,0
+
+1682278,DEBUG,pause, 0,0,0,0
+
+1694279,DEBUG,pause, 0,0,0,0
+
+1706280,DEBUG,pause, 0,0,0,0
+
+1718282,DEBUG,pause, 0,0,0,0
+
+1730283,DEBUG,pause, 0,0,0,0
+
+1742284,DEBUG,pause, 0,0,0,0
+
+1754286,DEBUG,pause, 0,0,0,0
+
+1766287,DEBUG,pause, 1,0,0,0
+
+1778288,DEBUG,pause, 0,0,0,0
+
+1790289,DEBUG,pause, 0,0,0,0
+
+1802291,DEBUG,pause, 0,0,0,0
+
+1814291,DEBUG,pause, 1,0,0,1
+
+1826292,DEBUG,pause, 0,0,0,0
+
+1838294,DEBUG,pause, 0,0,0,0
+
+1850295,DEBUG,pause, 0,0,0,0
+
+1862296,DEBUG,pause, 0,0,0,0
+
+1874297,DEBUG,pause, 0,0,0,0
+
+1886299,DEBUG,pause, 0,0,0,0
+
+1898300,DEBUG,pause, 0,0,0,0
+
+1910301,DEBUG,pause, 0,0,0,0
+
+1922302,DEBUG,pause, 0,1,0,0
+
+1934304,DEBUG,pause, 0,0,0,0
+
+1946305,DEBUG,pause, 0,0,0,0
+
+1958306,DEBUG,pause, 0,0,0,0
+
+1970308,DEBUG,pause, 1,0,0,0
+
+1982309,DEBUG,pause, 0,0,0,0
+
+1994309,DEBUG,pause, 0,0,0,0
+
+2006310,DEBUG,pause, 0,0,0,0
+
+2018312,DEBUG,pause, 0,0,0,0
+
+2030313,DEBUG,pause, 0,0,0,0
+
+2042314,DEBUG,pause, 1,0,0,1
+
+2054316,DEBUG,pause, 0,0,0,0
+
+2066317,DEBUG,pause, 0,0,0,0
+
+2078318,DEBUG,pause, 0,0,0,0
+
+2090319,DEBUG,pause, 1,0,0,0
+
+2102321,DEBUG,pause, 0,0,0,0
+
+2114322,DEBUG,pause, 0,0,0,0
+
+2126323,DEBUG,pause, 1,1,0,1
+
+2138324,DEBUG,pause, 0,0,0,0
+
+2150326,DEBUG,pause, 0,0,0,0
+
+2162327,DEBUG,pause, 0,0,0,0
+
+2174328,DEBUG,pause, 1,0,0,0
+
+2186329,DEBUG,pause, 0,0,0,0
+
+2198330,DEBUG,pause, 0,0,0,0
+
+2210331,DEBUG,pause, 0,0,0,0
+
+2222332,DEBUG,pause, 0,0,0,0
+
+2234334,DEBUG,pause, 0,0,0,0
+
+2246335,DEBUG,pause, 1,0,0,0
+
+2258336,DEBUG,pause, 0,0,0,0
+
+2270338,DEBUG,pause, 0,0,0,0
+
+2282339,DEBUG,pause, 0,0,0,0
+
+2294340,DEBUG,pause, 0,0,0,0
+
+2306341,DEBUG,pause, 0,0,0,0
+
+2318343,DEBUG,pause, 1,0,0,0
+
+2330344,DEBUG,pause, 0,0,0,0
+
+2342345,DEBUG,pause, 0,0,0,0
+
+2354347,DEBUG,pause, 0,0,0,0
+
+2366347,DEBUG,pause, 1,0,0,0
+
+2378348,DEBUG,pause, 0,0,0,0
+
+2390349,DEBUG,pause, 1,0,0,0
+
+2402351,DEBUG,pause, 1,0,0,0
+
+2414352,DEBUG,pause, 0,0,0,0
+
+2426353,DEBUG,pause, 0,0,0,0
+
+2438354,DEBUG,pause, 0,0,0,0
+
+2450355,DEBUG,Free memory: 1201
+
+2454361,DEBUG,Sensor at pin 0 has 2.95 error
+
+2454361,INFO,447, 1
+
+2458368,DEBUG,Sensor at pin 1 has 1.73 error
+
+2458368,INFO,266, 2
+
+2462375,DEBUG,Sensor at pin 2 has 7.33 error
+
+2462376,INFO,433, 3
+
+2466383,DEBUG,Sensor at pin 3 has 0.48 error
+
+2466384,INFO,336, 4
+
+2466386,DEBUG,pause, 2,0,2,13
+
+2478418,DEBUG,pause, 0,0,0,0
+
+2490420,DEBUG,pause, 2,0,0,0
+
+2502421,DEBUG,pause, 1,0,0,0
+
+2514422,DEBUG,pause, 0,0,0,0
+
+2526424,DEBUG,pause, 0,0,0,0
+
+2538425,DEBUG,pause, 1,0,0,0
+
+2550426,DEBUG,pause, 1,0,0,0
+
+2562427,DEBUG,pause, 0,0,0,0
+
+2574429,DEBUG,pause, 0,0,0,0
+
+2586430,DEBUG,pause, 1,0,0,0
+
+2598431,DEBUG,pause, 2,0,0,0
+
+2610433,DEBUG,pause, 1,0,0,0
+
+2622434,DEBUG,pause, 1,0,0,0
+
+2634435,DEBUG,pause, 0,0,0,0
+
+2646436,DEBUG,pause, 0,0,0,0
+
+2658437,DEBUG,pause, 0,0,0,0
+
+2670438,DEBUG,pause, 0,0,0,0
+
+2682439,DEBUG,pause, 0,0,0,0
+
+2694440,DEBUG,pause, 0,0,0,0
+
+2706442,DEBUG,pause, 0,0,0,0
+
+2718443,DEBUG,pause, 0,0,0,0
+
+2730444,DEBUG,pause, 0,0,0,0
+
+2742446,DEBUG,pause, 0,0,0,0
+
+2754447,DEBUG,pause, 0,0,0,0
+
+2766448,DEBUG,pause, 1,0,0,0
+
+2778449,DEBUG,pause, 0,0,0,0
+
+2790451,DEBUG,pause, 0,0,0,0
+
+2802452,DEBUG,pause, 0,0,0,0
+
+2814453,DEBUG,pause, 1,0,0,0
+
+2826455,DEBUG,pause, 0,0,0,0
+
+2838456,DEBUG,pause, 0,0,0,0
+
+2850456,DEBUG,pause, 0,0,0,0
+
+2862457,DEBUG,pause, 1,0,0,0
+
+2874459,DEBUG,pause, 1,0,0,0
+
+2886460,DEBUG,pause, 1,0,0,0
+
+2898461,DEBUG,pause, 0,0,0,0
+
+2910462,DEBUG,pause, 0,0,0,0
+
+2922464,DEBUG,pause, 0,0,0,0
+
+2934465,DEBUG,pause, 0,0,0,0
+
+2946466,DEBUG,pause, 0,0,0,0
+
+2958468,DEBUG,pause, 1,0,0,0
+
+2970469,DEBUG,pause, 1,0,0,0
+
+2982470,DEBUG,pause, 1,0,0,0
+
+2994471,DEBUG,pause, 0,0,0,0
+
+3006473,DEBUG,pause, 0,0,0,0
+
+3018474,DEBUG,pause, 0,0,0,0
+
+3030474,DEBUG,pause, 0,0,0,0
+
+3042476,DEBUG,pause, 0,1,0,0
+
+3054477,DEBUG,pause, 0,0,0,0
+
+3066478,DEBUG,pause, 1,0,0,0
+
+3078479,DEBUG,pause, 1,0,0,0
+
+3090481,DEBUG,pause, 0,0,0,0
+
+3102482,DEBUG,pause, 0,0,0,0
+
+3114483,DEBUG,pause, 0,0,0,0
+
+3126484,DEBUG,pause, 0,0,0,0
+
+3138486,DEBUG,pause, 0,0,0,0
+
+3150487,DEBUG,pause, 0,0,0,0
+
+3162488,DEBUG,pause, 0,0,0,0
+
+3174490,DEBUG,pause, 0,0,0,0
+
+3186491,DEBUG,pause, 0,0,0,0
+
+3198492,DEBUG,pause, 0,0,0,0
+
+3210492,DEBUG,pause, 0,0,0,0
+
+3222494,DEBUG,pause, 0,0,0,0
+
+3234495,DEBUG,pause, 0,0,0,0
+
+3246496,DEBUG,pause, 0,0,0,0
+
+3258498,DEBUG,pause, 0,0,0,0
+
+3270499,DEBUG,pause, 0,0,0,0
+
+3282500,DEBUG,pause, 0,0,0,0
+
+3294501,DEBUG,pause, 0,0,0,0
+
+3306503,DEBUG,pause, 0,0,0,0
+
+3318504,DEBUG,pause, 0,0,0,0
+
+3330505,DEBUG,pause, 0,0,0,0
+
+3342507,DEBUG,pause, 0,0,0,0
+
+3354508,DEBUG,pause, 0,0,0,0
+
+3366509,DEBUG,pause, 0,0,0,0
+
+3378510,DEBUG,pause, 0,0,0,0
+
+3390512,DEBUG,pause, 0,0,0,0
+
+3402512,DEBUG,pause, 0,0,0,0
+
+3414513,DEBUG,pause, 1,0,0,0
+
+3426514,DEBUG,pause, 0,0,0,0
+
+3438516,DEBUG,pause, 0,0,0,0
+
+3450517,DEBUG,pause, 0,0,0,0
+
+3462518,DEBUG,pause, 0,0,0,0
+
+3474520,DEBUG,pause, 1,0,0,0
+
+3486521,DEBUG,pause, 0,0,0,0
+
+3498522,DEBUG,pause, 0,0,0,0
+
+3510523,DEBUG,pause, 0,0,0,0
+
+3522525,DEBUG,pause, 0,0,0,0
+
+3534526,DEBUG,pause, 1,0,0,0
+
+3546527,DEBUG,pause, 0,0,0,0
+
+3558529,DEBUG,pause, 0,0,0,0
+
+3570530,DEBUG,pause, 0,0,0,0
+
+3582530,DEBUG,pause, 0,0,0,0
+
+3594531,DEBUG,pause, 1,0,0,0
+
+3606533,DEBUG,pause, 0,0,0,0
+
+3618534,DEBUG,pause, 0,0,0,0
+
+3630535,DEBUG,pause, 0,0,0,0
+
+3642536,DEBUG,pause, 0,0,0,0
+
+3654538,DEBUG,pause, 1,0,0,0
+
+3666539,DEBUG,Free memory: 1201
+
+3670544,DEBUG,Sensor at pin 0 has 3.16 error
+
+3670544,INFO,450, 1
+
+3674552,DEBUG,Sensor at pin 1 has 1.83 error
+
+3674553,INFO,269, 2
+
+3678559,DEBUG,Sensor at pin 2 has 18.54 error
+
+3678560,INFO,431, 3
+
+3682568,DEBUG,Sensor at pin 3 has 0.54 error
+
+3682568,INFO,334, 4
+
+3682571,DEBUG,pause, 0,0,0,0
+
+3694602,DEBUG,pause, 0,0,0,0
+
+3706603,DEBUG,pause, 0,0,0,0
+
+3718604,DEBUG,pause, 0,0,0,0
+
+3730606,DEBUG,pause, 0,0,0,0
+
+3742607,DEBUG,pause, 0,0,0,0
+
+3754608,DEBUG,pause, 0,0,0,0
+
+3766609,DEBUG,pause, 0,0,0,0
+
+3778610,DEBUG,pause, 0,0,0,0
+
+3790611,DEBUG,pause, 0,0,0,0
+
+3802612,DEBUG,pause, 0,0,0,0
+
+3814614,DEBUG,pause, 0,0,0,0
+
+3826615,DEBUG,pause, 1,0,0,3
+
+3838616,DEBUG,pause, 1,0,0,0
+
+3850617,DEBUG,pause, 0,0,0,0
+
+3862619,DEBUG,pause, 0,0,0,0
+
+3874620,DEBUG,pause, 0,0,0,0
+
+3886621,DEBUG,pause, 0,0,0,0
+
+3898622,DEBUG,pause, 1,0,0,0
+
+3910624,DEBUG,pause, 0,0,0,0
+
+3922625,DEBUG,pause, 0,0,0,0
+
+3934626,DEBUG,pause, 2,0,0,0
+
+3946628,DEBUG,pause, 0,0,0,0
+
+3958628,DEBUG,pause, 0,0,0,0
+
+3970629,DEBUG,pause, 0,0,0,0
+
+3982630,DEBUG,pause, 1,0,0,0
+
+3994632,DEBUG,pause, 0,0,0,0
+
+4006633,DEBUG,pause, 0,0,0,0
+
+4018634,DEBUG,pause, 0,0,0,0
+
+4030636,DEBUG,pause, 0,0,0,0
+
+4042637,DEBUG,pause, 0,0,0,0
+
+4054638,DEBUG,pause, 0,0,0,0
+
+4066639,DEBUG,pause, 0,0,0,0
+
+4078641,DEBUG,pause, 0,0,0,0
+
+4090642,DEBUG,pause, 0,0,0,0
+
+4102643,DEBUG,pause, 0,0,0,0
+
+4114644,DEBUG,pause, 0,0,0,0
+
+4126646,DEBUG,pause, 0,0,0,0
+
+4138646,DEBUG,pause, 0,0,0,0
+
+4150647,DEBUG,pause, 0,0,0,0
+
+4162649,DEBUG,pause, 0,0,0,0
+
+4174650,DEBUG,pause, 0,0,0,0
+
+4186651,DEBUG,pause, 0,0,0,0
+
+4198652,DEBUG,pause, 0,0,0,0
+
+4210654,DEBUG,pause, 0,0,0,0
+
+4222655,DEBUG,pause, 0,0,0,0
+
+4234656,DEBUG,pause, 0,0,0,0
+
+4246658,DEBUG,pause, 0,0,0,0
+
+4258659,DEBUG,pause, 0,0,0,0
+
+4270660,DEBUG,pause, 0,0,0,0
+
+4282661,DEBUG,pause, 0,0,0,0
+
+4294663,DEBUG,pause, 0,0,0,0
+
+4306664,DEBUG,pause, 0,0,0,0
+
+4318665,DEBUG,pause, 0,0,0,0
+
+4330665,DEBUG,pause, 0,0,0,0
+
+4342667,DEBUG,pause, 1,0,0,0
+
+4354668,DEBUG,pause, 0,0,0,0
+
+4366669,DEBUG,pause, 0,0,0,0
+
+4378671,DEBUG,pause, 0,0,0,0
+
+4390672,DEBUG,pause, 0,0,0,0
+
+4402673,DEBUG,pause, 1,0,0,0
+
+4414674,DEBUG,pause, 0,0,0,0
+
+4426676,DEBUG,pause, 0,0,0,0
+
+4438677,DEBUG,pause, 0,0,0,0
+
+4450678,DEBUG,pause, 0,0,0,0
+
+4462680,DEBUG,pause, 1,0,0,0
+
+4474681,DEBUG,pause, 0,0,0,0
+
+4486682,DEBUG,pause, 0,0,0,0
+
+4498683,DEBUG,pause, 0,0,0,0
+
+4510684,DEBUG,pause, 0,0,0,0
+
+4522685,DEBUG,pause, 0,0,0,0
+
+4534686,DEBUG,pause, 1,0,0,0
+
+4546688,DEBUG,pause, 0,0,0,0
+
+4558689,DEBUG,pause, 0,0,0,0
+
+4570690,DEBUG,pause, 0,0,0,0
+
+4582691,DEBUG,pause, 0,0,0,0
+
+4594693,DEBUG,pause, 0,0,0,0
+
+4606694,DEBUG,pause, 0,0,0,0
+
+4618695,DEBUG,pause, 0,0,0,0
+
+4630696,DEBUG,pause, 0,0,0,0
+
+4642698,DEBUG,pause, 0,0,0,0
+
+4654699,DEBUG,pause, 0,0,0,0
+
+4666700,DEBUG,pause, 1,0,0,0
+
+4678702,DEBUG,pause, 0,0,0,0
+
+4690703,DEBUG,pause, 0,0,0,0
+
+4702703,DEBUG,pause, 0,0,0,0
+
+4714704,DEBUG,pause, 0,0,0,0
+
+4726706,DEBUG,pause, 1,0,0,0
+
+4738707,DEBUG,pause, 0,0,0,0
+
+4750708,DEBUG,pause, 0,0,0,0
+
+4762710,DEBUG,pause, 0,0,0,0
+
+4774711,DEBUG,pause, 0,0,0,0
+
+4786712,DEBUG,pause, 1,0,0,0
+
+4798713,DEBUG,pause, 0,0,0,0
+
+4810715,DEBUG,pause, 0,0,0,0
+
+4822716,DEBUG,pause, 0,0,0,0
+
+4834717,DEBUG,pause, 0,0,0,0
+
+4846718,DEBUG,pause, 1,0,0,0
+
+4858720,DEBUG,pause, 0,0,0,0
+
+4870721,DEBUG,pause, 0,0,0,0
+
+4882721,DEBUG,Free memory: 1201
+
+4886726,DEBUG,Sensor at pin 0 has 3.44 error
+
+4886726,INFO,450, 1
+
+4890732,DEBUG,Sensor at pin 1 has 2.20 error
+
+4890733,INFO,272, 2
+
+4894741,DEBUG,Sensor at pin 2 has 7.15 error
+
+4894742,INFO,440, 3
+
+4898749,DEBUG,Sensor at pin 3 has 0.46 error
+
+4898749,INFO,331, 4
+
+4898752,DEBUG,pause, 2,1,1,13
+
+4910784,DEBUG,pause, 1,0,0,0
+
+4922785,DEBUG,pause, 1,0,0,0
+
+4934787,DEBUG,pause, 0,0,0,0
+
+4946788,DEBUG,pause, 0,0,0,0
+
+4958789,DEBUG,pause, 1,0,0,0
+
+4970790,DEBUG,pause, 0,0,0,0
+
+4982791,DEBUG,pause, 0,0,0,0
+
+4994792,DEBUG,pause, 1,0,0,0
+
+5006793,DEBUG,pause, 0,0,0,0
+
+5018795,DEBUG,pause, 0,0,0,0
+
+5030796,DEBUG,pause, 0,0,0,0
+
+5042797,DEBUG,pause, 0,0,0,0
+
+5054798,DEBUG,pause, 0,0,0,0
+
+5066800,DEBUG,pause, 0,0,0,0
+
+5078801,DEBUG,pause, 1,0,0,0
+
+5090802,DEBUG,pause, 1,0,0,0
+
+5102803,DEBUG,pause, 0,0,0,0
+
+5114805,DEBUG,pause, 0,0,0,0
+
+5126806,DEBUG,pause, 1,0,0,0
+
+5138807,DEBUG,pause, 0,0,0,0
+
+5150809,DEBUG,pause, 0,0,0,0
+
+5162810,DEBUG,pause, 0,0,0,0
+
+5174810,DEBUG,pause, 0,0,0,0
+
+5186811,DEBUG,pause, 0,0,0,0
+
+5198813,DEBUG,pause, 1,0,0,0
+
+5210814,DEBUG,pause, 1,0,0,0
+
+5222815,DEBUG,pause, 0,0,0,0
+
+5234817,DEBUG,pause, 1,0,0,0
+
+5246818,DEBUG,pause, 1,0,0,0
+
+5258819,DEBUG,pause, 0,0,0,0
+
+5270820,DEBUG,pause, 1,0,0,0
+
+5282822,DEBUG,pause, 0,0,0,0
+
+5294823,DEBUG,pause, 0,0,0,0
+
+5306824,DEBUG,pause, 0,0,0,0
+
+5318825,DEBUG,pause, 1,0,0,0
+
+5330827,DEBUG,pause, 0,0,0,0
+
+5342828,DEBUG,pause, 0,0,0,0
+
+5354828,DEBUG,pause, 0,0,0,0
+
+5366830,DEBUG,pause, 1,0,0,0
+
+5378831,DEBUG,pause, 0,0,0,0
+
+5390832,DEBUG,pause, 0,0,0,0
+
+5402833,DEBUG,pause, 1,0,0,0
+
+5414835,DEBUG,pause, 1,0,0,0
+
+5426836,DEBUG,pause, 1,0,0,0
+
+5438837,DEBUG,pause, 1,0,0,0
+
+5450839,DEBUG,pause, 0,0,0,0
+
+5462840,DEBUG,pause, 0,0,0,0
+
+5474841,DEBUG,pause, 0,0,0,0
+
+5486842,DEBUG,pause, 0,0,0,0
+
+5498844,DEBUG,pause, 0,0,0,0
+
+5510845,DEBUG,pause, 0,0,0,0
+
+5522846,DEBUG,pause, 1,0,0,0
+
+5534848,DEBUG,pause, 1,0,0,0
+
+5546848,DEBUG,pause, 1,0,0,0
+
+5558849,DEBUG,pause, 1,0,0,0
+
+5570850,DEBUG,pause, 0,0,0,0
+
+5582852,DEBUG,pause, 0,0,0,0
+
+5594853,DEBUG,pause, 0,0,0,0
+
+5606854,DEBUG,pause, 0,0,0,0
+
+5618855,DEBUG,pause, 0,0,0,0
+
+5630857,DEBUG,pause, 0,0,0,0
+
+5642858,DEBUG,pause, 1,0,0,0
+
+5654859,DEBUG,pause, 1,0,0,0
+
+5666861,DEBUG,pause, 1,0,0,0
+
+5678862,DEBUG,pause, 1,0,0,0
+
+5690863,DEBUG,pause, 1,0,0,0
+
+5702864,DEBUG,pause, 0,0,0,0
+
+5714866,DEBUG,pause, 0,0,0,0
+
+5726866,DEBUG,pause, 0,0,0,0
+
+5738867,DEBUG,pause, 0,0,0,0
+
+5750868,DEBUG,pause, 0,0,0,0
+
+5762870,DEBUG,pause, 0,0,0,0
+
+5774871,DEBUG,pause, 0,0,0,0
+
+5786872,DEBUG,pause, 1,0,0,0
+
+5798874,DEBUG,pause, 0,0,0,0
+
+5810875,DEBUG,pause, 0,0,0,0
+
+5822876,DEBUG,pause, 1,0,0,0
+
+5834877,DEBUG,pause, 0,0,0,0
+
+5846879,DEBUG,pause, 0,0,0,0
+
+5858880,DEBUG,pause, 0,0,0,0
+
+5870881,DEBUG,pause, 0,0,0,0
+
+5882883,DEBUG,pause, 0,0,0,0
+
+5894884,DEBUG,pause, 0,0,0,0
+
+5906885,DEBUG,pause, 0,0,0,0
+
+5918885,DEBUG,pause, 0,0,0,0
+
+5930887,DEBUG,pause, 0,0,0,0
+
+5942888,DEBUG,pause, 1,0,0,0
+
+5954889,DEBUG,pause, 0,0,0,0
+
+5966891,DEBUG,pause, 0,0,0,0
+
+5978892,DEBUG,pause, 0,0,0,0
+
+5990893,DEBUG,pause, 0,0,0,0
+
+6002894,DEBUG,pause, 0,0,0,0
+
+6014896,DEBUG,pause, 0,0,0,0
+
+6026897,DEBUG,pause, 0,0,0,0
+
+6038898,DEBUG,pause, 0,0,0,0
+
+6050899,DEBUG,pause, 0,0,0,0
+
+6062901,DEBUG,pause, 0,0,0,0
+
+6074902,DEBUG,pause, 0,0,0,0
+
+6086903,DEBUG,pause, 0,0,0,0
+
+6098904,DEBUG,Free memory: 1201
+
+6102908,DEBUG,Sensor at pin 0 has 2.98 error
+
+6102908,INFO,449, 1
+
+6106916,DEBUG,Sensor at pin 1 has 1.57 error
+
+6106916,INFO,284, 2
+
+6110923,DEBUG,Sensor at pin 2 has 18.42 error
+
+6110924,INFO,438, 3
+
+6114932,DEBUG,Sensor at pin 3 has 0.16 error
+
+6114933,INFO,332, 4
+
+6114935,DEBUG,pause, 1,0,0,0
+
+6126966,DEBUG,pause, 0,0,0,0
+
+6138968,DEBUG,pause, 0,0,0,0
+
+6150969,DEBUG,pause, 0,0,0,0
+
+6162970,DEBUG,pause, 0,0,0,0
+
+6174971,DEBUG,pause, 0,0,0,0
+
+6186973,DEBUG,pause, 0,0,0,0
+
+6198974,DEBUG,pause, 1,0,0,0
+
+6210975,DEBUG,pause, 0,0,0,0
+
+6222976,DEBUG,pause, 0,0,0,0
+
+6234977,DEBUG,pause, 0,0,0,0
+
+6246978,DEBUG,pause, 0,0,0,0
+
+6258979,DEBUG,pause, 0,0,0,0
+
+6270981,DEBUG,pause, 0,0,0,0
+
+6282982,DEBUG,pause, 0,0,0,0
+
+6294983,DEBUG,pause, 0,0,0,0
+
+6306984,DEBUG,pause, 0,0,0,0
+
+6318986,DEBUG,pause, 0,0,0,0
+
+6330987,DEBUG,pause, 0,0,0,0
+
+6342988,DEBUG,pause, 0,0,0,0
+
+6354990,DEBUG,pause, 0,0,0,0
+
+6366991,DEBUG,pause, 0,0,0,0
+
+6378992,DEBUG,pause, 0,0,0,0
+
+6390993,DEBUG,pause, 0,0,0,0
+
+6402995,DEBUG,pause, 0,0,0,0
+
+6414995,DEBUG,pause, 0,0,0,0
+
+6426996,DEBUG,pause, 0,0,0,0
+
+6438998,DEBUG,pause, 0,0,0,0
+
+6450999,DEBUG,pause, 0,0,0,0
+
+6463000,DEBUG,pause, 0,0,0,0
+
+6475001,DEBUG,pause, 0,0,0,0
+
+6487003,DEBUG,pause, 0,0,0,0
+
+6499004,DEBUG,pause, 0,0,0,0
+
+6511005,DEBUG,pause, 0,0,0,0
+
+6523006,DEBUG,pause, 0,0,0,0
+
+6535008,DEBUG,pause, 0,0,0,0
+
+6547009,DEBUG,pause, 0,0,0,0
+
+6559010,DEBUG,pause, 1,0,0,0
+
+6571012,DEBUG,pause, 1,0,0,0
+
+6583013,DEBUG,pause, 1,0,0,0
+
+6595013,DEBUG,pause, 1,0,0,0
+
+6607014,DEBUG,pause, 2,0,0,0
+
+6619016,DEBUG,pause, 0,0,0,0
+
+6631017,DEBUG,pause, 0,0,0,0
+
+6643018,DEBUG,pause, 0,0,0,0
+
+6655020,DEBUG,pause, 0,0,0,0
+
+6667021,DEBUG,pause, 0,0,0,0
+
+6679022,DEBUG,pause, 0,0,0,0
+
+6691023,DEBUG,pause, 0,0,0,0
+
+6703025,DEBUG,pause, 0,0,0,0
+
+6715026,DEBUG,pause, 0,0,0,0
+
+6727027,DEBUG,pause, 0,0,0,0
+
+6739028,DEBUG,pause, 0,0,0,0
+
+6751030,DEBUG,pause, 0,0,0,0
+
+6763031,DEBUG,pause, 0,0,0,0
+
+6775032,DEBUG,pause, 0,0,0,0
+
+6787033,DEBUG,pause, 0,0,0,0
+
+6799034,DEBUG,pause, 0,0,0,0
+
+6811035,DEBUG,pause, 0,0,0,0
+
+6823036,DEBUG,pause, 0,0,0,0
+
+6835038,DEBUG,pause, 0,0,0,0
+
+6847039,DEBUG,pause, 0,0,0,0
+
+6859040,DEBUG,pause, 0,0,0,0
+
+6871042,DEBUG,pause, 0,0,0,0
+
+6883043,DEBUG,pause, 0,0,0,0
+
+6895044,DEBUG,pause, 0,0,0,0
+
+6907045,DEBUG,pause, 0,0,0,0
+
+6919047,DEBUG,pause, 0,0,0,0
+
+6931048,DEBUG,pause, 0,0,0,0
+
+6943049,DEBUG,pause, 0,0,0,0
+
+6955051,DEBUG,pause, 0,0,0,0
+
+6967051,DEBUG,pause, 0,0,0,0
+
+6979052,DEBUG,pause, 0,0,0,0
+
+6991053,DEBUG,pause, 0,0,0,0
+
+7003055,DEBUG,pause, 0,0,0,0
+
+7015056,DEBUG,pause, 0,0,0,0
+
+7027057,DEBUG,pause, 0,0,0,0
+
+7039058,DEBUG,pause, 0,0,0,0
+
+7051060,DEBUG,pause, 0,0,0,0
+
+7063061,DEBUG,pause, 0,0,0,0
+
+7075062,DEBUG,pause, 0,0,0,0
+
+7087064,DEBUG,pause, 0,0,0,0
+
+7099065,DEBUG,pause, 0,0,0,0
+
+7111066,DEBUG,pause, 0,0,0,0
+
+7123067,DEBUG,pause, 0,0,0,0
+
+7135069,DEBUG,pause, 0,0,0,0
+
+7147070,DEBUG,pause, 0,0,0,0
+
+7159070,DEBUG,pause, 0,0,0,0
+
+7171072,DEBUG,pause, 0,0,0,0
+
+7183073,DEBUG,pause, 0,0,0,0
+
+7195074,DEBUG,pause, 0,0,0,0
+
+7207075,DEBUG,pause, 0,0,0,0
+
+7219077,DEBUG,pause, 0,0,0,0
+
+7231078,DEBUG,pause, 1,0,0,0
+
+7243079,DEBUG,pause, 0,0,0,0
+
+7255080,DEBUG,pause, 0,0,0,0
+
+7267082,DEBUG,pause, 0,0,0,0
+
+7279083,DEBUG,pause, 0,0,0,0
+
+7291084,DEBUG,pause, 0,0,0,0
+
+7303086,DEBUG,pause, 0,0,0,0
+
+7315086,DEBUG,Free memory: 1201
+
+7319092,DEBUG,Sensor at pin 0 has 3.27 error
+
+7319093,INFO,451, 1
+
+7323099,DEBUG,Sensor at pin 1 has 2.39 error
+
+7323100,INFO,284, 2
+
+7327107,DEBUG,Sensor at pin 2 has 6.95 error
+
+7327108,INFO,447, 3
+
+7331115,DEBUG,Sensor at pin 3 has 0.49 error
+
+7331116,INFO,328, 4
+
+7331118,DEBUG,pause, 1,0,0,12
+
+7343151,DEBUG,pause, 2,0,0,0
+
+7355152,DEBUG,pause, 1,0,0,0
+
+7367153,DEBUG,pause, 0,0,0,0
+
+7379153,DEBUG,pause, 0,0,0,0
+
+7391155,DEBUG,pause, 0,0,0,0
+
+7403156,DEBUG,pause, 0,0,0,0
+
+7415157,DEBUG,pause, 0,0,0,0
+
+7427159,DEBUG,pause, 0,0,0,0
+
+7439160,DEBUG,pause, 0,0,0,0
+
+7451161,DEBUG,pause, 0,0,0,0
+
+7463162,DEBUG,pause, 0,0,0,0
+
+7475164,DEBUG,pause, 0,0,0,0
+
+7487165,DEBUG,pause, 0,0,0,0
+
+7499166,DEBUG,pause, 0,0,0,0
+
+7511168,DEBUG,pause, 0,0,0,0
+
+7523169,DEBUG,pause, 0,0,0,0
+
+7535170,DEBUG,pause, 0,0,0,0
+
+7547171,DEBUG,pause, 0,0,0,0
+
+7559173,DEBUG,pause, 0,0,0,0
+
+7571173,DEBUG,pause, 0,0,0,0
+
+7583174,DEBUG,pause, 1,0,0,0
+
+7595175,DEBUG,pause, 0,0,0,0
+
+7607177,DEBUG,pause, 0,0,0,0
+
+7619178,DEBUG,pause, 0,0,0,0
+
+7631179,DEBUG,pause, 1,0,0,0
+
+7643181,DEBUG,pause, 1,0,0,0
+
+7655182,DEBUG,pause, 0,0,0,0
+
+7667183,DEBUG,pause, 0,0,0,0
+
+7679184,DEBUG,pause, 0,0,0,0
+
+7691186,DEBUG,pause, 0,0,0,0
+
+7703187,DEBUG,pause, 0,0,0,0
+
+7715188,DEBUG,pause, 1,0,0,0
+
+7727190,DEBUG,pause, 0,0,0,0
+
+7739191,DEBUG,pause, 0,0,0,0
+
+7751191,DEBUG,pause, 0,0,0,0
+
+7763192,DEBUG,pause, 1,0,0,0
+
+7775194,DEBUG,pause, 0,0,0,0
+
+7787195,DEBUG,pause, 0,0,0,0
+
+7799196,DEBUG,pause, 0,0,0,0
+
+7811197,DEBUG,pause, 0,0,0,0
+
+7823199,DEBUG,pause, 1,2,0,0
+
+7835200,DEBUG,pause, 1,1,0,0
+
+7847201,DEBUG,pause, 1,0,0,0
+
+7859203,DEBUG,pause, 0,0,0,0
+
+7871204,DEBUG,pause, 0,0,0,0
+
+7883205,DEBUG,pause, 0,0,0,0
+
+7895206,DEBUG,pause, 0,0,0,0
+
+7907208,DEBUG,pause, 0,0,0,0
+
+7919209,DEBUG,pause, 0,0,0,0
+
+7931210,DEBUG,pause, 1,0,0,0
+
+7943211,DEBUG,pause, 0,0,0,0
+
+7955212,DEBUG,pause, 0,0,0,0
+
+7967213,DEBUG,pause, 0,0,0,0
+
+7979214,DEBUG,pause, 0,0,0,0
+
+7991216,DEBUG,pause, 0,0,0,0
+
+8003217,DEBUG,pause, 1,0,0,0
+
+8015218,DEBUG,pause, 0,0,0,0
+
+8027219,DEBUG,pause, 0,0,0,0
+
+8039221,DEBUG,pause, 0,0,0,0
+
+8051222,DEBUG,pause, 0,0,0,0
+
+8063223,DEBUG,pause, 1,0,0,0
+
+8075225,DEBUG,pause, 1,0,0,0
+
+8087226,DEBUG,pause, 0,0,0,0
+
+8099227,DEBUG,pause, 0,0,0,0
+
+8111228,DEBUG,pause, 0,0,0,0
+
+8123229,DEBUG,pause, 0,0,0,0
+
+8135230,DEBUG,pause, 1,0,0,0
+
+8147231,DEBUG,pause, 0,0,0,0
+
+8159233,DEBUG,pause, 0,0,0,0
+
+8171234,DEBUG,pause, 0,0,0,0
+
+8183235,DEBUG,pause, 0,0,0,0
+
+8195236,DEBUG,pause, 0,0,0,0
+
+8207238,DEBUG,pause, 1,0,0,0
+
+8219239,DEBUG,pause, 0,0,0,0
+
+8231240,DEBUG,pause, 0,0,0,0
+
+8243241,DEBUG,pause, 1,1,0,0
+
+8255243,DEBUG,pause, 0,0,0,0
+
+8267244,DEBUG,pause, 0,0,0,0
+
+8279245,DEBUG,pause, 1,0,0,0
+
+8291247,DEBUG,pause, 1,0,0,0
+
+8303248,DEBUG,pause, 0,0,0,0
+
+8315248,DEBUG,pause, 0,0,0,0
+
+8327249,DEBUG,pause, 1,0,0,0
+
+8339251,DEBUG,pause, 0,0,0,0
+
+8351252,DEBUG,pause, 1,0,0,0
+
+8363253,DEBUG,pause, 0,0,0,0
+
+8375255,DEBUG,pause, 0,0,0,0
+
+8387256,DEBUG,pause, 1,0,0,0
+
+8399257,DEBUG,pause, 0,0,0,0
+
+8411258,DEBUG,pause, 0,0,0,0
+
+8423260,DEBUG,pause, 3,0,0,0
+
+8435261,DEBUG,pause, 1,0,0,0
+
+8447262,DEBUG,pause, 1,0,0,0
+
+8459264,DEBUG,pause, 1,0,0,0
+
+8471265,DEBUG,pause, 0,0,0,0
+
+8483266,DEBUG,pause, 0,0,0,0
+
+8495267,DEBUG,pause, 0,0,0,0
+
+8507268,DEBUG,pause, 0,0,0,0
+
+8519269,DEBUG,pause, 0,0,0,0
+
+8531270,DEBUG,Free memory: 1201
+
+8535275,DEBUG,Sensor at pin 0 has 3.69 error
+
+8535275,INFO,457, 1
+
+8539282,DEBUG,Sensor at pin 1 has 1.47 error
+
+8539283,INFO,297, 2
+
+8543289,DEBUG,Sensor at pin 2 has 18.53 error
+
+8543290,INFO,445, 3
+
+8547298,DEBUG,Sensor at pin 3 has 0.14 error
+
+8547299,INFO,331, 4
+
+8547302,DEBUG,pause, 0,0,0,0
+
+8559333,DEBUG,pause, 0,0,0,0
+
+8571334,DEBUG,pause, 0,0,0,0
+
+8583335,DEBUG,pause, 0,0,0,0
+
+8595337,DEBUG,pause, 0,0,0,0
+
+8607337,DEBUG,pause, 0,0,0,0
+
+8619338,DEBUG,pause, 0,0,0,0
+
+8631340,DEBUG,pause, 0,0,0,0
+
+8643341,DEBUG,pause, 0,0,0,0
+
+8655342,DEBUG,pause, 0,0,0,0
+
+8667343,DEBUG,pause, 0,0,0,0
+
+8679345,DEBUG,pause, 0,0,0,0
+
+8691346,DEBUG,pause, 0,0,0,0
+
+8703347,DEBUG,pause, 0,0,0,0
+
+8715348,DEBUG,pause, 0,0,0,0
+
+8727350,DEBUG,pause, 0,0,0,0
+
+8739351,DEBUG,pause, 0,0,0,0
+
+8751352,DEBUG,pause, 0,0,0,0
+
+8763354,DEBUG,pause, 0,0,0,0
+
+8775355,DEBUG,pause, 0,0,0,0
+
+8787356,DEBUG,pause, 0,0,0,0
+
+8799356,DEBUG,pause, 0,0,0,0
+
+8811358,DEBUG,pause, 0,0,0,0
+
+8823359,DEBUG,pause, 0,0,0,0
+
+8835360,DEBUG,pause, 0,0,0,0
+
+8847362,DEBUG,pause, 0,0,0,0
+
+8859363,DEBUG,pause, 0,0,0,0
+
+8871364,DEBUG,pause, 0,0,0,0
+
+8883365,DEBUG,pause, 0,0,0,0
+
+8895367,DEBUG,pause, 1,0,0,0
+
+8907368,DEBUG,pause, 1,0,0,0
+
+8919369,DEBUG,pause, 0,0,0,0
+
+8931371,DEBUG,pause, 0,0,0,0
+
+8943372,DEBUG,pause, 0,0,0,0
+
+8955373,DEBUG,pause, 0,0,0,0
+
+8967374,DEBUG,pause, 0,0,0,0
+
+8979376,DEBUG,pause, 0,0,0,0
+
+8991376,DEBUG,pause, 0,0,0,0
+
+9003377,DEBUG,pause, 0,0,0,0
+
+9015378,DEBUG,pause, 0,0,0,0
+
+9027380,DEBUG,pause, 0,0,0,0
+
+9039381,DEBUG,pause, 1,0,0,0
+
+9051382,DEBUG,pause, 0,0,0,0
+
+9063384,DEBUG,pause, 0,0,0,0
+
+9075385,DEBUG,pause, 0,0,0,0
+
+9087386,DEBUG,pause, 0,0,0,0
+
+9099387,DEBUG,pause, 0,0,0,0
+
+9111389,DEBUG,pause, 0,0,0,0
+
+9123390,DEBUG,pause, 0,0,0,0
+
+9135391,DEBUG,pause, 0,0,0,0
+
+9147393,DEBUG,pause, 0,0,0,0
+
+9159394,DEBUG,pause, 0,0,0,0
+
+9171394,DEBUG,pause, 0,0,0,0
+
+9183395,DEBUG,pause, 0,0,0,0
+
+9195397,DEBUG,pause, 0,0,0,0
+
+9207398,DEBUG,pause, 0,0,0,0
+
+9219399,DEBUG,pause, 0,0,0,0
+
+9231400,DEBUG,pause, 0,0,0,0
+
+9243402,DEBUG,pause, 0,0,0,0
+
+9255403,DEBUG,pause, 1,0,0,0
+
+9267404,DEBUG,pause, 0,0,0,0
+
+9279406,DEBUG,pause, 0,0,0,0
+
+9291407,DEBUG,pause, 0,1,0,0
+
+9303408,DEBUG,pause, 0,0,0,0
+
+9315409,DEBUG,pause, 0,0,0,0
+
+9327411,DEBUG,pause, 0,0,0,0
+
+9339412,DEBUG,pause, 0,0,0,0
+
+9351412,DEBUG,pause, 0,0,0,0
+
+9363414,DEBUG,pause, 1,0,0,0
+
+9375415,DEBUG,pause, 0,0,0,0
+
+9387416,DEBUG,pause, 1,0,0,0
+
+9399417,DEBUG,pause, 0,0,0,0
+
+9411419,DEBUG,pause, 1,0,0,0
+
+9423420,DEBUG,pause, 1,0,0,0
+
+9435421,DEBUG,pause, 0,0,0,0
+
+9447422,DEBUG,pause, 0,0,0,0
+
+9459424,DEBUG,pause, 0,0,0,0
+
+9471425,DEBUG,pause, 0,0,0,0
+
+9483426,DEBUG,pause, 0,0,0,0
+
+9495428,DEBUG,pause, 0,0,0,0
+
+9507429,DEBUG,pause, 0,0,0,0
+
+9519430,DEBUG,pause, 0,0,0,0
+
+9531431,DEBUG,pause, 0,0,0,1
+
+9543432,DEBUG,pause, 0,0,0,0
+
+9555433,DEBUG,pause, 0,0,0,0
+
+9567434,DEBUG,pause, 0,0,0,0
+
+9579436,DEBUG,pause, 0,0,0,0
+
+9591437,DEBUG,pause, 0,0,0,0
+
+9603438,DEBUG,pause, 0,0,0,0
+
+9615439,DEBUG,pause, 0,0,0,0
+
+9627441,DEBUG,pause, 0,0,0,0
+
+9639442,DEBUG,pause, 1,0,0,0
+
+9651443,DEBUG,pause, 0,0,0,0
+
+9663444,DEBUG,pause, 0,0,0,0
+
+9675446,DEBUG,pause, 0,0,0,0
+
+9687447,DEBUG,pause, 0,0,0,0
+
+9699448,DEBUG,pause, 0,0,0,0
+
+9711450,DEBUG,pause, 3,0,0,0
+
+9723450,DEBUG,pause, 0,0,0,0
+
+9735451,DEBUG,pause, 0,0,0,0
+
+9747452,DEBUG,Free memory: 1201
+
+9751457,DEBUG,Sensor at pin 0 has 3.26 error
+
+9751458,INFO,469, 1
+
+9755464,DEBUG,Sensor at pin 1 has 1.94 error
+
+9755465,INFO,300, 2
+
+9759472,DEBUG,Sensor at pin 2 has 7.44 error
+
+9759473,INFO,459, 3
+
+9763480,DEBUG,Sensor at pin 3 has 0.23 error
+
+9763481,INFO,328, 4
+
+9763483,DEBUG,pause, 0,0,2,12
+
+9775515,DEBUG,pause, 1,0,0,0
+
+9787516,DEBUG,pause, 1,0,0,0
+
+9799518,DEBUG,pause, 0,0,0,0
+
+9811519,DEBUG,pause, 0,0,0,0
+
+9823520,DEBUG,pause, 1,0,0,0
+
+9835522,DEBUG,pause, 0,0,0,0
+
+9847523,DEBUG,pause, 0,0,0,0
+
+9859524,DEBUG,pause, 0,0,0,0
+
+9871525,DEBUG,pause, 1,0,0,0
+
+9883527,DEBUG,pause, 1,0,0,0
+
+9895528,DEBUG,pause, 1,0,0,0
+
+9907529,DEBUG,pause, 0,0,0,0
+
+9919531,DEBUG,pause, 0,0,0,0
+
+9931531,DEBUG,pause, 0,0,0,0
+
+9943532,DEBUG,pause, 0,0,0,0
+
+9955533,DEBUG,pause, 0,0,0,0
+
+9967535,DEBUG,pause, 0,0,0,0
+
+9979536,DEBUG,pause, 0,0,0,0
+
+9991537,DEBUG,pause, 0,0,0,0
+
+10003538,DEBUG,pause, 0,0,0,0
+
+10015540,DEBUG,pause, 1,0,0,0
+
+10027541,DEBUG,pause, 1,0,0,0
+
+10039542,DEBUG,pause, 1,0,0,0
+
+10051544,DEBUG,pause, 0,0,0,0
+
+10063545,DEBUG,pause, 1,0,0,0
+
+10075546,DEBUG,pause, 1,0,0,0
+
+10087547,DEBUG,pause, 1,0,0,0
+
+10099549,DEBUG,pause, 1,0,0,0
+
+10111550,DEBUG,pause, 0,0,0,0
+
+10123551,DEBUG,pause, 1,0,0,0
+
+10135553,DEBUG,pause, 1,0,0,0
+
+10147554,DEBUG,pause, 0,0,0,0
+
+10159555,DEBUG,pause, 1,0,0,0
+
+10171556,DEBUG,pause, 1,0,0,0
+
+10183558,DEBUG,pause, 1,0,0,0
+
+10195559,DEBUG,pause, 0,0,0,0
+
+10207559,DEBUG,pause, 1,0,0,0
+
+10219560,DEBUG,pause, 0,0,0,0
+
+10231562,DEBUG,pause, 0,0,0,0
+
+10243563,DEBUG,pause, 0,0,0,0
+
+10255564,DEBUG,pause, 0,0,0,0
+
+10267566,DEBUG,pause, 1,0,0,0
+
+10279567,DEBUG,pause, 1,0,0,0
+
+10291568,DEBUG,pause, 1,0,0,0
+
+10303569,DEBUG,pause, 0,0,0,0
+
+10315571,DEBUG,pause, 1,0,0,0
+
+10327572,DEBUG,pause, 0,0,0,0
+
+10339573,DEBUG,pause, 0,0,0,0
+
+10351575,DEBUG,pause, 0,0,0,0
+
+10363576,DEBUG,pause, 1,0,0,0
+
+10375577,DEBUG,pause, 1,0,0,0
+
+10387578,DEBUG,pause, 0,0,0,0
+
+10399580,DEBUG,pause, 0,0,0,0
+
+10411581,DEBUG,pause, 0,0,0,0
+
+10423582,DEBUG,pause, 0,0,0,0
+
+10435584,DEBUG,pause, 1,0,0,0
+
+10447585,DEBUG,pause, 0,0,0,0
+
+10459586,DEBUG,pause, 0,0,0,0
+
+10471587,DEBUG,pause, 1,0,0,0
+
+10483589,DEBUG,pause, 1,0,0,0
+
+10495590,DEBUG,pause, 0,0,0,0
+
+10507591,DEBUG,pause, 0,0,0,0
+
+10519592,DEBUG,pause, 0,0,0,0
+
+10531594,DEBUG,pause, 0,0,0,0
+
+10543595,DEBUG,pause, 0,0,0,0
+
+10555596,DEBUG,pause, 1,0,0,0
+
+10567597,DEBUG,pause, 1,0,0,0
+
+10579598,DEBUG,pause, 1,0,0,0
+
+10591599,DEBUG,pause, 1,0,0,0
+
+10603600,DEBUG,pause, 1,0,0,0
+
+10615602,DEBUG,pause, 1,0,0,0
+
+10627603,DEBUG,pause, 0,0,0,0
+
+10639604,DEBUG,pause, 1,0,0,0
+
+10651606,DEBUG,pause, 1,0,0,0
+
+10663607,DEBUG,pause, 0,0,0,0
+
+10675608,DEBUG,pause, 0,0,0,0
+
+10687609,DEBUG,pause, 0,0,0,0
+
+10699611,DEBUG,pause, 0,0,0,0
+
+10711612,DEBUG,pause, 0,0,0,0
+
+10723613,DEBUG,pause, 0,0,0,0
+
+10735614,DEBUG,pause, 0,0,0,0
+
+10747616,DEBUG,pause, 1,0,0,0
+
+10759617,DEBUG,pause, 1,0,0,0
+
+10771618,DEBUG,pause, 0,0,0,0
+
+10783620,DEBUG,pause, 0,0,0,0
+
+10795621,DEBUG,pause, 0,0,0,0
+
+10807622,DEBUG,pause, 0,0,0,0
+
+10819623,DEBUG,pause, 0,0,0,0
+
+10831625,DEBUG,pause, 0,0,0,0
+
+10843626,DEBUG,pause, 1,0,0,0
+
+10855627,DEBUG,pause, 0,0,0,0
+
+10867629,DEBUG,pause, 0,0,0,0
+
+10879630,DEBUG,pause, 0,0,0,0
+
+10891631,DEBUG,pause, 0,0,0,0
+
+10903632,DEBUG,pause, 0,0,0,0
+
+10915634,DEBUG,pause, 0,0,0,0
+
+10927634,DEBUG,pause, 0,0,0,0
+
+10939635,DEBUG,pause, 0,0,0,0
+
+10951636,DEBUG,pause, 0,0,0,0
+
+10963638,DEBUG,Free memory: 1201
+
+10967643,DEBUG,Sensor at pin 0 has 5.19 error
+
+10967644,INFO,466, 1
+
+10971653,DEBUG,Sensor at pin 1 has 1.14 error
+
+10971654,INFO,310, 2
+
+10975662,DEBUG,Sensor at pin 2 has 18.11 error
+
+10975663,INFO,455, 3
+
+10979674,DEBUG,Sensor at pin 3 has 0.16 error
+
+10979674,INFO,330, 4
+
+10979679,DEBUG,pause, 1,0,0,0
+
+10991711,DEBUG,pause, 0,0,0,0
+

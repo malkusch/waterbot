@@ -1,6 +1,6 @@
 
 Data = csvread ("moist4.log");
-for session = 5:11
+for session = 5:13
 	Data2 = csvread (sprintf("moist%d.log", session))(:,1:5);
 	Data2(:,1) = Data2(:,1) + max(Data(:,1));
 	if (session == 10)
