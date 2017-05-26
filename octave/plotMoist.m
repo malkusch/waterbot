@@ -38,8 +38,10 @@ for sensor = 1:sensors
 
 	subplot(plotColumns,plotRows, sensor);
 	plot(x,y,'.g',x,f, '-r', X,Y, 'linewidth', 3, 'xr');
+	axis([min(x);max(x)]);
 	subplot(plotColumns,plotRows, sensor + sensors);
 	# plot(x,f2);
 	plot(X,dY, "rx");
+	axis([min(x);max(x)]);
 
 endfor
