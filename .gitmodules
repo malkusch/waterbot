@@ -10,3 +10,9 @@
 [submodule "libraries/Sleep_n0m1"]
 	path = libraries/Sleep_n0m1
 	url = https://github.com/n0m1/Sleep_n0m1.git
+[submodule "libraries/OneWire"]
+	path = libraries/OneWire
+	url = https://github.com/PaulStoffregen/OneWire.git
+[submodule "libraries/Arduino-Temperature-Control-Library"]
+	path = libraries/Arduino-Temperature-Control-Library
+	url = https://github.com/milesburton/Arduino-Temperature-Control-Library.git

@@ -3,6 +3,7 @@
 
 typedef struct {
 	int moisture;
+	float temperature;
 } SensorData;
 
 #endif

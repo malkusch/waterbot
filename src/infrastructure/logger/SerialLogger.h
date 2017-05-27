@@ -13,14 +13,16 @@
 
 class SerialLogger: public Logger {
 public:
-	SerialLogger(LED);
+	SerialLogger(LED warnLED, LED errorLED);
 	virtual void warn(const String& message);
+	virtual void error(const String& message);
 
 protected:
 	virtual void write(const String& message);
 
 private:
 	LED warnLED;
+	LED errorLED;
 };
 
 #endif /* INFRASTRUCTURE_LOGGER_SERIALLOGGER_H_ */

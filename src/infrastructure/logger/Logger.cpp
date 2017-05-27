@@ -30,6 +30,10 @@ void Logger::warn(const String& message) {
 	log(WARN, message);
 }
 
+void Logger::error(const String& message) {
+	log(ERROR, message);
+}
+
 void Logger::log(LogLevel level, const String& message) {
 	String logMessage = String(millis());
 	logMessage += ",";
@@ -44,6 +48,9 @@ void Logger::log(LogLevel level, const String& message) {
 		break;
 	case WARN:
 		printableLevel = "WARN";
+		break;
+	case ERROR:
+		printableLevel = "ERROR";
 		break;
 	}
 	logMessage += printableLevel;

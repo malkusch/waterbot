@@ -7,17 +7,18 @@
 
 #include "Pot.h"
 
-#include <WString.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 #include "../infrastructure/logger/Logger.h"
-#include "../infrastructure/TimeUnits.h"
 
 byte Pot::nextId = 1;
 
-Pot::Pot(MoistureSensor* moistureSensor, DryStrategy* dryStrategy, Valve* valve,
-		Pump* pump) :
-		id(nextId++), moistureSensor(moistureSensor), dryStrategy(dryStrategy), valve(
-				valve), pump(pump) {
+Pot::Pot(MoistureSensor* moistureSensor, TemperatureSensor* temperatureSensor,
+		DryStrategy* dryStrategy, Valve* valve, Pump* pump) :
+		id(nextId++), moistureSensor(moistureSensor), temperatureSensor(
+				temperatureSensor), dryStrategy(dryStrategy), valve(valve), pump(
+				pump) {
 
 	lastWaterTime = millis();
 }
@@ -49,9 +50,14 @@ bool Pot::isDry() {
 SensorData Pot::readSensors() {
 	SensorData data;
 	data.moisture = moistureSensor->readMoisture();
+	if (temperatureSensor != NULL) {
+		data.temperature = temperatureSensor->readTemperature();
+	}
 
 	char message[10];
-	sprintf(message, "%d, %d", data.moisture, id);
+	char temperature[8];
+	dtostrf(data.temperature, 7, 2, temperature);
+	sprintf(message, "%d, %d, %s", data.moisture, id, temperature);
 	Logger::getLogger()->info(message);
 
 	return data;
