@@ -11,15 +11,16 @@
 #include <Arduino.h>
 
 #include "SensorData.h"
-#include "Pump.h"
-#include "Valve.h"
+#include "DryStrategy.h"
 #include "MoistureSensor.h"
-#include  "DryStrategy.h"
+#include "Pump.h"
+#include "SensorData.h"
+#include "TemperatureSensor.h"
+#include "Valve.h"
 
 class Pot {
 public:
-	Pot(MoistureSensor* moistureSensor, DryStrategy* dryStrategy, Valve* valve,
-			Pump* pump);
+	Pot(MoistureSensor*, TemperatureSensor*, DryStrategy*, Valve*, Pump*);
 	void water(byte seconds);
 	unsigned long getLastWaterTime() const;
 	byte getId();bool isDry();
@@ -27,6 +28,7 @@ public:
 private:
 	const byte id;
 	MoistureSensor* moistureSensor;
+	TemperatureSensor* temperatureSensor;
 	static byte nextId;
 	DryStrategy* dryStrategy;
 	Valve* valve;

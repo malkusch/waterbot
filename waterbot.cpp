@@ -3,76 +3,92 @@
 #include "waterbot.h"
 
 #include <Arduino.h>
+#include <Arduino-Temperature-Control-Library/DallasTemperature.h>
+#include <HardwareSerial.h>
+#include <OneWire/OneWire.h>
+#include <stddef.h>
+#include <Sleep_n0m1/Sleep_n0m1.h>
 
-#include "libraries/Sleep_n0m1/Sleep_n0m1.h"
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/Debugger.h"
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
+#include "src/infrastructure/onewire/DallasTemperatureSensor.h"
 #include "src/infrastructure/TimeUnits.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
-#define moistureReadCount 10
-#define moistureVoltageDelayMillis 1000
-#define moistureThreshold 200
-#define valveDelayMillis 500
-#define coolDownSeconds 21600 // 6h
-#define maxWaterlessDays 5
-#define waterSeconds 10
-#define bootWaterSeconds 3
-#define pauseSeconds 1200
+#define PIN_MOISTURE1_SENSOR 0
+#define PIN_MOISTURE2_SENSOR 1
+#define PIN_MOISTURE3_SENSOR 2
 
-#define warnLED LED_BUILTIN
-SerialLogger logger(LED(warnLED));
+#define PIN_ONEWIRE 			2
+#define PIN_VALVE1 				3
+#define PIN_MOISTURE1_VOLTAGE1 	4
+#define PIN_MOISTURE1_VOLTAGE2 	5
+#define PIN_MOISTURE2_VOLTAGE1 	6
+#define PIN_MOISTURE2_VOLTAGE2 	7
+#define PIN_VALVE2 				8
+#define PIN_MOISTURE3_VOLTAGE1 	9
+#define PIN_MOISTURE3_VOLTAGE2 	10
+#define PIN_VALVE3 				11
+#define PIN_PUMP 				12
+#define PIN_WARNLED 			LED_BUILTIN
+#define PIN_ERRORLED 			LED_BUILTIN
 
-#define pumpPin 12
-#define pumpTurnOffDelayMillis 500
-Pump pump(pumpPin, pumpTurnOffDelayMillis);
+#define MOISTURE_READ_COUNT 10
+#define MOISTURE_VOLTAGE_DELAY_MILLIS 1000
+#define MOISTURE_THRESHOLD 200
+#define VALVE_DELAY_MILLIS 500
+#define COOL_DOWN_SECONDS 21600 // 6h
+#define MAX_WATERLESS_DAYS 5
+#define WATER_SECONDS 10
+#define BOOT_WATER_SECONDS 3
+#define PAUSE_SECONDS 1200
+#define PUMP_TURN_OFF_DELAY_MILLIS 500
+#define TEMPERATURE_RESOLUTION 9
 
-AutomaticWaterService automaticWaterService(waterSeconds, coolDownSeconds,
-maxWaterlessDays);
+SerialLogger logger(LED(PIN_WARNLED), LED(PIN_ERRORLED));
+Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
 
-ThresholdDryStrategy thresholdDryStrategy(moistureThreshold);
+OneWire onewire(PIN_ONEWIRE);
+DallasTemperature dallasTemperature(&onewire);
+DallasTemperatureSensor temperatureSensor(&dallasTemperature, NULL);
 
-#define moisture1VoltagePin1 4
-#define moisture1VoltagePin2 5
-#define moistureSensor1Pin 0
-OnboardMoistureSensor moistureSensor1(moisture1VoltagePin1,
-moisture1VoltagePin2,
-moistureSensor1Pin, moistureReadCount, moistureVoltageDelayMillis);
+AutomaticWaterService automaticWaterService(WATER_SECONDS, COOL_DOWN_SECONDS,
+MAX_WATERLESS_DAYS);
 
-#define valve1Pin 3
-OnboardValve valve1(valve1Pin, valveDelayMillis);
+ThresholdDryStrategy thresholdDryStrategy(MOISTURE_THRESHOLD);
 
-Pot pot1 = Pot(&moistureSensor1, &thresholdDryStrategy, &valve1, &pump);
+OnboardMoistureSensor moistureSensor1(PIN_MOISTURE1_VOLTAGE1,
+PIN_MOISTURE1_VOLTAGE2,
+PIN_MOISTURE1_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
 
-#define moisture2VoltagePin1 6
-#define moisture2VoltagePin2 7
-#define moistureSensor2Pin 1
-OnboardMoistureSensor moistureSensor2(moisture2VoltagePin1,
-moisture2VoltagePin2,
-moistureSensor2Pin, moistureReadCount, moistureVoltageDelayMillis);
+OnboardValve valve1(PIN_VALVE1, VALVE_DELAY_MILLIS);
 
-#define valve2Pin 8
-OnboardValve valve2(valve2Pin, valveDelayMillis);
+Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &thresholdDryStrategy,
+		&valve1, &pump);
 
-Pot pot2 = Pot(&moistureSensor2, &thresholdDryStrategy, &valve2, &pump);
+OnboardMoistureSensor moistureSensor2(PIN_MOISTURE2_VOLTAGE1,
+PIN_MOISTURE2_VOLTAGE2,
+PIN_MOISTURE2_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
 
-#define moisture3VoltagePin1 9
-#define moisture3VoltagePin2 10
-#define moistureSensor3Pin 2
-OnboardMoistureSensor moistureSensor3(moisture3VoltagePin1,
-moisture3VoltagePin2,
-moistureSensor3Pin, moistureReadCount, moistureVoltageDelayMillis);
+OnboardValve valve2(PIN_VALVE2, VALVE_DELAY_MILLIS);
 
-#define valve3Pin 11
-OnboardValve valve3(valve3Pin, valveDelayMillis);
+Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &thresholdDryStrategy,
+		&valve2, &pump);
 
-Pot pot3 = Pot(&moistureSensor3, &thresholdDryStrategy, &valve3, &pump);
+OnboardMoistureSensor moistureSensor3(PIN_MOISTURE3_VOLTAGE1,
+PIN_MOISTURE3_VOLTAGE2,
+PIN_MOISTURE3_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
+
+OnboardValve valve3(PIN_VALVE3, VALVE_DELAY_MILLIS);
+
+Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &thresholdDryStrategy,
+		&valve3, &pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
 
@@ -80,12 +96,15 @@ Sleep sleep;
 
 void setup() {
 	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
+	dallasTemperature.begin();
+	dallasTemperature.setResolution(TEMPERATURE_RESOLUTION);
+
 	Logger::setLogger(&logger);
 	Debugger::logAndClearResetReason();
 
 	// Water all pots, as a visual self test
 	for (auto & pot : pots) {
-		pot.water(bootWaterSeconds);
+		pot.water(BOOT_WATER_SECONDS);
 	}
 }
 
@@ -95,7 +114,7 @@ void loop() {
 	for (auto & pot : pots) {
 		automaticWaterService.waterIfNeeded(&pot);
 	}
-	pause(pauseSeconds);
+	pause(PAUSE_SECONDS);
 }
 
 void pause(unsigned long seconds) {

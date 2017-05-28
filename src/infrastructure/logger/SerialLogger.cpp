@@ -7,14 +7,19 @@
 
 #include "SerialLogger.h"
 
-SerialLogger::SerialLogger(LED warnLED) :
-		warnLED(warnLED) {
+SerialLogger::SerialLogger(LED warnLED, LED errorLED) :
+		warnLED(warnLED), errorLED(errorLED) {
 	Serial.begin(9600);
 }
 
 void SerialLogger::warn(const String& message) {
 	warnLED.turnOn();
 	Logger::warn(message);
+}
+
+void SerialLogger::error(const String& message) {
+	errorLED.turnOn();
+	Logger::error(message);
 }
 
 void SerialLogger::write(const String& message) {

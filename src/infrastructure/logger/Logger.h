@@ -12,7 +12,7 @@
 #include <Arduino.h>
 
 enum LogLevel {
-	DEBUG, INFO, WARN
+	DEBUG, INFO, WARN, ERROR
 };
 
 class Logger {
@@ -22,6 +22,7 @@ public:
 	;
 	virtual void info(const String& message);
 	virtual void warn(const String& message);
+	virtual void error(const String& message);
 	virtual void debug(const String& message);
 	virtual void log(LogLevel, const String& message);
 	static Logger* getLogger();
