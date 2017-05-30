@@ -7,7 +7,7 @@
 
 #include "AutomaticWaterService.h"
 
-#include <stdio.h>
+#include <WString.h>
 
 #include "../infrastructure/logger/Logger.h"
 #include "../infrastructure/TimeUnits.h"
@@ -21,24 +21,25 @@ AutomaticWaterService::AutomaticWaterService(byte waterSeconds,
 
 void AutomaticWaterService::waterIfNeeded(Pot *pot) {
 	if (isHot(pot)) {
-		char message[30];
-		sprintf(message, "Pot %d is still hot", pot->getId());
+		String message = F("Pot ");
+		message += pot->getId();
+		message += F(" is still hot");
 		Logger::getLogger()->debug(message);
 		return;
 	}
 
 	if (isTooLongWaterLess(pot)) {
-		char warning[50];
-		sprintf(warning, "Pot %d wasn't watered too long. Check sensors!",
-				pot->getId());
+		String warning = F("Pot ");
+		warning += pot->getId();
+		warning += F(" wasn't watered too long. Check sensors!");
 		Logger::getLogger()->warn(warning);
 		pot->water(waterSeconds);
 		return;
 	}
 
 	if (pot->isDry()) {
-		char info[35];
-		sprintf(info, "Automatically watering pot %d", pot->getId());
+		String info = F("Automatically watering pot ");
+		info += pot->getId();
 		Logger::getLogger()->info(info);
 		pot->water(waterSeconds);
 	}

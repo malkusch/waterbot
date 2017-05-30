@@ -24,7 +24,7 @@ public:
 	virtual void warn(const String& message);
 	virtual void error(const String& message);
 	virtual void debug(const String& message);
-	virtual void log(LogLevel, const String& message);
+	virtual void log(const LogLevel, const String& message);
 	static Logger* getLogger();
 	static void setLogger(Logger*);
 

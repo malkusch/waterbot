@@ -7,7 +7,9 @@
 
 #include "OnboardMoistureSensor.h"
 
-#include "../../../libraries/QuickStats/QuickStats.h"
+#include <QuickStats/QuickStats.h>
+#include <WString.h>
+
 #include "../logger/Logger.h"
 
 OnboardMoistureSensor::OnboardMoistureSensor(byte voltagePin1, byte voltagePin2,
@@ -46,25 +48,23 @@ int OnboardMoistureSensor::readMoisture() {
 	float median = stats.median(data, readCount);
 	float error = stats.stderror(data, readCount);
 
-	String debugError;
-	debugError += "Sensor at pin " + String(sensorPin) + " has " + error
-			+ " error";
+	String debugError = F("Sensor at pin ");
+	debugError += String(sensorPin) + F(" has ") + error + F(" error");
 	Logger::getLogger()->debug(debugError);
 
 	if (median < 10) {
-		String warning;
-		warning += "Sensor " + String(sensorPin) + " reads too low: " + median;
+		String warning = F("Sensor at pin ");
+		warning += String(sensorPin) + F(" reads too low: ") + median;
 		Logger::getLogger()->warn(warning);
 	}
 	if (median > 1023 - 10) {
-		String warning;
-		warning += "Sensor " + String(sensorPin) + " reads too high: " + median;
+		String warning = F("Sensor at pin ");
+		warning += String(sensorPin) + F(" reads too high: ") + median;
 		Logger::getLogger()->warn(warning);
 	}
 	if (error > 50) {
-		String warning;
-		warning += "Sensor " + String(sensorPin) + " has too much error: "
-				+ error;
+		String warning = F("Sensor at pin ");
+		warning += String(sensorPin) + F(" has too much error: ") + error;
 		Logger::getLogger()->warn(warning);
 	}
 

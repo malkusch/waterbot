@@ -8,8 +8,10 @@
 #include "Debugger.h"
 
 #include <avr/io.h>
+#include <MemoryFree/MemoryFree.h>
+#include <stdio.h>
+#include <WString.h>
 
-#include "../../libraries/MemoryFree/MemoryFree.h"
 #include "logger/Logger.h"
 
 void Debugger::logMemory() {
@@ -19,21 +21,21 @@ void Debugger::logMemory() {
 }
 
 void Debugger::logAndClearResetReason() {
-	const char* reason;
+	String reason;
 
 	if (MCUSR & (1 << PORF))
-		reason = "Power-on";
+		reason = F("Power-on");
 	else if (MCUSR & (1 << EXTRF))
-		reason = "External";
+		reason = F("External");
 	else if (MCUSR & (1 << BORF))
-		reason = "Brownout";
+		reason = F("Brownout");
 	else if (MCUSR & (1 << WDRF))
-		reason = "Watchdog";
+		reason = F("Watchdog");
 	else
-		reason = "no reason";
+		reason = F("no reason");
 
-	char message[50];
-	sprintf(message, "Reset reason: %s (%d)", reason, MCUSR);
+	String message = F("Reset reason: ");
+	message += reason + F(" (") + String(MCUCR) + F(")");
 	Logger::getLogger()->info(message);
 
 	MCUSR = 0;

@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <WString.h>
 
 #include "../infrastructure/logger/Logger.h"
 
@@ -24,8 +25,8 @@ Pot::Pot(MoistureSensor* moistureSensor, TemperatureSensor* temperatureSensor,
 }
 
 void Pot::water(byte seconds) {
-	char message[16];
-	sprintf(message, "Watering pot %d", id);
+	String message = F("Watering pot ");
+	message += id;
 	Logger::getLogger()->info(message);
 
 	valve->open();
@@ -54,7 +55,7 @@ SensorData Pot::readSensors() {
 		data.temperature = temperatureSensor->readTemperature();
 	}
 
-	char message[10];
+	char message[20];
 	char temperature[8];
 	dtostrf(data.temperature, 7, 2, temperature);
 	sprintf(message, "%d, %d, %s", data.moisture, id, temperature);

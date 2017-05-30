@@ -9,7 +9,7 @@
 
 #include <WString.h>
 
-DS1307RTC::DS1307RTC(const RTC_DS1307* ds1307) :
+DS1307RTC::DS1307RTC(RTC_DS1307* ds1307) :
 		ds1307(ds1307) {
 }
 

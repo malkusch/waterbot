@@ -10,11 +10,11 @@
 
 class TimeUnits {
 public:
-	static unsigned long secondsToMillis(unsigned long seconds);
-	static unsigned long minutesToMillis(unsigned long minutes);
-	static unsigned long hoursToMillis(unsigned int hours);
-	static unsigned long daysToMillis(unsigned int days);
-	static unsigned long millisSince(unsigned long millis);
+	static unsigned long secondsToMillis(const unsigned long seconds);
+	static unsigned long minutesToMillis(const unsigned long minutes);
+	static unsigned long hoursToMillis(const unsigned int hours);
+	static unsigned long daysToMillis(const unsigned int days);
+	static unsigned long millisSince(const unsigned long millis);
 };
 
 #endif /* TIMEUNITS_H_ */

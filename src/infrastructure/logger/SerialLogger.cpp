@@ -8,7 +8,6 @@
 #include "SerialLogger.h"
 
 #include <HardwareSerial.h>
-#include <WString.h>
 
 SerialLogger::SerialLogger(LED warnLED, LED errorLED) :
 		warnLED(warnLED), errorLED(errorLED) {
