@@ -19,3 +19,6 @@
 [submodule "libraries/RTClib"]
 	path = libraries/RTClib
 	url = https://github.com/adafruit/RTClib.git
+[submodule "libraries/SdFat"]
+	path = libraries/SdFat
+	url = https://github.com/greiman/SdFat.git

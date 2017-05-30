@@ -5,14 +5,14 @@
 #include <Arduino.h>
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 #include <OneWire/OneWire.h>
+#include <pins_arduino.h>
 #include <RTClib/RTClib.h>
 #include <stddef.h>
 #include <Sleep_n0m1/Sleep_n0m1.h>
 
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/Debugger.h"
-#include "src/infrastructure/logger/SerialLogger.h"
-#include "src/infrastructure/LED.h"
+#include "src/infrastructure/logger/SDLogger.h"
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/onewire/DallasTemperatureSensor.h"
@@ -27,18 +27,14 @@
 #define PIN_MOISTURE3_SENSOR 2
 
 #define PIN_ONEWIRE 			2
-#define PIN_VALVE1 				3
-#define PIN_MOISTURE1_VOLTAGE1 	4
-#define PIN_MOISTURE1_VOLTAGE2 	5
-#define PIN_MOISTURE2_VOLTAGE1 	6
-#define PIN_MOISTURE2_VOLTAGE2 	7
-#define PIN_VALVE2 				8
-#define PIN_MOISTURE3_VOLTAGE1 	9
-#define PIN_MOISTURE3_VOLTAGE2 	10
-#define PIN_VALVE3 				11
-#define PIN_PUMP 				12
-#define PIN_WARNLED 			LED_BUILTIN
-#define PIN_ERRORLED 			LED_BUILTIN
+#define PIN_PUMP 				3
+#define PIN_VALVE1 				4
+#define PIN_MOISTURE1_VOLTAGE1 	5
+#define PIN_MOISTURE1_VOLTAGE2 	6
+#define PIN_VALVE2				7
+#define PIN_MOISTURE2_VOLTAGE1 	8
+#define PIN_MOISTURE2_VOLTAGE2 	9
+#define PIN_SDLOG_CHIPSELECT	SS
 
 #define MOISTURE_READ_COUNT 10
 #define MOISTURE_VOLTAGE_DELAY_MILLIS 1000
@@ -51,8 +47,9 @@
 #define PAUSE_SECONDS 1200
 #define PUMP_TURN_OFF_DELAY_MILLIS 500
 #define TEMPERATURE_RESOLUTION 9
+#define LOG_FILE "waterbot-%d.log"
 
-SerialLogger logger(LED(PIN_WARNLED), LED(PIN_ERRORLED));
+SDLogger logger(PIN_SDLOG_CHIPSELECT);
 Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
 
 // MillisRTC rtc;
@@ -86,22 +83,13 @@ OnboardValve valve2(PIN_VALVE2, VALVE_DELAY_MILLIS);
 Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &thresholdDryStrategy,
 		&valve2, &pump);
 
-OnboardMoistureSensor moistureSensor3(PIN_MOISTURE3_VOLTAGE1,
-PIN_MOISTURE3_VOLTAGE2,
-PIN_MOISTURE3_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
-
-OnboardValve valve3(PIN_VALVE3, VALVE_DELAY_MILLIS);
-
-Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &thresholdDryStrategy,
-		&valve3, &pump);
-
-Pot pots[] = { pot1, pot2, pot3 };
+Pot pots[] = { pot1, pot2 };
 
 Sleep sleep;
 
 void setup() {
 	rtc.begin();
-	logger.begin();
+	logger.begin(LOG_FILE);
 	dallasTemperature.begin();
 	dallasTemperature.setResolution(TEMPERATURE_RESOLUTION);
 	Debugger::logAndClearResetReason();
@@ -122,6 +110,7 @@ void loop() {
 }
 
 void pause(unsigned long seconds) {
+	logger.flush();
 	byte delaySleepMillis = 100;
 	delay(delaySleepMillis); // Give serial data some time to print
 	sleep.pwrDownMode();
