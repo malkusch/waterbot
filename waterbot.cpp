@@ -4,8 +4,8 @@
 
 #include <Arduino.h>
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
-#include <HardwareSerial.h>
 #include <OneWire/OneWire.h>
+#include <RTClib/RTClib.h>
 #include <stddef.h>
 #include <Sleep_n0m1/Sleep_n0m1.h>
 
@@ -16,6 +16,7 @@
 #include "src/infrastructure/onboard/OnboardMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/onewire/DallasTemperatureSensor.h"
+#include "src/infrastructure/rtc/DS1307RTC.h"
 #include "src/infrastructure/TimeUnits.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
@@ -53,6 +54,10 @@
 
 SerialLogger logger(LED(PIN_WARNLED), LED(PIN_ERRORLED));
 Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
+
+// MillisRTC rtc;
+RTC_DS1307 ds1307;
+DS1307RTC rtc(&ds1307);
 
 OneWire onewire(PIN_ONEWIRE);
 DallasTemperature dallasTemperature(&onewire);
@@ -95,11 +100,10 @@ Pot pots[] = { pot1, pot2, pot3 };
 Sleep sleep;
 
 void setup() {
-	Serial.begin(9600); // XXX Somehow the constructor of Logger doesn't work.
+	rtc.begin();
+	logger.begin();
 	dallasTemperature.begin();
 	dallasTemperature.setResolution(TEMPERATURE_RESOLUTION);
-
-	Logger::setLogger(&logger);
 	Debugger::logAndClearResetReason();
 
 	// Water all pots, as a visual self test

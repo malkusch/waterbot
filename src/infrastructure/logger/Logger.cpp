@@ -6,7 +6,10 @@
  */
 
 #include "Logger.h"
-#include <Arduino.h>
+
+#include <WString.h>
+
+#include "../rtc/RTC.h"
 
 Logger* Logger::logger;
 
@@ -35,7 +38,7 @@ void Logger::error(const String& message) {
 }
 
 void Logger::log(LogLevel level, const String& message) {
-	String logMessage = String(millis());
+	String logMessage = String(RTC::getRTC()->timestamp());
 	logMessage += ",";
 
 	const char* printableLevel;

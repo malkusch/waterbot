@@ -7,9 +7,16 @@
 
 #include "SerialLogger.h"
 
+#include <HardwareSerial.h>
+#include <WString.h>
+
 SerialLogger::SerialLogger(LED warnLED, LED errorLED) :
 		warnLED(warnLED), errorLED(errorLED) {
+}
+
+void SerialLogger::begin() {
 	Serial.begin(9600);
+	Logger::setLogger(this);
 }
 
 void SerialLogger::warn(const String& message) {

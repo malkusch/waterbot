@@ -14,6 +14,7 @@
 class SerialLogger: public Logger {
 public:
 	SerialLogger(LED warnLED, LED errorLED);
+	void begin();
 	virtual void warn(const String& message);
 	virtual void error(const String& message);
 
