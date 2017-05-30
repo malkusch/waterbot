@@ -9,6 +9,8 @@ for session = 5:14
 	Data = [Data;Data2];
 endfor
 
+Data = Data(Data(:,2)==Inf,:);
+
 sensors = max(Data(:,4));
 n = 2;
 sensorColumn = 4;
