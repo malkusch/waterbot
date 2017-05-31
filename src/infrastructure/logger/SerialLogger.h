@@ -17,6 +17,7 @@ public:
 	void begin();
 	virtual void warn(const String& message);
 	virtual void error(const String& message);
+	virtual void flush();
 
 protected:
 	virtual void write(const String& message);

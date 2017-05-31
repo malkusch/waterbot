@@ -12,35 +12,45 @@
 #include <FatLib/FatFileSystem.h>
 #include <limits.h>
 #include <stdio.h>
-#include <SdCard/SdInfo.h>
-#include <SPI.h>
 
-SDLogger::SDLogger(const byte chipSelectPin) :
-		chipSelectPin(chipSelectPin) {
+SDLogger::SDLogger(const char* filenameFormat, const byte chipSelectPin) :
+		filenameFormat(filenameFormat), chipSelectPin(chipSelectPin) {
 
 	fs = new SdFat();
 }
 
 SDLogger::~SDLogger() {
+	file.close();
 	delete fs;
 }
 
 void SDLogger::write(const String& message) {
 	file.println(message);
+	if (file.getWriteError()) {
+		if (initCard()) {
+			file.clearWriteError();
+			file.println(message);
+		}
+	}
 }
 
-void SDLogger::begin(const char* filenameFormat) {
+void SDLogger::begin() {
 	Logger::setLogger(this);
-	if (!fs->begin(chipSelectPin, SPI_FULL_SPEED)) {
-		return;
-	}
-	file = SdFile();
-	if (!open(filenameFormat)) {
-		return;
-	}
+	initCard();
 }
 
-bool SDLogger::open(const char* filenameFormat) {
+bool SDLogger::initCard() {
+	file.close();
+	if (!fs->begin(chipSelectPin)) {
+		return false;
+	}
+	if (!openNewLogFile()) {
+		return false;
+	}
+	return true;
+}
+
+bool SDLogger::openNewLogFile() {
 	char filename[20];
 	for (unsigned long index = 0; index < ULONG_MAX; index++) {
 		sprintf(filename, filenameFormat, index);

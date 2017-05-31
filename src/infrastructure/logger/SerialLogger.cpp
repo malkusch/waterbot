@@ -8,6 +8,7 @@
 #include "SerialLogger.h"
 
 #include <HardwareSerial.h>
+#include <WString.h>
 
 SerialLogger::SerialLogger(LED warnLED, LED errorLED) :
 		warnLED(warnLED), errorLED(errorLED) {
@@ -26,6 +27,10 @@ void SerialLogger::warn(const String& message) {
 void SerialLogger::error(const String& message) {
 	errorLED.turnOn();
 	Logger::error(message);
+}
+
+void SerialLogger::flush() {
+	Serial.flush();
 }
 
 void SerialLogger::write(const String& message) {

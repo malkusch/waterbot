@@ -5,7 +5,6 @@
 #include <Arduino.h>
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 #include <OneWire/OneWire.h>
-#include <pins_arduino.h>
 #include <RTClib/RTClib.h>
 #include <stddef.h>
 #include <Sleep_n0m1/Sleep_n0m1.h>
@@ -34,7 +33,6 @@
 #define PIN_VALVE2				7
 #define PIN_MOISTURE2_VOLTAGE1 	8
 #define PIN_MOISTURE2_VOLTAGE2 	9
-#define PIN_SDLOG_CHIPSELECT	SS
 
 #define MOISTURE_READ_COUNT 10
 #define MOISTURE_VOLTAGE_DELAY_MILLIS 1000
@@ -49,7 +47,7 @@
 #define TEMPERATURE_RESOLUTION 9
 #define LOG_FILE "waterbot-%d.log"
 
-SDLogger logger(PIN_SDLOG_CHIPSELECT);
+SDLogger logger(LOG_FILE);
 Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
 
 // MillisRTC rtc;
@@ -89,7 +87,7 @@ Sleep sleep;
 
 void setup() {
 	rtc.begin();
-	logger.begin(LOG_FILE);
+	logger.begin();
 	dallasTemperature.begin();
 	dallasTemperature.setResolution(TEMPERATURE_RESOLUTION);
 	Debugger::logAndClearResetReason();

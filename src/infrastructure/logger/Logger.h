@@ -27,6 +27,7 @@ public:
 	virtual void log(const LogLevel, const String& message);
 	static Logger* getLogger();
 	static void setLogger(Logger*);
+	virtual void flush() = 0;
 
 protected:
 	virtual void write(const String& message) = 0;

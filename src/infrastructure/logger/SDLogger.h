@@ -17,19 +17,20 @@
 
 class SDLogger: public Logger {
 public:
-	SDLogger(const byte chipSelectPin = SS);
+	SDLogger(const char* filenameFormat, const byte chipSelectPin = SS);
 	~SDLogger();
 
-	void begin(const char* filenameFormat);
-	void flush();
+	void begin();
+	virtual void flush();
 
 protected:
 	virtual void write(const String& message);
 
 private:
 	SdFat* fs;
-	SdFile file;
-	bool open(const char* filenameFormat);
+	SdFile file;bool openNewLogFile();
+	bool initCard();
+	const char* filenameFormat;
 	const byte chipSelectPin;
 };
 
