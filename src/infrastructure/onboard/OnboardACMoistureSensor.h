@@ -9,22 +9,24 @@
 #define ONBOARD_MOISTURESENSOR_H_
 
 #include <Arduino.h>
-#include "../../model/MoistureSensor.h"
-class OnboardMoistureSensor: public MoistureSensor {
+
+#include "AnalogMoistureSensor.h"
+
+class OnboardACMoistureSensor: public AnalogMoistureSensor {
 
 public:
-	OnboardMoistureSensor(byte voltagePin1, byte voltagePin2, byte sensorPin,
-			byte halfReadCount, unsigned int voltageDelayMillis);
-	virtual int readMoisture();
+	OnboardACMoistureSensor(byte voltagePin1, byte voltagePin2, byte sensorPin,
+			byte readCount, unsigned int voltageDelayMillis);
+
+protected:
+	virtual int singleReadMoisture();
+	virtual void readRawMoisture(float data[], const byte readCount);
 
 private:
 	const byte voltagePin1;
 	const byte voltagePin2;
-	const byte sensorPin;
-	const byte halfReadCount;
 	const unsigned int voltageDelayMillis;bool pin1ToPin2;
 
-	int singleReadMoisture();
 	void turnOnVoltage();
 	void switchPolarity();
 	void turnOffVoltage();

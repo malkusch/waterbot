@@ -12,7 +12,7 @@
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/Debugger.h"
 #include "src/infrastructure/logger/SDLogger.h"
-#include "src/infrastructure/onboard/OnboardMoistureSensor.h"
+#include "src/infrastructure/onboard/OnboardDCMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/onewire/DallasTemperatureSensor.h"
 #include "src/infrastructure/rtc/DS1307RTC.h"
@@ -21,18 +21,18 @@
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
-#define PIN_MOISTURE1_SENSOR 0
-#define PIN_MOISTURE2_SENSOR 1
-#define PIN_MOISTURE3_SENSOR 2
+#define PIN_POT1_MOISTURE_SENSOR 0
+#define PIN_POT2_MOISTURE_SENSOR 1
+#define PIN_POT3_MOISTURE_SENSOR 2
 
-#define PIN_ONEWIRE 			2
-#define PIN_PUMP 				3
-#define PIN_VALVE1 				4
-#define PIN_MOISTURE1_VOLTAGE1 	5
-#define PIN_MOISTURE1_VOLTAGE2 	6
-#define PIN_VALVE2				7
-#define PIN_MOISTURE2_VOLTAGE1 	8
-#define PIN_MOISTURE2_VOLTAGE2 	9
+#define PIN_ONEWIRE 				2
+#define PIN_PUMP 					3
+#define PIN_POT1_VALVE 				4
+#define PIN_POT1_MOISTURE_VOLTAGE 	5
+#define PIN_POT2_VALVE				6
+#define PIN_POT2_MOISTURE_VOLTAGE 	7
+#define PIN_POT3_VALVE				8
+#define PIN_POT3_MOISTURE_VOLTAGE 	9
 
 #define MOISTURE_READ_COUNT 10
 #define MOISTURE_VOLTAGE_DELAY_MILLIS 1000
@@ -63,25 +63,31 @@ MAX_WATERLESS_DAYS);
 
 ThresholdDryStrategy thresholdDryStrategy(MOISTURE_THRESHOLD);
 
-OnboardMoistureSensor moistureSensor1(PIN_MOISTURE1_VOLTAGE1,
-PIN_MOISTURE1_VOLTAGE2,
-PIN_MOISTURE1_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
+OnboardDCMoistureSensor moistureSensor1(PIN_POT1_MOISTURE_VOLTAGE,
+PIN_POT1_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
 
-OnboardValve valve1(PIN_VALVE1, VALVE_DELAY_MILLIS);
+OnboardValve valve1(PIN_POT1_VALVE, VALVE_DELAY_MILLIS);
 
 Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &thresholdDryStrategy,
 		&valve1, &pump);
 
-OnboardMoistureSensor moistureSensor2(PIN_MOISTURE2_VOLTAGE1,
-PIN_MOISTURE2_VOLTAGE2,
-PIN_MOISTURE2_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
+OnboardDCMoistureSensor moistureSensor2(PIN_POT2_MOISTURE_VOLTAGE,
+PIN_POT2_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
 
-OnboardValve valve2(PIN_VALVE2, VALVE_DELAY_MILLIS);
+OnboardValve valve2(PIN_POT2_VALVE, VALVE_DELAY_MILLIS);
 
 Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &thresholdDryStrategy,
 		&valve2, &pump);
 
-Pot pots[] = { pot1, pot2 };
+OnboardDCMoistureSensor moistureSensor3(PIN_POT3_MOISTURE_VOLTAGE,
+PIN_POT3_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
+
+OnboardValve valve3(PIN_POT3_VALVE, VALVE_DELAY_MILLIS);
+
+Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &thresholdDryStrategy,
+		&valve3, &pump);
+
+Pot pots[] = { pot1, pot2, pot3 };
 
 Sleep sleep;
 
