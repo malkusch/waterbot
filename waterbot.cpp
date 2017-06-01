@@ -27,6 +27,7 @@ SDLogger logger(LOG_FILE);
 #else
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
+using waterbot::infrastructure::LED;
 SerialLogger logger(LED(LED_BUILTIN), LED(LED_BUILTIN));
 #endif
 

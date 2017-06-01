@@ -5,10 +5,12 @@
  *      Author: malkusch
  */
 
-#ifndef LED_H_
-#define LED_H_
+#pragma once
 
 #include <Arduino.h>
+
+namespace waterbot {
+namespace infrastructure {
 
 class LED {
 public:
@@ -20,4 +22,5 @@ private:
 	const byte pin;
 };
 
-#endif /* LED_H_ */
+}
+}

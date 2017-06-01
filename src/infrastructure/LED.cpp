@@ -7,6 +7,8 @@
 
 #include "LED.h"
 
+using waterbot::infrastructure::LED;
+
 LED::LED(const byte pin) :
 		pin(pin) {
 

@@ -5,11 +5,14 @@
  *      Author: malkusch
  */
 
-#ifndef INFRASTRUCTURE_LOGGER_SERIALLOGGER_H_
-#define INFRASTRUCTURE_LOGGER_SERIALLOGGER_H_
+#pragma once
+
+#include <WString.h>
 
 #include "../LED.h"
 #include "Logger.h"
+
+using waterbot::infrastructure::LED;
 
 class SerialLogger: public Logger {
 public:
@@ -27,4 +30,3 @@ private:
 	LED errorLED;
 };
 
-#endif /* INFRASTRUCTURE_LOGGER_SERIALLOGGER_H_ */

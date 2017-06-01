@@ -1,5 +1,4 @@
-#ifndef _waterbot_H_
-#define _waterbot_H_
+#pragma once
 
 #define PIN_POT1_MOISTURE_SENSOR PIN_A0
 #define PIN_POT2_MOISTURE_SENSOR PIN_A1
@@ -32,5 +31,3 @@
 #define LOGGER LOGGER_SD
 
 void pause(unsigned long seconds);
-
-#endif /* _waterbot_H_ */
