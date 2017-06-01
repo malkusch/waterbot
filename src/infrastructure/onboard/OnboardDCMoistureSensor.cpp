@@ -13,7 +13,7 @@ OnboardDCMoistureSensor::OnboardDCMoistureSensor(byte voltagePin,
 				voltageDelayMillis) {
 
 	pinMode(voltagePin, OUTPUT);
-	turnOffVoltageWithoutDelay();
+	turnOffVoltage();
 }
 
 void OnboardDCMoistureSensor::readRawMoisture(float data[],
@@ -37,15 +37,5 @@ void OnboardDCMoistureSensor::turnOnVoltage() {
 }
 
 void OnboardDCMoistureSensor::turnOffVoltage() {
-	turnOffVoltageWithoutDelay();
-	/*
-	 * Wait until any capacitive or inductive effects of the wire
-	 * are eliminated.
-	 */
-	delay(voltageDelayMillis);
-}
-
-void OnboardDCMoistureSensor::turnOffVoltageWithoutDelay() {
 	digitalWrite(voltagePin, LOW);
 }
-

@@ -27,7 +27,6 @@ private:
 
 	void turnOnVoltage();
 	void turnOffVoltage();
-	void turnOffVoltageWithoutDelay();
 };
 
 #endif /* ONBOARD_MOISTURESENSOR_H_ */
