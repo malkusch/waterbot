@@ -5,13 +5,13 @@
 #include <Arduino.h>
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 #include <OneWire/OneWire.h>
+#include <pins_arduino.h>
 #include <RTClib/RTClib.h>
 #include <stddef.h>
 #include <Sleep_n0m1/Sleep_n0m1.h>
 
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/Debugger.h"
-#include "src/infrastructure/logger/SDLogger.h"
 #include "src/infrastructure/onboard/OnboardDCMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/onewire/DallasTemperatureSensor.h"
@@ -21,33 +21,15 @@
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
-#define PIN_POT1_MOISTURE_SENSOR PIN_A0
-#define PIN_POT2_MOISTURE_SENSOR PIN_A1
-#define PIN_POT3_MOISTURE_SENSOR PIN_A2
-
-#define PIN_ONEWIRE 				2
-#define PIN_PUMP 					3
-#define PIN_POT1_VALVE 				4
-#define PIN_POT1_MOISTURE_VOLTAGE 	5
-#define PIN_POT2_VALVE				6
-#define PIN_POT2_MOISTURE_VOLTAGE 	7
-#define PIN_POT3_VALVE				8
-#define PIN_POT3_MOISTURE_VOLTAGE 	9
-
-#define MOISTURE_READ_COUNT 10
-#define MOISTURE_VOLTAGE_DELAY_MILLIS 10000
-#define MOISTURE_THRESHOLD 200
-#define VALVE_DELAY_MILLIS 500
-#define COOL_DOWN_SECONDS 21600 // 6h
-#define MAX_WATERLESS_DAYS 5
-#define WATER_SECONDS 10
-#define BOOT_WATER_SECONDS 3
-#define PAUSE_SECONDS 1200
-#define PUMP_TURN_OFF_DELAY_MILLIS 500
-#define TEMPERATURE_RESOLUTION 9
-#define LOG_FILE "waterbot-%d.log"
-
+#if LOGGER == LOGGER_SD
+#include "src/infrastructure/logger/SDLogger.h"
 SDLogger logger(LOG_FILE);
+#else
+#include "src/infrastructure/logger/SerialLogger.h"
+#include "src/infrastructure/LED.h"
+SerialLogger logger(LED(LED_BUILTIN), LED(LED_BUILTIN));
+#endif
+
 Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
 
 // MillisRTC rtc;
