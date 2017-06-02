@@ -9,10 +9,13 @@
 
 #include "../infrastructure/TimeUnits.h"
 
-Pump::Pump(byte pin, unsigned int turnOffDelayMillis) :
+using waterbot::model::Pump;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
+
+Pump::Pump(DigitalOutputPin* pin, unsigned int turnOffDelayMillis) :
 		pin(pin), turnOffDelayMillis(turnOffDelayMillis) {
 
-	pinMode(pin, OUTPUT);
 	turnOffWithoutDelay(); // You can't delay within a constructor
 }
 
@@ -28,10 +31,9 @@ void Pump::turnOff() {
 }
 
 void Pump::turnOffWithoutDelay() {
-	digitalWrite(pin, HIGH);
+	pin->write(ON);
 }
 
 void Pump::turnOn() {
-	digitalWrite(pin, LOW);
+	pin->write(OFF);
 }
-

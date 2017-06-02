@@ -5,25 +5,34 @@
  *      Author: malkusch
  */
 
-#ifndef INFRASTRUCTURE_ONBOARD_ONBOARDVALVE_H_
-#define INFRASTRUCTURE_ONBOARD_ONBOARDVALVE_H_
+#pragma once
 
 #include <Arduino.h>
 
 #include "../../model/Valve.h"
+#include "../pin/DigitalOutputPin.h"
+
+namespace waterbot {
+namespace infrastructure {
+namespace onboard {
+
+using waterbot::model::Valve;
+using pin::DigitalOutputPin;
 
 class OnboardValve: public Valve {
 public:
-	OnboardValve(byte pin, unsigned int delayMillis);
+	OnboardValve(DigitalOutputPin* pin, unsigned int delayMillis);
 
 protected:
 	virtual void open();
 	virtual void close();
 
 private:
-	const byte pin;
+	DigitalOutputPin* pin;
 	const unsigned int delayMillis;
 	void closeWithoutDelay();
 };
 
-#endif /* INFRASTRUCTURE_ONBOARD_ONBOARDVALVE_H_ */
+}
+}
+}

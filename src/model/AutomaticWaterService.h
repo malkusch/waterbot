@@ -5,17 +5,20 @@
  *      Author: malkusch
  */
 
-#ifndef MODEL_AUTOMATICWATERSERVICE_H_
-#define MODEL_AUTOMATICWATERSERVICE_H_
+#pragma once
 
 #include <Arduino.h>
 
 #include "SensorData.h"
 #include "Pot.h"
 
+namespace waterbot {
+namespace model {
+
 class AutomaticWaterService {
 public:
-	AutomaticWaterService(byte waterSeconds, unsigned int coolDownSeconds, byte maxWaterlessDays);
+	AutomaticWaterService(byte waterSeconds, unsigned int coolDownSeconds,
+			byte maxWaterlessDays);
 	void waterIfNeeded(Pot *pot);
 
 private:
@@ -23,8 +26,8 @@ private:
 	const unsigned int coolDownSeconds;
 	const byte maxWaterlessDays;
 
-	bool isHot(const Pot *pot);
-	bool isTooLongWaterLess(const Pot *pot);
+	bool isHot(const Pot *pot);bool isTooLongWaterLess(const Pot *pot);
 };
 
-#endif /* MODEL_AUTOMATICWATERSERVICE_H_ */
+}
+}

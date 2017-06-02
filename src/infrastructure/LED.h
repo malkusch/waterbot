@@ -8,18 +8,21 @@
 #pragma once
 
 #include <Arduino.h>
+#include "pin/DigitalOutputPin.h"
 
 namespace waterbot {
 namespace infrastructure {
 
+using pin::DigitalOutputPin;
+
 class LED {
 public:
-	LED(const byte pin);
+	LED(DigitalOutputPin* pin);
 	void turnOn();
 	void turnOff();
 
 private:
-	const byte pin;
+	DigitalOutputPin* pin;
 };
 
 }

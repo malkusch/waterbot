@@ -13,6 +13,8 @@
 
 #include "../infrastructure/logger/Logger.h"
 
+using waterbot::model::Pot;
+
 byte Pot::nextId = 1;
 
 Pot::Pot(MoistureSensor* moistureSensor, TemperatureSensor* temperatureSensor,
@@ -63,3 +65,4 @@ SensorData Pot::readSensors() {
 
 	return data;
 }
+

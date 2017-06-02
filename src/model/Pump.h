@@ -5,23 +5,28 @@
  *      Author: malkusch
  */
 
-#ifndef PUMP_H_
-#define PUMP_H_
+#pragma once
 
 #include <Arduino.h>
+#include "../infrastructure/pin/DigitalOutputPin.h"
+
+namespace waterbot {
+namespace model {
+
+using waterbot::infrastructure::pin::DigitalOutputPin;
 
 class Pump {
 
 	friend class Pot;
 
 public:
-	Pump(byte pin, unsigned int turnOffDelayMillis);
+	Pump(DigitalOutputPin* pin, unsigned int turnOffDelayMillis);
 
 protected:
 	void pump(byte seconds);
 
 private:
-	const byte pin;
+	DigitalOutputPin* pin;
 	const unsigned int turnOffDelayMillis;
 
 	void turnOff();
@@ -30,4 +35,5 @@ private:
 
 };
 
-#endif /* PUMP_H_ */
+}
+}

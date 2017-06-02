@@ -12,6 +12,8 @@
 #include "../infrastructure/logger/Logger.h"
 #include "../infrastructure/TimeUnits.h"
 
+using waterbot::model::AutomaticWaterService;
+
 AutomaticWaterService::AutomaticWaterService(byte waterSeconds,
 		unsigned int coolDownSeconds, byte maxWaterlessDays) :
 		waterSeconds(waterSeconds), coolDownSeconds(coolDownSeconds), maxWaterlessDays(

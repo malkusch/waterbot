@@ -3,6 +3,7 @@
 #include "waterbot.h"
 
 #include <Arduino.h>
+#define REQUIRESALARMS false
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 #include <OneWire/OneWire.h>
 #include <pins_arduino.h>
@@ -15,23 +16,43 @@
 #include "src/infrastructure/onboard/OnboardDCMoistureSensor.h"
 #include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/onewire/DallasTemperatureSensor.h"
+#include "src/infrastructure/pin/onboard/OnboardAnalogInputPin.h"
+#include "src/infrastructure/pin/onboard/OnboardDigitalOutputPin.h"
 #include "src/infrastructure/rtc/DS1307RTC.h"
 #include "src/infrastructure/TimeUnits.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 
+using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
+using waterbot::infrastructure::pin::onboard::OnboardAnalogInputPin;
+using waterbot::infrastructure::onboard::OnboardValve;
+using waterbot::infrastructure::onboard::OnboardDCMoistureSensor;
+using waterbot::model::Pump;
+using waterbot::model::AutomaticWaterService;
+using waterbot::model::Pot;
+
 #if LOGGER == LOGGER_SD
+
 #include "src/infrastructure/logger/SDLogger.h"
 SDLogger logger(LOG_FILE);
+
 #else
+
 #include "src/infrastructure/logger/SerialLogger.h"
 #include "src/infrastructure/LED.h"
+
 using waterbot::infrastructure::LED;
-SerialLogger logger(LED(LED_BUILTIN), LED(LED_BUILTIN));
+
+OnboardDigitalOutputPin builtinLEDPin(LED_BUILTIN);
+LED warnLED(&builtinLEDPin);
+LED errorLED(&builtinLEDPin);
+SerialLogger logger(warnLED, errorLED);
+
 #endif
 
-Pump pump(PIN_PUMP, PUMP_TURN_OFF_DELAY_MILLIS);
+OnboardDigitalOutputPin pumpPin(PIN_PUMP);
+Pump pump(&pumpPin, PUMP_TURN_OFF_DELAY_MILLIS);
 
 // MillisRTC rtc;
 RTC_DS1307 ds1307;
@@ -46,27 +67,33 @@ MAX_WATERLESS_DAYS);
 
 ThresholdDryStrategy thresholdDryStrategy(MOISTURE_THRESHOLD);
 
-OnboardDCMoistureSensor moistureSensor1(PIN_POT1_MOISTURE_VOLTAGE,
-PIN_POT1_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
-
-OnboardValve valve1(PIN_POT1_VALVE, VALVE_DELAY_MILLIS);
-
+OnboardAnalogInputPin moistureSensor1SensorPin(PIN_POT1_MOISTURE_SENSOR);
+OnboardDigitalOutputPin moistureSensor1VoltagePin(PIN_POT1_MOISTURE_VOLTAGE);
+OnboardDCMoistureSensor moistureSensor1(&moistureSensor1VoltagePin,
+		&moistureSensor1SensorPin, MOISTURE_READ_COUNT,
+		MOISTURE_VOLTAGE_DELAY_MILLIS);
+OnboardDigitalOutputPin valve1Pin(PIN_POT1_VALVE);
+OnboardValve valve1(&valve1Pin, VALVE_DELAY_MILLIS);
 Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &thresholdDryStrategy,
 		&valve1, &pump);
 
-OnboardDCMoistureSensor moistureSensor2(PIN_POT2_MOISTURE_VOLTAGE,
-PIN_POT2_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
-
-OnboardValve valve2(PIN_POT2_VALVE, VALVE_DELAY_MILLIS);
-
+OnboardAnalogInputPin moistureSensor2SensorPin(PIN_POT2_MOISTURE_SENSOR);
+OnboardDigitalOutputPin moistureSensor2VoltagePin(PIN_POT2_MOISTURE_VOLTAGE);
+OnboardDCMoistureSensor moistureSensor2(&moistureSensor2VoltagePin,
+		&moistureSensor2SensorPin, MOISTURE_READ_COUNT,
+		MOISTURE_VOLTAGE_DELAY_MILLIS);
+OnboardDigitalOutputPin valve2Pin(PIN_POT2_VALVE);
+OnboardValve valve2(&valve2Pin, VALVE_DELAY_MILLIS);
 Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &thresholdDryStrategy,
 		&valve2, &pump);
 
-OnboardDCMoistureSensor moistureSensor3(PIN_POT3_MOISTURE_VOLTAGE,
-PIN_POT3_MOISTURE_SENSOR, MOISTURE_READ_COUNT, MOISTURE_VOLTAGE_DELAY_MILLIS);
-
-OnboardValve valve3(PIN_POT3_VALVE, VALVE_DELAY_MILLIS);
-
+OnboardAnalogInputPin moistureSensor3SensorPin(PIN_POT3_MOISTURE_SENSOR);
+OnboardDigitalOutputPin moistureSensor3VoltagePin(PIN_POT3_MOISTURE_VOLTAGE);
+OnboardDCMoistureSensor moistureSensor3(&moistureSensor3VoltagePin,
+		&moistureSensor3SensorPin, MOISTURE_READ_COUNT,
+		MOISTURE_VOLTAGE_DELAY_MILLIS);
+OnboardDigitalOutputPin valve3Pin(PIN_POT3_VALVE);
+OnboardValve valve3(&valve3Pin, VALVE_DELAY_MILLIS);
 Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &thresholdDryStrategy,
 		&valve3, &pump);
 

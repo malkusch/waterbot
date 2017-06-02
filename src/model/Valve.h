@@ -5,8 +5,10 @@
  *      Author: malkusch
  */
 
-#ifndef VALVE_H_
-#define VALVE_H_
+#pragma once
+
+namespace waterbot {
+namespace model {
 
 class Valve {
 	friend class Pot;
@@ -20,4 +22,5 @@ protected:
 
 };
 
-#endif /* VALVE_H_ */
+}
+}

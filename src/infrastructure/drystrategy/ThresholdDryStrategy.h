@@ -11,7 +11,9 @@
 #include "../../model/DryStrategy.h"
 #include "../../model/SensorData.h"
 
-class ThresholdDryStrategy : public DryStrategy {
+using waterbot::model::DryStrategy;
+
+class ThresholdDryStrategy: public DryStrategy {
 public:
 	ThresholdDryStrategy(int moistureThreshold);
 

@@ -5,17 +5,24 @@
  *      Author: malkusch
  */
 
-#ifndef ONBOARD_MOISTURESENSOR_H_
-#define ONBOARD_MOISTURESENSOR_H_
+#pragma once
 
 #include <Arduino.h>
 
 #include "AnalogMoistureSensor.h"
+#include "../pin/DigitalOutputPin.h"
+
+namespace waterbot {
+namespace infrastructure {
+namespace onboard {
+
+using pin::DigitalOutputPin;
 
 class OnboardACMoistureSensor: public AnalogMoistureSensor {
 
 public:
-	OnboardACMoistureSensor(byte voltagePin1, byte voltagePin2, byte sensorPin,
+	OnboardACMoistureSensor(DigitalOutputPin* voltagePin1,
+			DigitalOutputPin* voltagePin2, AnalogInputPin* sensorPin,
 			byte readCount, unsigned int voltageDelayMillis);
 
 protected:
@@ -23,8 +30,8 @@ protected:
 	virtual void readRawMoisture(float data[], const byte readCount);
 
 private:
-	const byte voltagePin1;
-	const byte voltagePin2;
+	DigitalOutputPin* voltagePin1;
+	DigitalOutputPin* voltagePin2;
 	const unsigned int voltageDelayMillis;bool pin1ToPin2;
 
 	void turnOnVoltage();
@@ -33,4 +40,6 @@ private:
 	void turnOffVoltageWithoutDelay();
 };
 
-#endif /* ONBOARD_MOISTURESENSOR_H_ */
+}
+}
+}

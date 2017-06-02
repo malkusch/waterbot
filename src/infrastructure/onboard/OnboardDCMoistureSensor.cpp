@@ -7,12 +7,16 @@
 
 #include "OnboardDCMoistureSensor.h"
 
-OnboardDCMoistureSensor::OnboardDCMoistureSensor(byte voltagePin,
-		byte sensorPin, byte readCount, unsigned int voltageDelayMillis) :
+using waterbot::infrastructure::onboard::OnboardDCMoistureSensor;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
+
+OnboardDCMoistureSensor::OnboardDCMoistureSensor(DigitalOutputPin* voltagePin,
+		AnalogInputPin* sensorPin, byte readCount,
+		unsigned int voltageDelayMillis) :
 		AnalogMoistureSensor(sensorPin, readCount), voltagePin(voltagePin), voltageDelayMillis(
 				voltageDelayMillis) {
 
-	pinMode(voltagePin, OUTPUT);
 	turnOffVoltage();
 }
 
@@ -27,7 +31,7 @@ void OnboardDCMoistureSensor::readRawMoisture(float data[],
 }
 
 void OnboardDCMoistureSensor::turnOnVoltage() {
-	digitalWrite(voltagePin, HIGH);
+	voltagePin->write(ON);
 
 	/*
 	 * Wait until any capacitive or inductive effects of the wire
@@ -37,5 +41,5 @@ void OnboardDCMoistureSensor::turnOnVoltage() {
 }
 
 void OnboardDCMoistureSensor::turnOffVoltage() {
-	digitalWrite(voltagePin, LOW);
+	voltagePin->write(OFF);
 }

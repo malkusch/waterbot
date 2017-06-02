@@ -7,15 +7,18 @@
 
 #include "OnboardValve.h"
 
-OnboardValve::OnboardValve(byte pin, unsigned int delayMillis) :
+using waterbot::infrastructure::onboard::OnboardValve;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
+
+OnboardValve::OnboardValve(DigitalOutputPin* pin, unsigned int delayMillis) :
 		pin(pin), delayMillis(delayMillis) {
 
-	pinMode(pin, OUTPUT);
 	closeWithoutDelay(); // You can't delay within a constructor
 }
 
 void OnboardValve::open() {
-	digitalWrite(pin, HIGH);
+	pin->write(ON);
 	delay(delayMillis);
 }
 
@@ -25,5 +28,5 @@ void OnboardValve::close() {
 }
 
 void OnboardValve::closeWithoutDelay() {
-	digitalWrite(pin, LOW);
+	pin->write(OFF);
 }

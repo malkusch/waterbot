@@ -7,16 +7,17 @@
 
 #include "OnboardACMoistureSensor.h"
 
-OnboardACMoistureSensor::OnboardACMoistureSensor(byte voltagePin1,
-		byte voltagePin2, byte sensorPin, byte readCount,
-		unsigned int voltageDelayMillis) :
+using waterbot::infrastructure::onboard::OnboardACMoistureSensor;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
+
+OnboardACMoistureSensor::OnboardACMoistureSensor(DigitalOutputPin* voltagePin1,
+		DigitalOutputPin* voltagePin2, AnalogInputPin* sensorPin,
+		byte readCount, unsigned int voltageDelayMillis) :
 		AnalogMoistureSensor(sensorPin, readCount), voltagePin1(voltagePin1), voltagePin2(
 				voltagePin2), voltageDelayMillis(voltageDelayMillis) {
 
 	pin1ToPin2 = true;
-
-	pinMode(voltagePin1, OUTPUT);
-	pinMode(voltagePin2, OUTPUT);
 	turnOffVoltageWithoutDelay();
 }
 
@@ -46,11 +47,11 @@ int OnboardACMoistureSensor::singleReadMoisture() {
 
 void OnboardACMoistureSensor::turnOnVoltage() {
 	if (pin1ToPin2) {
-		digitalWrite(voltagePin2, LOW);
-		digitalWrite(voltagePin1, HIGH);
+		voltagePin2->write(OFF);
+		voltagePin1->write(ON);
 	} else {
-		digitalWrite(voltagePin1, LOW);
-		digitalWrite(voltagePin2, HIGH);
+		voltagePin1->write(OFF);
+		voltagePin2->write(ON);
 	}
 
 	/*
@@ -76,6 +77,6 @@ void OnboardACMoistureSensor::turnOffVoltage() {
 }
 
 void OnboardACMoistureSensor::turnOffVoltageWithoutDelay() {
-	digitalWrite(voltagePin1, LOW);
-	digitalWrite(voltagePin2, LOW);
+	voltagePin1->write(OFF);
+	voltagePin2->write(OFF);
 }

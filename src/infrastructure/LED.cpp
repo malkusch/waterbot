@@ -8,19 +8,20 @@
 #include "LED.h"
 
 using waterbot::infrastructure::LED;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
 
-LED::LED(const byte pin) :
+LED::LED(DigitalOutputPin* pin) :
 		pin(pin) {
 
-	pinMode(pin, OUTPUT);
 	turnOff();
 }
 
 void LED::turnOn() {
-	digitalWrite(pin, HIGH);
+	pin->write(ON);
 }
 
 void LED::turnOff() {
-	digitalWrite(pin, LOW);
+	pin->write(OFF);
 }
 

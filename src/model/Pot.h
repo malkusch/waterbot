@@ -5,8 +5,7 @@
  *      Author: malkusch
  */
 
-#ifndef MODEL_POT_H_
-#define MODEL_POT_H_
+#pragma once
 
 #include <Arduino.h>
 
@@ -17,6 +16,9 @@
 #include "SensorData.h"
 #include "TemperatureSensor.h"
 #include "Valve.h"
+
+namespace waterbot {
+namespace model {
 
 class Pot {
 public:
@@ -38,4 +40,5 @@ private:
 	SensorData readSensors();
 };
 
-#endif /* POT_H_ */
+}
+}

@@ -9,9 +9,8 @@
 #define SRC_INFRASTRUCTURE_ONEWIRE_DALLASTEMPERATURESENSOR_H_
 
 #include "../../model/TemperatureSensor.h"
-#include "../../../libraries/Arduino-Temperature-Control-Library/DallasTemperature.h"
+#include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 
-#define REQUIRESALARMS false
 #define DALLAS_RETRIES 3
 
 class DallasTemperatureSensor: public TemperatureSensor {

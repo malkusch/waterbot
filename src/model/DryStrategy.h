@@ -5,10 +5,12 @@
  *      Author: malkusch
  */
 
-#ifndef MODEL_DRYSTRATEGY_H_
-#define MODEL_DRYSTRATEGY_H_
+#pragma once
 
 #include "SensorData.h"
+
+namespace waterbot {
+namespace model {
 
 class DryStrategy {
 	friend class Pot;
@@ -21,4 +23,5 @@ protected:
 	virtual bool isDry(SensorData) = 0;
 };
 
-#endif /* MODEL_DRYSTRATEGY_H_ */
+}
+}
