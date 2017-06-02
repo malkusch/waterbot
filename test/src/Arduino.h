@@ -20,10 +20,12 @@ typedef unsigned int uint8_t __attribute__((__mode__(__QI__)));
 typedef __SIZE_TYPE__ size_t;
 
 void delay(unsigned long ms);
+void delayMicroseconds(unsigned int us);
 unsigned long millis();
 void setMillis(unsigned long millis);
 void pinMode(uint8_t pin, uint8_t mode);
 void digitalWrite(uint8_t pin, uint8_t val);
+uint8_t getPinState(uint8_t pin);
 int analogRead(uint8_t pin);
 
 class String {
