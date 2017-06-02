@@ -22,3 +22,6 @@
 [submodule "libraries/SdFat"]
 	path = libraries/SdFat
 	url = https://github.com/greiman/SdFat.git
+[submodule "libraries/Arduino-PCF8574"]
+	path = libraries/Arduino-PCF8574
+	url = https://github.com/Beirdo/Arduino-PCF8574.git
