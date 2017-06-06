@@ -1,15 +1,14 @@
 
-Data = csvread ("moist4.log");
-for session = 5:14
-	Data2 = csvread (sprintf("moist%d.log", session))(:,1:5);
-	Data2(:,1) = Data2(:,1) + max(Data(:,1));
-	if (session == 10)
-		Data2(:,3)=1023-Data2(:,3);
+Data = [];
+for session = 0:9999
+	file = sprintf("waterbot-%d.log", session);
+	if !exist(file)
+		break
 	endif
-	Data = [Data;Data2];
+	L = csvread(file)(:,1:5);
+	L = L(and(L(:,3)>0, L(:,2)==Inf),:);
+	Data = [Data;L];
 endfor
-
-Data = Data(Data(:,2)==Inf,:);
 
 sensors = max(Data(:,4));
 n = 2;
@@ -22,7 +21,7 @@ day = 24 * 3;
 for sensor = 1:sensors
 
 	A = Data(and(Data(:,sensorColumn)==sensor, Data(:,2)==Inf), :);
-	x = round(A(:,1)/(1000*60))/60;
+	x = A(:,1);
 	y = A(:,dataColumn);
 
 	Y = nan(day, ceil(length(y)/day));

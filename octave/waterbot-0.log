@@ -1,0 +1,23 @@
+1496327648,INFO,Reset reason: no reason (0)
+1496327648,INFO,Watering pot 1
+1496327652,INFO,Watering pot 2
+1496327657,INFO,Watering pot 3
+1496327661,DEBUG,Free memory: 519
+1496327671,DEBUG,Sensor at pin 14 has 0.00 error
+1496327671,WARN,Retry reading temperature
+1496327671,WARN,Retry reading temperature
+1496327671,WARN,Retry reading temperature
+1496327671,ERROR,Failed reading temperature
+1496327671,INFO,398, 1,   -1.00
+1496327681,DEBUG,Sensor at pin 15 has 0.00 error
+1496327681,WARN,Retry reading temperature
+1496327681,WARN,Retry reading temperature
+1496327681,WARN,Retry reading temperature
+1496327681,ERROR,Failed reading temperature
+1496327681,INFO,371, 2,   -1.00
+1496327691,DEBUG,Sensor at pin 16 has 0.16 error
+1496327691,WARN,Retry reading temperature
+1496327691,WARN,Retry reading temperature
+1496327691,WARN,Retry reading temperature
+1496327691,ERROR,Failed reading temperature
+1496327691,INFO,507, 3,   -1.00
