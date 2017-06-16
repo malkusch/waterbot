@@ -1,0 +1,1482 @@
+1497520524,DEBUG,Free memory: 519
+1497520534,DEBUG,Sensor at pin 14 has 0.13 error
+1497520534,WARN,Retry reading temperature
+1497520534,WARN,Retry reading temperature
+1497520534,WARN,Retry reading temperature
+1497520534,ERROR,Failed reading temperature
+1497520534,INFO,626, 1,   -1.00
+1497520544,DEBUG,Sensor at pin 15 has 0.21 error
+1497520544,WARN,Retry reading temperature
+1497520544,WARN,Retry reading temperature
+1497520544,WARN,Retry reading temperature
+1497520544,ERROR,Failed reading temperature
+1497520544,INFO,657, 2,   -1.00
+1497520554,DEBUG,Sensor at pin 16 has 0.28 error
+1497520554,WARN,Retry reading temperature
+1497520554,WARN,Retry reading temperature
+1497520554,WARN,Retry reading temperature
+1497520554,ERROR,Failed reading temperature
+1497520554,INFO,762, 3,   -1.00
+1497521751,DEBUG,Free memory: 519
+1497521761,DEBUG,Sensor at pin 14 has 0.16 error
+1497521761,WARN,Retry reading temperature
+1497521761,WARN,Retry reading temperature
+1497521761,WARN,Retry reading temperature
+1497521761,ERROR,Failed reading temperature
+1497521761,INFO,629, 1,   -1.00
+1497521771,DEBUG,Sensor at pin 15 has 0.10 error
+1497521771,WARN,Retry reading temperature
+1497521771,WARN,Retry reading temperature
+1497521771,WARN,Retry reading temperature
+1497521771,ERROR,Failed reading temperature
+1497521771,INFO,656, 2,   -1.00
+1497521781,DEBUG,Sensor at pin 16 has 0.15 error
+1497521781,WARN,Retry reading temperature
+1497521781,WARN,Retry reading temperature
+1497521781,WARN,Retry reading temperature
+1497521781,ERROR,Failed reading temperature
+1497521781,INFO,760, 3,   -1.00
+1497522978,DEBUG,Free memory: 519
+1497522988,DEBUG,Sensor at pin 14 has 0.10 error
+1497522988,WARN,Retry reading temperature
+1497522988,WARN,Retry reading temperature
+1497522988,WARN,Retry reading temperature
+1497522988,ERROR,Failed reading temperature
+1497522988,INFO,633, 1,   -1.00
+1497522998,DEBUG,Sensor at pin 15 has 0.25 error
+1497522998,WARN,Retry reading temperature
+1497522998,WARN,Retry reading temperature
+1497522998,WARN,Retry reading temperature
+1497522998,ERROR,Failed reading temperature
+1497522998,INFO,667, 2,   -1.00
+1497523008,DEBUG,Sensor at pin 16 has 0.16 error
+1497523008,WARN,Retry reading temperature
+1497523008,WARN,Retry reading temperature
+1497523008,WARN,Retry reading temperature
+1497523008,ERROR,Failed reading temperature
+1497523008,INFO,756, 3,   -1.00
+1497524205,DEBUG,Free memory: 519
+1497524215,DEBUG,Sensor at pin 14 has 0.21 error
+1497524215,WARN,Retry reading temperature
+1497524215,WARN,Retry reading temperature
+1497524215,WARN,Retry reading temperature
+1497524216,ERROR,Failed reading temperature
+1497524216,INFO,645, 1,   -1.00
+1497524226,DEBUG,Sensor at pin 15 has 0.18 error
+1497524226,WARN,Retry reading temperature
+1497524226,WARN,Retry reading temperature
+1497524226,WARN,Retry reading temperature
+1497524226,ERROR,Failed reading temperature
+1497524226,INFO,657, 2,   -1.00
+1497524236,DEBUG,Sensor at pin 16 has 0.13 error
+1497524236,WARN,Retry reading temperature
+1497524236,WARN,Retry reading temperature
+1497524236,WARN,Retry reading temperature
+1497524236,ERROR,Failed reading temperature
+1497524236,INFO,755, 3,   -1.00
+1497525433,DEBUG,Free memory: 519
+1497525443,DEBUG,Sensor at pin 14 has 0.00 error
+1497525443,WARN,Retry reading temperature
+1497525443,WARN,Retry reading temperature
+1497525443,WARN,Retry reading temperature
+1497525443,ERROR,Failed reading temperature
+1497525443,INFO,643, 1,   -1.00
+1497525453,DEBUG,Sensor at pin 15 has 0.17 error
+1497525453,WARN,Retry reading temperature
+1497525453,WARN,Retry reading temperature
+1497525453,WARN,Retry reading temperature
+1497525453,ERROR,Failed reading temperature
+1497525453,INFO,660, 2,   -1.00
+1497525463,DEBUG,Sensor at pin 16 has 0.28 error
+1497525463,WARN,Retry reading temperature
+1497525463,WARN,Retry reading temperature
+1497525463,WARN,Retry reading temperature
+1497525463,ERROR,Failed reading temperature
+1497525463,INFO,754, 3,   -1.00
+1497526660,DEBUG,Free memory: 519
+1497526670,DEBUG,Sensor at pin 14 has 0.37 error
+1497526670,WARN,Retry reading temperature
+1497526670,WARN,Retry reading temperature
+1497526670,WARN,Retry reading temperature
+1497526670,ERROR,Failed reading temperature
+1497526670,INFO,647, 1,   -1.00
+1497526680,DEBUG,Sensor at pin 15 has 0.27 error
+1497526680,WARN,Retry reading temperature
+1497526680,WARN,Retry reading temperature
+1497526680,WARN,Retry reading temperature
+1497526680,ERROR,Failed reading temperature
+1497526680,INFO,665, 2,   -1.00
+1497526690,DEBUG,Sensor at pin 16 has 0.10 error
+1497526690,WARN,Retry reading temperature
+1497526690,WARN,Retry reading temperature
+1497526690,WARN,Retry reading temperature
+1497526690,ERROR,Failed reading temperature
+1497526690,INFO,752, 3,   -1.00
+1497527888,DEBUG,Free memory: 519
+1497527898,DEBUG,Sensor at pin 14 has 0.10 error
+1497527898,WARN,Retry reading temperature
+1497527898,WARN,Retry reading temperature
+1497527898,WARN,Retry reading temperature
+1497527898,ERROR,Failed reading temperature
+1497527898,INFO,654, 1,   -1.00
+1497527908,DEBUG,Sensor at pin 15 has 0.15 error
+1497527908,WARN,Retry reading temperature
+1497527908,WARN,Retry reading temperature
+1497527908,WARN,Retry reading temperature
+1497527908,ERROR,Failed reading temperature
+1497527908,INFO,663, 2,   -1.00
+1497527918,DEBUG,Sensor at pin 16 has 0.10 error
+1497527918,WARN,Retry reading temperature
+1497527918,WARN,Retry reading temperature
+1497527918,WARN,Retry reading temperature
+1497527918,ERROR,Failed reading temperature
+1497527918,INFO,751, 3,   -1.00
+1497529122,DEBUG,Free memory: 519
+1497529132,DEBUG,Sensor at pin 14 has 0.15 error
+1497529132,WARN,Retry reading temperature
+1497529132,WARN,Retry reading temperature
+1497529132,WARN,Retry reading temperature
+1497529132,ERROR,Failed reading temperature
+1497529132,INFO,652, 1,   -1.00
+1497529142,DEBUG,Sensor at pin 15 has 0.34 error
+1497529142,WARN,Retry reading temperature
+1497529142,WARN,Retry reading temperature
+1497529142,WARN,Retry reading temperature
+1497529142,ERROR,Failed reading temperature
+1497529142,INFO,671, 2,   -1.00
+1497529152,DEBUG,Sensor at pin 16 has 0.16 error
+1497529152,WARN,Retry reading temperature
+1497529152,WARN,Retry reading temperature
+1497529152,WARN,Retry reading temperature
+1497529152,ERROR,Failed reading temperature
+1497529152,INFO,749, 3,   -1.00
+1497530352,DEBUG,Free memory: 519
+1497530362,DEBUG,Sensor at pin 14 has 0.13 error
+1497530362,WARN,Retry reading temperature
+1497530362,WARN,Retry reading temperature
+1497530362,WARN,Retry reading temperature
+1497530362,ERROR,Failed reading temperature
+1497530362,INFO,656, 1,   -1.00
+1497530372,DEBUG,Sensor at pin 15 has 0.13 error
+1497530372,WARN,Retry reading temperature
+1497530372,WARN,Retry reading temperature
+1497530372,WARN,Retry reading temperature
+1497530372,ERROR,Failed reading temperature
+1497530372,INFO,664, 2,   -1.00
+1497530382,DEBUG,Sensor at pin 16 has 0.20 error
+1497530382,WARN,Retry reading temperature
+1497530382,WARN,Retry reading temperature
+1497530382,WARN,Retry reading temperature
+1497530382,ERROR,Failed reading temperature
+1497530382,INFO,746, 3,   -1.00
+1497531579,DEBUG,Free memory: 519
+1497531589,DEBUG,Sensor at pin 14 has 0.17 error
+1497531589,WARN,Retry reading temperature
+1497531589,WARN,Retry reading temperature
+1497531589,WARN,Retry reading temperature
+1497531589,ERROR,Failed reading temperature
+1497531589,INFO,657, 1,   -1.00
+1497531599,DEBUG,Sensor at pin 15 has 0.00 error
+1497531599,WARN,Retry reading temperature
+1497531599,WARN,Retry reading temperature
+1497531599,WARN,Retry reading temperature
+1497531599,ERROR,Failed reading temperature
+1497531599,INFO,664, 2,   -1.00
+1497531609,DEBUG,Sensor at pin 16 has 0.16 error
+1497531609,WARN,Retry reading temperature
+1497531609,WARN,Retry reading temperature
+1497531609,WARN,Retry reading temperature
+1497531609,ERROR,Failed reading temperature
+1497531609,INFO,748, 3,   -1.00
+1497532807,DEBUG,Free memory: 519
+1497532817,DEBUG,Sensor at pin 14 has 0.15 error
+1497532817,WARN,Retry reading temperature
+1497532817,WARN,Retry reading temperature
+1497532817,WARN,Retry reading temperature
+1497532817,ERROR,Failed reading temperature
+1497532817,INFO,656, 1,   -1.00
+1497532827,DEBUG,Sensor at pin 15 has 0.13 error
+1497532827,WARN,Retry reading temperature
+1497532827,WARN,Retry reading temperature
+1497532827,WARN,Retry reading temperature
+1497532827,ERROR,Failed reading temperature
+1497532827,INFO,659, 2,   -1.00
+1497532837,DEBUG,Sensor at pin 16 has 0.22 error
+1497532837,WARN,Retry reading temperature
+1497532837,WARN,Retry reading temperature
+1497532837,WARN,Retry reading temperature
+1497532837,ERROR,Failed reading temperature
+1497532837,INFO,748, 3,   -1.00
+1497534034,DEBUG,Free memory: 519
+1497534044,DEBUG,Sensor at pin 14 has 0.15 error
+1497534044,WARN,Retry reading temperature
+1497534044,WARN,Retry reading temperature
+1497534044,WARN,Retry reading temperature
+1497534044,ERROR,Failed reading temperature
+1497534044,INFO,655, 1,   -1.00
+1497534054,DEBUG,Sensor at pin 15 has 0.21 error
+1497534054,WARN,Retry reading temperature
+1497534054,WARN,Retry reading temperature
+1497534054,WARN,Retry reading temperature
+1497534054,ERROR,Failed reading temperature
+1497534054,INFO,661, 2,   -1.00
+1497534064,DEBUG,Sensor at pin 16 has 0.31 error
+1497534064,WARN,Retry reading temperature
+1497534064,WARN,Retry reading temperature
+1497534064,WARN,Retry reading temperature
+1497534064,ERROR,Failed reading temperature
+1497534064,INFO,741, 3,   -1.00
+1497535261,DEBUG,Free memory: 519
+1497535271,DEBUG,Sensor at pin 14 has 0.10 error
+1497535271,WARN,Retry reading temperature
+1497535271,WARN,Retry reading temperature
+1497535271,WARN,Retry reading temperature
+1497535271,ERROR,Failed reading temperature
+1497535271,INFO,658, 1,   -1.00
+1497535281,DEBUG,Sensor at pin 15 has 0.18 error
+1497535281,WARN,Retry reading temperature
+1497535281,WARN,Retry reading temperature
+1497535281,WARN,Retry reading temperature
+1497535281,ERROR,Failed reading temperature
+1497535281,INFO,663, 2,   -1.00
+1497535291,DEBUG,Sensor at pin 16 has 0.18 error
+1497535291,WARN,Retry reading temperature
+1497535291,WARN,Retry reading temperature
+1497535291,WARN,Retry reading temperature
+1497535291,ERROR,Failed reading temperature
+1497535291,INFO,742, 3,   -1.00
+1497536489,DEBUG,Free memory: 519
+1497536499,DEBUG,Sensor at pin 14 has 0.16 error
+1497536499,WARN,Retry reading temperature
+1497536499,WARN,Retry reading temperature
+1497536499,WARN,Retry reading temperature
+1497536499,ERROR,Failed reading temperature
+1497536499,INFO,660, 1,   -1.00
+1497536509,DEBUG,Sensor at pin 15 has 0.00 error
+1497536509,WARN,Retry reading temperature
+1497536509,WARN,Retry reading temperature
+1497536509,WARN,Retry reading temperature
+1497536509,ERROR,Failed reading temperature
+1497536509,INFO,666, 2,   -1.00
+1497536519,DEBUG,Sensor at pin 16 has 0.27 error
+1497536519,WARN,Retry reading temperature
+1497536519,WARN,Retry reading temperature
+1497536519,WARN,Retry reading temperature
+1497536519,ERROR,Failed reading temperature
+1497536519,INFO,737, 3,   -1.00
+1497537717,DEBUG,Free memory: 519
+1497537727,DEBUG,Sensor at pin 14 has 0.00 error
+1497537727,WARN,Retry reading temperature
+1497537727,WARN,Retry reading temperature
+1497537727,WARN,Retry reading temperature
+1497537727,ERROR,Failed reading temperature
+1497537727,INFO,662, 1,   -1.00
+1497537737,DEBUG,Sensor at pin 15 has 0.10 error
+1497537737,WARN,Retry reading temperature
+1497537737,WARN,Retry reading temperature
+1497537737,WARN,Retry reading temperature
+1497537737,ERROR,Failed reading temperature
+1497537737,INFO,665, 2,   -1.00
+1497537747,DEBUG,Sensor at pin 16 has 0.16 error
+1497537747,WARN,Retry reading temperature
+1497537747,WARN,Retry reading temperature
+1497537747,WARN,Retry reading temperature
+1497537747,ERROR,Failed reading temperature
+1497537747,INFO,739, 3,   -1.00
+1497538944,DEBUG,Free memory: 519
+1497538954,DEBUG,Sensor at pin 14 has 0.33 error
+1497538954,WARN,Retry reading temperature
+1497538954,WARN,Retry reading temperature
+1497538954,WARN,Retry reading temperature
+1497538954,ERROR,Failed reading temperature
+1497538954,INFO,660, 1,   -1.00
+1497538964,DEBUG,Sensor at pin 15 has 0.17 error
+1497538964,WARN,Retry reading temperature
+1497538964,WARN,Retry reading temperature
+1497538964,WARN,Retry reading temperature
+1497538964,ERROR,Failed reading temperature
+1497538964,INFO,664, 2,   -1.00
+1497538974,DEBUG,Sensor at pin 16 has 0.00 error
+1497538974,WARN,Retry reading temperature
+1497538974,WARN,Retry reading temperature
+1497538974,WARN,Retry reading temperature
+1497538974,ERROR,Failed reading temperature
+1497538974,INFO,737, 3,   -1.00
+1497540171,DEBUG,Free memory: 519
+1497540181,DEBUG,Sensor at pin 14 has 0.16 error
+1497540181,WARN,Retry reading temperature
+1497540181,WARN,Retry reading temperature
+1497540181,WARN,Retry reading temperature
+1497540181,ERROR,Failed reading temperature
+1497540181,INFO,669, 1,   -1.00
+1497540191,DEBUG,Sensor at pin 15 has 0.00 error
+1497540191,WARN,Retry reading temperature
+1497540191,WARN,Retry reading temperature
+1497540191,WARN,Retry reading temperature
+1497540191,ERROR,Failed reading temperature
+1497540191,INFO,666, 2,   -1.00
+1497540201,DEBUG,Sensor at pin 16 has 0.15 error
+1497540201,WARN,Retry reading temperature
+1497540201,WARN,Retry reading temperature
+1497540201,WARN,Retry reading temperature
+1497540201,ERROR,Failed reading temperature
+1497540201,INFO,740, 3,   -1.00
+1497541397,DEBUG,Free memory: 519
+1497541407,DEBUG,Sensor at pin 14 has 0.15 error
+1497541407,WARN,Retry reading temperature
+1497541407,WARN,Retry reading temperature
+1497541407,WARN,Retry reading temperature
+1497541407,ERROR,Failed reading temperature
+1497541407,INFO,670, 1,   -1.00
+1497541417,DEBUG,Sensor at pin 15 has 0.10 error
+1497541417,WARN,Retry reading temperature
+1497541417,WARN,Retry reading temperature
+1497541417,WARN,Retry reading temperature
+1497541417,ERROR,Failed reading temperature
+1497541417,INFO,670, 2,   -1.00
+1497541427,DEBUG,Sensor at pin 16 has 0.13 error
+1497541427,WARN,Retry reading temperature
+1497541427,WARN,Retry reading temperature
+1497541427,WARN,Retry reading temperature
+1497541427,ERROR,Failed reading temperature
+1497541427,INFO,735, 3,   -1.00
+1497542624,DEBUG,Free memory: 519
+1497542634,DEBUG,Sensor at pin 14 has 0.63 error
+1497542634,WARN,Retry reading temperature
+1497542634,WARN,Retry reading temperature
+1497542634,WARN,Retry reading temperature
+1497542634,ERROR,Failed reading temperature
+1497542634,INFO,675, 1,   -1.00
+1497542644,DEBUG,Sensor at pin 15 has 0.10 error
+1497542644,WARN,Retry reading temperature
+1497542644,WARN,Retry reading temperature
+1497542644,WARN,Retry reading temperature
+1497542644,ERROR,Failed reading temperature
+1497542644,INFO,673, 2,   -1.00
+1497542654,DEBUG,Sensor at pin 16 has 0.18 error
+1497542654,WARN,Retry reading temperature
+1497542654,WARN,Retry reading temperature
+1497542654,WARN,Retry reading temperature
+1497542654,ERROR,Failed reading temperature
+1497542654,INFO,734, 3,   -1.00
+1497543850,DEBUG,Free memory: 519
+1497543860,DEBUG,Sensor at pin 14 has 0.17 error
+1497543860,WARN,Retry reading temperature
+1497543860,WARN,Retry reading temperature
+1497543860,WARN,Retry reading temperature
+1497543860,ERROR,Failed reading temperature
+1497543860,INFO,673, 1,   -1.00
+1497543870,DEBUG,Sensor at pin 15 has 1.11 error
+1497543870,WARN,Retry reading temperature
+1497543870,WARN,Retry reading temperature
+1497543870,WARN,Retry reading temperature
+1497543870,ERROR,Failed reading temperature
+1497543870,INFO,685, 2,   -1.00
+1497543880,DEBUG,Sensor at pin 16 has 0.15 error
+1497543880,WARN,Retry reading temperature
+1497543880,WARN,Retry reading temperature
+1497543880,WARN,Retry reading temperature
+1497543880,ERROR,Failed reading temperature
+1497543880,INFO,729, 3,   -1.00
+1497545077,DEBUG,Free memory: 519
+1497545087,DEBUG,Sensor at pin 14 has 0.20 error
+1497545087,WARN,Retry reading temperature
+1497545087,WARN,Retry reading temperature
+1497545087,WARN,Retry reading temperature
+1497545087,ERROR,Failed reading temperature
+1497545087,INFO,678, 1,   -1.00
+1497545097,DEBUG,Sensor at pin 15 has 0.48 error
+1497545097,WARN,Retry reading temperature
+1497545097,WARN,Retry reading temperature
+1497545097,WARN,Retry reading temperature
+1497545097,ERROR,Failed reading temperature
+1497545097,INFO,683, 2,   -1.00
+1497545107,DEBUG,Sensor at pin 16 has 0.25 error
+1497545107,WARN,Retry reading temperature
+1497545107,WARN,Retry reading temperature
+1497545107,WARN,Retry reading temperature
+1497545107,ERROR,Failed reading temperature
+1497545107,INFO,727, 3,   -1.00
+1497546303,DEBUG,Free memory: 519
+1497546313,DEBUG,Sensor at pin 14 has 0.10 error
+1497546313,WARN,Retry reading temperature
+1497546313,WARN,Retry reading temperature
+1497546313,WARN,Retry reading temperature
+1497546313,ERROR,Failed reading temperature
+1497546313,INFO,686, 1,   -1.00
+1497546323,DEBUG,Sensor at pin 15 has 0.17 error
+1497546323,WARN,Retry reading temperature
+1497546323,WARN,Retry reading temperature
+1497546323,WARN,Retry reading temperature
+1497546323,ERROR,Failed reading temperature
+1497546323,INFO,684, 2,   -1.00
+1497546333,DEBUG,Sensor at pin 16 has 0.27 error
+1497546333,WARN,Retry reading temperature
+1497546333,WARN,Retry reading temperature
+1497546333,WARN,Retry reading temperature
+1497546333,ERROR,Failed reading temperature
+1497546333,INFO,723, 3,   -1.00
+1497547529,DEBUG,Free memory: 519
+1497547539,DEBUG,Sensor at pin 14 has 0.15 error
+1497547539,WARN,Retry reading temperature
+1497547539,WARN,Retry reading temperature
+1497547539,WARN,Retry reading temperature
+1497547539,ERROR,Failed reading temperature
+1497547539,INFO,689, 1,   -1.00
+1497547549,DEBUG,Sensor at pin 15 has 0.26 error
+1497547549,WARN,Retry reading temperature
+1497547549,WARN,Retry reading temperature
+1497547549,WARN,Retry reading temperature
+1497547549,ERROR,Failed reading temperature
+1497547549,INFO,696, 2,   -1.00
+1497547559,DEBUG,Sensor at pin 16 has 0.13 error
+1497547559,WARN,Retry reading temperature
+1497547559,WARN,Retry reading temperature
+1497547559,WARN,Retry reading temperature
+1497547559,ERROR,Failed reading temperature
+1497547559,INFO,724, 3,   -1.00
+1497548755,DEBUG,Free memory: 519
+1497548765,DEBUG,Sensor at pin 14 has 1.13 error
+1497548765,WARN,Retry reading temperature
+1497548765,WARN,Retry reading temperature
+1497548765,WARN,Retry reading temperature
+1497548765,ERROR,Failed reading temperature
+1497548765,INFO,695, 1,   -1.00
+1497548775,DEBUG,Sensor at pin 15 has 0.29 error
+1497548775,WARN,Retry reading temperature
+1497548775,WARN,Retry reading temperature
+1497548775,WARN,Retry reading temperature
+1497548775,ERROR,Failed reading temperature
+1497548775,INFO,688, 2,   -1.00
+1497548785,DEBUG,Sensor at pin 16 has 0.13 error
+1497548785,WARN,Retry reading temperature
+1497548785,WARN,Retry reading temperature
+1497548785,WARN,Retry reading temperature
+1497548785,ERROR,Failed reading temperature
+1497548785,INFO,723, 3,   -1.00
+1497549981,DEBUG,Free memory: 519
+1497549991,DEBUG,Sensor at pin 14 has 0.26 error
+1497549991,WARN,Retry reading temperature
+1497549991,WARN,Retry reading temperature
+1497549991,WARN,Retry reading temperature
+1497549991,ERROR,Failed reading temperature
+1497549991,INFO,694, 1,   -1.00
+1497550001,DEBUG,Sensor at pin 15 has 0.15 error
+1497550001,WARN,Retry reading temperature
+1497550001,WARN,Retry reading temperature
+1497550001,WARN,Retry reading temperature
+1497550001,ERROR,Failed reading temperature
+1497550001,INFO,693, 2,   -1.00
+1497550011,DEBUG,Sensor at pin 16 has 0.22 error
+1497550011,WARN,Retry reading temperature
+1497550011,WARN,Retry reading temperature
+1497550011,WARN,Retry reading temperature
+1497550011,ERROR,Failed reading temperature
+1497550011,INFO,725, 3,   -1.00
+1497551207,DEBUG,Free memory: 519
+1497551217,DEBUG,Sensor at pin 14 has 0.16 error
+1497551217,WARN,Retry reading temperature
+1497551217,WARN,Retry reading temperature
+1497551217,WARN,Retry reading temperature
+1497551217,ERROR,Failed reading temperature
+1497551217,INFO,698, 1,   -1.00
+1497551227,DEBUG,Sensor at pin 15 has 0.27 error
+1497551227,WARN,Retry reading temperature
+1497551227,WARN,Retry reading temperature
+1497551227,WARN,Retry reading temperature
+1497551227,ERROR,Failed reading temperature
+1497551227,INFO,698, 2,   -1.00
+1497551237,DEBUG,Sensor at pin 16 has 0.73 error
+1497551237,WARN,Retry reading temperature
+1497551237,WARN,Retry reading temperature
+1497551237,WARN,Retry reading temperature
+1497551237,ERROR,Failed reading temperature
+1497551237,INFO,722, 3,   -1.00
+1497552432,DEBUG,Free memory: 519
+1497552442,DEBUG,Sensor at pin 14 has 0.45 error
+1497552442,WARN,Retry reading temperature
+1497552442,WARN,Retry reading temperature
+1497552442,WARN,Retry reading temperature
+1497552442,ERROR,Failed reading temperature
+1497552442,INFO,705, 1,   -1.00
+1497552452,DEBUG,Sensor at pin 15 has 0.15 error
+1497552452,WARN,Retry reading temperature
+1497552452,WARN,Retry reading temperature
+1497552452,WARN,Retry reading temperature
+1497552452,ERROR,Failed reading temperature
+1497552452,INFO,697, 2,   -1.00
+1497552462,DEBUG,Sensor at pin 16 has 0.70 error
+1497552462,WARN,Retry reading temperature
+1497552462,WARN,Retry reading temperature
+1497552462,WARN,Retry reading temperature
+1497552462,ERROR,Failed reading temperature
+1497552462,INFO,720, 3,   -1.00
+1497553658,DEBUG,Free memory: 519
+1497553668,DEBUG,Sensor at pin 14 has 0.22 error
+1497553668,WARN,Retry reading temperature
+1497553668,WARN,Retry reading temperature
+1497553668,WARN,Retry reading temperature
+1497553668,ERROR,Failed reading temperature
+1497553668,INFO,693, 1,   -1.00
+1497553678,DEBUG,Sensor at pin 15 has 0.26 error
+1497553678,WARN,Retry reading temperature
+1497553678,WARN,Retry reading temperature
+1497553678,WARN,Retry reading temperature
+1497553678,ERROR,Failed reading temperature
+1497553678,INFO,701, 2,   -1.00
+1497553688,DEBUG,Sensor at pin 16 has 0.63 error
+1497553688,WARN,Retry reading temperature
+1497553688,WARN,Retry reading temperature
+1497553688,WARN,Retry reading temperature
+1497553688,ERROR,Failed reading temperature
+1497553688,INFO,723, 3,   -1.00
+1497554883,DEBUG,Free memory: 519
+1497554893,DEBUG,Sensor at pin 14 has 0.26 error
+1497554893,WARN,Retry reading temperature
+1497554893,WARN,Retry reading temperature
+1497554893,WARN,Retry reading temperature
+1497554893,ERROR,Failed reading temperature
+1497554893,INFO,704, 1,   -1.00
+1497554903,DEBUG,Sensor at pin 15 has 0.50 error
+1497554903,WARN,Retry reading temperature
+1497554903,WARN,Retry reading temperature
+1497554903,WARN,Retry reading temperature
+1497554903,ERROR,Failed reading temperature
+1497554903,INFO,703, 2,   -1.00
+1497554913,DEBUG,Sensor at pin 16 has 0.13 error
+1497554913,WARN,Retry reading temperature
+1497554913,WARN,Retry reading temperature
+1497554913,WARN,Retry reading temperature
+1497554913,ERROR,Failed reading temperature
+1497554913,INFO,722, 3,   -1.00
+1497556108,DEBUG,Free memory: 519
+1497556118,DEBUG,Sensor at pin 14 has 0.22 error
+1497556118,WARN,Retry reading temperature
+1497556118,WARN,Retry reading temperature
+1497556118,WARN,Retry reading temperature
+1497556118,ERROR,Failed reading temperature
+1497556118,INFO,704, 1,   -1.00
+1497556128,DEBUG,Sensor at pin 15 has 0.25 error
+1497556128,WARN,Retry reading temperature
+1497556128,WARN,Retry reading temperature
+1497556128,WARN,Retry reading temperature
+1497556128,ERROR,Failed reading temperature
+1497556128,INFO,702, 2,   -1.00
+1497556138,DEBUG,Sensor at pin 16 has 0.13 error
+1497556138,WARN,Retry reading temperature
+1497556138,WARN,Retry reading temperature
+1497556138,WARN,Retry reading temperature
+1497556138,ERROR,Failed reading temperature
+1497556138,INFO,721, 3,   -1.00
+1497557333,DEBUG,Free memory: 519
+1497557343,DEBUG,Sensor at pin 14 has 0.16 error
+1497557343,WARN,Retry reading temperature
+1497557343,WARN,Retry reading temperature
+1497557343,WARN,Retry reading temperature
+1497557343,ERROR,Failed reading temperature
+1497557343,INFO,711, 1,   -1.00
+1497557353,DEBUG,Sensor at pin 15 has 0.57 error
+1497557353,WARN,Retry reading temperature
+1497557353,WARN,Retry reading temperature
+1497557353,WARN,Retry reading temperature
+1497557353,ERROR,Failed reading temperature
+1497557353,INFO,712, 2,   -1.00
+1497557363,DEBUG,Sensor at pin 16 has 0.00 error
+1497557363,WARN,Retry reading temperature
+1497557363,WARN,Retry reading temperature
+1497557363,WARN,Retry reading temperature
+1497557363,ERROR,Failed reading temperature
+1497557363,INFO,722, 3,   -1.00
+1497558558,DEBUG,Free memory: 519
+1497558568,DEBUG,Sensor at pin 14 has 0.10 error
+1497558568,WARN,Retry reading temperature
+1497558568,WARN,Retry reading temperature
+1497558568,WARN,Retry reading temperature
+1497558568,ERROR,Failed reading temperature
+1497558568,INFO,711, 1,   -1.00
+1497558578,DEBUG,Sensor at pin 15 has 0.25 error
+1497558578,WARN,Retry reading temperature
+1497558578,WARN,Retry reading temperature
+1497558578,WARN,Retry reading temperature
+1497558578,ERROR,Failed reading temperature
+1497558578,INFO,706, 2,   -1.00
+1497558588,DEBUG,Sensor at pin 16 has 1.67 error
+1497558588,WARN,Retry reading temperature
+1497558588,WARN,Retry reading temperature
+1497558588,WARN,Retry reading temperature
+1497558588,ERROR,Failed reading temperature
+1497558588,INFO,716, 3,   -1.00
+1497559783,DEBUG,Free memory: 519
+1497559793,DEBUG,Sensor at pin 14 has 0.65 error
+1497559793,WARN,Retry reading temperature
+1497559793,WARN,Retry reading temperature
+1497559793,WARN,Retry reading temperature
+1497559793,ERROR,Failed reading temperature
+1497559793,INFO,715, 1,   -1.00
+1497559803,DEBUG,Sensor at pin 15 has 0.20 error
+1497559803,WARN,Retry reading temperature
+1497559803,WARN,Retry reading temperature
+1497559803,WARN,Retry reading temperature
+1497559803,ERROR,Failed reading temperature
+1497559803,INFO,708, 2,   -1.00
+1497559813,DEBUG,Sensor at pin 16 has 0.10 error
+1497559813,WARN,Retry reading temperature
+1497559813,WARN,Retry reading temperature
+1497559813,WARN,Retry reading temperature
+1497559813,ERROR,Failed reading temperature
+1497559813,INFO,723, 3,   -1.00
+1497561008,DEBUG,Free memory: 519
+1497561018,DEBUG,Sensor at pin 14 has 0.15 error
+1497561018,WARN,Retry reading temperature
+1497561018,WARN,Retry reading temperature
+1497561018,WARN,Retry reading temperature
+1497561018,ERROR,Failed reading temperature
+1497561018,INFO,714, 1,   -1.00
+1497561028,DEBUG,Sensor at pin 15 has 0.16 error
+1497561028,WARN,Retry reading temperature
+1497561028,WARN,Retry reading temperature
+1497561028,WARN,Retry reading temperature
+1497561028,ERROR,Failed reading temperature
+1497561028,INFO,709, 2,   -1.00
+1497561038,DEBUG,Sensor at pin 16 has 0.17 error
+1497561038,WARN,Retry reading temperature
+1497561038,WARN,Retry reading temperature
+1497561038,WARN,Retry reading temperature
+1497561038,ERROR,Failed reading temperature
+1497561038,INFO,724, 3,   -1.00
+1497562232,DEBUG,Free memory: 519
+1497562242,DEBUG,Sensor at pin 14 has 0.31 error
+1497562242,WARN,Retry reading temperature
+1497562242,WARN,Retry reading temperature
+1497562242,WARN,Retry reading temperature
+1497562242,ERROR,Failed reading temperature
+1497562242,INFO,715, 1,   -1.00
+1497562252,DEBUG,Sensor at pin 15 has 0.10 error
+1497562252,WARN,Retry reading temperature
+1497562252,WARN,Retry reading temperature
+1497562252,WARN,Retry reading temperature
+1497562252,ERROR,Failed reading temperature
+1497562252,INFO,720, 2,   -1.00
+1497562262,DEBUG,Sensor at pin 16 has 0.15 error
+1497562262,WARN,Retry reading temperature
+1497562262,WARN,Retry reading temperature
+1497562262,WARN,Retry reading temperature
+1497562262,ERROR,Failed reading temperature
+1497562262,INFO,725, 3,   -1.00
+1497563456,DEBUG,Free memory: 519
+1497563466,DEBUG,Sensor at pin 14 has 0.00 error
+1497563466,WARN,Retry reading temperature
+1497563466,WARN,Retry reading temperature
+1497563466,WARN,Retry reading temperature
+1497563466,ERROR,Failed reading temperature
+1497563466,INFO,717, 1,   -1.00
+1497563476,DEBUG,Sensor at pin 15 has 0.15 error
+1497563476,WARN,Retry reading temperature
+1497563476,WARN,Retry reading temperature
+1497563476,WARN,Retry reading temperature
+1497563476,ERROR,Failed reading temperature
+1497563476,INFO,720, 2,   -1.00
+1497563487,DEBUG,Sensor at pin 16 has 0.10 error
+1497563487,WARN,Retry reading temperature
+1497563487,WARN,Retry reading temperature
+1497563487,WARN,Retry reading temperature
+1497563487,ERROR,Failed reading temperature
+1497563487,INFO,725, 3,   -1.00
+1497564681,DEBUG,Free memory: 519
+1497564691,DEBUG,Sensor at pin 14 has 0.16 error
+1497564691,WARN,Retry reading temperature
+1497564691,WARN,Retry reading temperature
+1497564691,WARN,Retry reading temperature
+1497564691,ERROR,Failed reading temperature
+1497564691,INFO,717, 1,   -1.00
+1497564701,DEBUG,Sensor at pin 15 has 0.21 error
+1497564701,WARN,Retry reading temperature
+1497564701,WARN,Retry reading temperature
+1497564701,WARN,Retry reading temperature
+1497564701,ERROR,Failed reading temperature
+1497564701,INFO,717, 2,   -1.00
+1497564711,DEBUG,Sensor at pin 16 has 0.22 error
+1497564711,WARN,Retry reading temperature
+1497564711,WARN,Retry reading temperature
+1497564711,WARN,Retry reading temperature
+1497564711,ERROR,Failed reading temperature
+1497564711,INFO,726, 3,   -1.00
+1497565905,DEBUG,Free memory: 519
+1497565915,DEBUG,Sensor at pin 14 has 0.18 error
+1497565915,WARN,Retry reading temperature
+1497565915,WARN,Retry reading temperature
+1497565915,WARN,Retry reading temperature
+1497565915,ERROR,Failed reading temperature
+1497565915,INFO,717, 1,   -1.00
+1497565925,DEBUG,Sensor at pin 15 has 0.00 error
+1497565925,WARN,Retry reading temperature
+1497565925,WARN,Retry reading temperature
+1497565925,WARN,Retry reading temperature
+1497565925,ERROR,Failed reading temperature
+1497565925,INFO,720, 2,   -1.00
+1497565935,DEBUG,Sensor at pin 16 has 0.26 error
+1497565935,WARN,Retry reading temperature
+1497565935,WARN,Retry reading temperature
+1497565935,WARN,Retry reading temperature
+1497565935,ERROR,Failed reading temperature
+1497565935,INFO,726, 3,   -1.00
+1497567129,DEBUG,Free memory: 519
+1497567139,DEBUG,Sensor at pin 14 has 0.13 error
+1497567139,WARN,Retry reading temperature
+1497567139,WARN,Retry reading temperature
+1497567139,WARN,Retry reading temperature
+1497567139,ERROR,Failed reading temperature
+1497567139,INFO,719, 1,   -1.00
+1497567149,DEBUG,Sensor at pin 15 has 0.18 error
+1497567149,WARN,Retry reading temperature
+1497567149,WARN,Retry reading temperature
+1497567149,WARN,Retry reading temperature
+1497567149,ERROR,Failed reading temperature
+1497567149,INFO,721, 2,   -1.00
+1497567159,DEBUG,Sensor at pin 16 has 0.00 error
+1497567159,WARN,Retry reading temperature
+1497567159,WARN,Retry reading temperature
+1497567159,WARN,Retry reading temperature
+1497567159,ERROR,Failed reading temperature
+1497567159,INFO,728, 3,   -1.00
+1497568352,DEBUG,Free memory: 519
+1497568362,DEBUG,Sensor at pin 14 has 0.27 error
+1497568362,WARN,Retry reading temperature
+1497568362,WARN,Retry reading temperature
+1497568362,WARN,Retry reading temperature
+1497568362,ERROR,Failed reading temperature
+1497568362,INFO,718, 1,   -1.00
+1497568372,DEBUG,Sensor at pin 15 has 0.43 error
+1497568372,WARN,Retry reading temperature
+1497568372,WARN,Retry reading temperature
+1497568372,WARN,Retry reading temperature
+1497568372,ERROR,Failed reading temperature
+1497568372,INFO,726, 2,   -1.00
+1497568382,DEBUG,Sensor at pin 16 has 0.13 error
+1497568382,WARN,Retry reading temperature
+1497568382,WARN,Retry reading temperature
+1497568382,WARN,Retry reading temperature
+1497568382,ERROR,Failed reading temperature
+1497568382,INFO,729, 3,   -1.00
+1497569576,DEBUG,Free memory: 519
+1497569586,DEBUG,Sensor at pin 14 has 0.23 error
+1497569586,WARN,Retry reading temperature
+1497569586,WARN,Retry reading temperature
+1497569586,WARN,Retry reading temperature
+1497569586,ERROR,Failed reading temperature
+1497569586,INFO,734, 1,   -1.00
+1497569596,DEBUG,Sensor at pin 15 has 0.18 error
+1497569596,WARN,Retry reading temperature
+1497569596,WARN,Retry reading temperature
+1497569596,WARN,Retry reading temperature
+1497569596,ERROR,Failed reading temperature
+1497569596,INFO,724, 2,   -1.00
+1497569606,DEBUG,Sensor at pin 16 has 0.22 error
+1497569606,WARN,Retry reading temperature
+1497569606,WARN,Retry reading temperature
+1497569606,WARN,Retry reading temperature
+1497569606,ERROR,Failed reading temperature
+1497569606,INFO,730, 3,   -1.00
+1497570800,DEBUG,Free memory: 519
+1497570810,DEBUG,Sensor at pin 14 has 0.15 error
+1497570810,WARN,Retry reading temperature
+1497570810,WARN,Retry reading temperature
+1497570810,WARN,Retry reading temperature
+1497570810,ERROR,Failed reading temperature
+1497570810,INFO,719, 1,   -1.00
+1497570820,DEBUG,Sensor at pin 15 has 0.00 error
+1497570820,WARN,Retry reading temperature
+1497570820,WARN,Retry reading temperature
+1497570820,WARN,Retry reading temperature
+1497570820,ERROR,Failed reading temperature
+1497570820,INFO,725, 2,   -1.00
+1497570830,DEBUG,Sensor at pin 16 has 0.29 error
+1497570830,WARN,Retry reading temperature
+1497570830,WARN,Retry reading temperature
+1497570830,WARN,Retry reading temperature
+1497570830,ERROR,Failed reading temperature
+1497570830,INFO,730, 3,   -1.00
+1497572023,DEBUG,Free memory: 519
+1497572033,DEBUG,Sensor at pin 14 has 0.75 error
+1497572033,WARN,Retry reading temperature
+1497572033,WARN,Retry reading temperature
+1497572033,WARN,Retry reading temperature
+1497572033,ERROR,Failed reading temperature
+1497572033,INFO,727, 1,   -1.00
+1497572043,DEBUG,Sensor at pin 15 has 0.15 error
+1497572043,WARN,Retry reading temperature
+1497572043,WARN,Retry reading temperature
+1497572043,WARN,Retry reading temperature
+1497572043,ERROR,Failed reading temperature
+1497572043,INFO,725, 2,   -1.00
+1497572053,DEBUG,Sensor at pin 16 has 0.36 error
+1497572053,WARN,Retry reading temperature
+1497572053,WARN,Retry reading temperature
+1497572053,WARN,Retry reading temperature
+1497572053,ERROR,Failed reading temperature
+1497572053,INFO,731, 3,   -1.00
+1497573247,DEBUG,Free memory: 519
+1497573257,DEBUG,Sensor at pin 14 has 0.16 error
+1497573257,WARN,Retry reading temperature
+1497573257,WARN,Retry reading temperature
+1497573257,WARN,Retry reading temperature
+1497573257,ERROR,Failed reading temperature
+1497573257,INFO,733, 1,   -1.00
+1497573267,DEBUG,Sensor at pin 15 has 0.17 error
+1497573267,WARN,Retry reading temperature
+1497573267,WARN,Retry reading temperature
+1497573267,WARN,Retry reading temperature
+1497573267,ERROR,Failed reading temperature
+1497573267,INFO,725, 2,   -1.00
+1497573277,DEBUG,Sensor at pin 16 has 0.21 error
+1497573277,WARN,Retry reading temperature
+1497573277,WARN,Retry reading temperature
+1497573277,WARN,Retry reading temperature
+1497573277,ERROR,Failed reading temperature
+1497573277,INFO,741, 3,   -1.00
+1497574470,DEBUG,Free memory: 519
+1497574480,DEBUG,Sensor at pin 14 has 0.20 error
+1497574480,WARN,Retry reading temperature
+1497574480,WARN,Retry reading temperature
+1497574480,WARN,Retry reading temperature
+1497574480,ERROR,Failed reading temperature
+1497574480,INFO,723, 1,   -1.00
+1497574490,DEBUG,Sensor at pin 15 has 0.31 error
+1497574490,WARN,Retry reading temperature
+1497574490,WARN,Retry reading temperature
+1497574490,WARN,Retry reading temperature
+1497574490,ERROR,Failed reading temperature
+1497574490,INFO,724, 2,   -1.00
+1497574500,DEBUG,Sensor at pin 16 has 0.15 error
+1497574500,WARN,Retry reading temperature
+1497574500,WARN,Retry reading temperature
+1497574500,WARN,Retry reading temperature
+1497574500,ERROR,Failed reading temperature
+1497574500,INFO,734, 3,   -1.00
+1497575693,DEBUG,Free memory: 519
+1497575703,DEBUG,Sensor at pin 14 has 0.16 error
+1497575703,WARN,Retry reading temperature
+1497575703,WARN,Retry reading temperature
+1497575703,WARN,Retry reading temperature
+1497575703,ERROR,Failed reading temperature
+1497575703,INFO,719, 1,   -1.00
+1497575713,DEBUG,Sensor at pin 15 has 0.10 error
+1497575713,WARN,Retry reading temperature
+1497575713,WARN,Retry reading temperature
+1497575713,WARN,Retry reading temperature
+1497575713,ERROR,Failed reading temperature
+1497575713,INFO,728, 2,   -1.00
+1497575723,DEBUG,Sensor at pin 16 has 0.21 error
+1497575723,WARN,Retry reading temperature
+1497575723,WARN,Retry reading temperature
+1497575723,WARN,Retry reading temperature
+1497575723,ERROR,Failed reading temperature
+1497575723,INFO,743, 3,   -1.00
+1497576917,DEBUG,Free memory: 519
+1497576927,DEBUG,Sensor at pin 14 has 0.10 error
+1497576927,WARN,Retry reading temperature
+1497576927,WARN,Retry reading temperature
+1497576927,WARN,Retry reading temperature
+1497576927,ERROR,Failed reading temperature
+1497576927,INFO,725, 1,   -1.00
+1497576937,DEBUG,Sensor at pin 15 has 0.22 error
+1497576937,WARN,Retry reading temperature
+1497576937,WARN,Retry reading temperature
+1497576937,WARN,Retry reading temperature
+1497576937,ERROR,Failed reading temperature
+1497576937,INFO,731, 2,   -1.00
+1497576947,DEBUG,Sensor at pin 16 has 0.50 error
+1497576947,WARN,Retry reading temperature
+1497576947,WARN,Retry reading temperature
+1497576947,WARN,Retry reading temperature
+1497576947,ERROR,Failed reading temperature
+1497576947,INFO,741, 3,   -1.00
+1497578139,DEBUG,Free memory: 519
+1497578149,DEBUG,Sensor at pin 14 has 0.10 error
+1497578150,WARN,Retry reading temperature
+1497578150,WARN,Retry reading temperature
+1497578150,WARN,Retry reading temperature
+1497578150,ERROR,Failed reading temperature
+1497578150,INFO,726, 1,   -1.00
+1497578160,DEBUG,Sensor at pin 15 has 0.33 error
+1497578160,WARN,Retry reading temperature
+1497578160,WARN,Retry reading temperature
+1497578160,WARN,Retry reading temperature
+1497578160,ERROR,Failed reading temperature
+1497578160,INFO,732, 2,   -1.00
+1497578170,DEBUG,Sensor at pin 16 has 0.00 error
+1497578170,WARN,Retry reading temperature
+1497578170,WARN,Retry reading temperature
+1497578170,WARN,Retry reading temperature
+1497578170,ERROR,Failed reading temperature
+1497578170,INFO,736, 3,   -1.00
+1497579362,DEBUG,Free memory: 519
+1497579372,DEBUG,Sensor at pin 14 has 0.26 error
+1497579372,WARN,Retry reading temperature
+1497579372,WARN,Retry reading temperature
+1497579372,WARN,Retry reading temperature
+1497579372,ERROR,Failed reading temperature
+1497579372,INFO,722, 1,   -1.00
+1497579382,DEBUG,Sensor at pin 15 has 0.00 error
+1497579382,WARN,Retry reading temperature
+1497579382,WARN,Retry reading temperature
+1497579382,WARN,Retry reading temperature
+1497579382,ERROR,Failed reading temperature
+1497579382,INFO,729, 2,   -1.00
+1497579392,DEBUG,Sensor at pin 16 has 0.55 error
+1497579392,WARN,Retry reading temperature
+1497579392,WARN,Retry reading temperature
+1497579392,WARN,Retry reading temperature
+1497579392,ERROR,Failed reading temperature
+1497579392,INFO,736, 3,   -1.00
+1497580585,DEBUG,Free memory: 519
+1497580595,DEBUG,Sensor at pin 14 has 0.16 error
+1497580595,WARN,Retry reading temperature
+1497580595,WARN,Retry reading temperature
+1497580595,WARN,Retry reading temperature
+1497580595,ERROR,Failed reading temperature
+1497580595,INFO,728, 1,   -1.00
+1497580605,DEBUG,Sensor at pin 15 has 0.17 error
+1497580605,WARN,Retry reading temperature
+1497580605,WARN,Retry reading temperature
+1497580605,WARN,Retry reading temperature
+1497580605,ERROR,Failed reading temperature
+1497580605,INFO,729, 2,   -1.00
+1497580615,DEBUG,Sensor at pin 16 has 0.13 error
+1497580615,WARN,Retry reading temperature
+1497580615,WARN,Retry reading temperature
+1497580615,WARN,Retry reading temperature
+1497580615,ERROR,Failed reading temperature
+1497580615,INFO,738, 3,   -1.00
+1497581808,DEBUG,Free memory: 519
+1497581818,DEBUG,Sensor at pin 14 has 0.15 error
+1497581818,WARN,Retry reading temperature
+1497581818,WARN,Retry reading temperature
+1497581818,WARN,Retry reading temperature
+1497581818,ERROR,Failed reading temperature
+1497581818,INFO,731, 1,   -1.00
+1497581828,DEBUG,Sensor at pin 15 has 0.26 error
+1497581828,WARN,Retry reading temperature
+1497581828,WARN,Retry reading temperature
+1497581828,WARN,Retry reading temperature
+1497581828,ERROR,Failed reading temperature
+1497581828,INFO,724, 2,   -1.00
+1497581838,DEBUG,Sensor at pin 16 has 0.50 error
+1497581838,WARN,Retry reading temperature
+1497581838,WARN,Retry reading temperature
+1497581838,WARN,Retry reading temperature
+1497581838,ERROR,Failed reading temperature
+1497581838,INFO,748, 3,   -1.00
+1497583030,DEBUG,Free memory: 519
+1497583040,DEBUG,Sensor at pin 14 has 0.10 error
+1497583040,WARN,Retry reading temperature
+1497583040,WARN,Retry reading temperature
+1497583040,WARN,Retry reading temperature
+1497583040,ERROR,Failed reading temperature
+1497583040,INFO,730, 1,   -1.00
+1497583050,DEBUG,Sensor at pin 15 has 0.22 error
+1497583050,WARN,Retry reading temperature
+1497583050,WARN,Retry reading temperature
+1497583050,WARN,Retry reading temperature
+1497583050,ERROR,Failed reading temperature
+1497583050,INFO,738, 2,   -1.00
+1497583061,DEBUG,Sensor at pin 16 has 0.00 error
+1497583061,WARN,Retry reading temperature
+1497583061,WARN,Retry reading temperature
+1497583061,WARN,Retry reading temperature
+1497583061,ERROR,Failed reading temperature
+1497583061,INFO,739, 3,   -1.00
+1497584253,DEBUG,Free memory: 519
+1497584263,DEBUG,Sensor at pin 14 has 0.00 error
+1497584263,WARN,Retry reading temperature
+1497584263,WARN,Retry reading temperature
+1497584263,WARN,Retry reading temperature
+1497584263,ERROR,Failed reading temperature
+1497584263,INFO,730, 1,   -1.00
+1497584273,DEBUG,Sensor at pin 15 has 0.16 error
+1497584273,WARN,Retry reading temperature
+1497584273,WARN,Retry reading temperature
+1497584273,WARN,Retry reading temperature
+1497584273,ERROR,Failed reading temperature
+1497584273,INFO,725, 2,   -1.00
+1497584283,DEBUG,Sensor at pin 16 has 0.16 error
+1497584283,WARN,Retry reading temperature
+1497584283,WARN,Retry reading temperature
+1497584283,WARN,Retry reading temperature
+1497584283,ERROR,Failed reading temperature
+1497584283,INFO,739, 3,   -1.00
+1497585476,DEBUG,Free memory: 519
+1497585486,DEBUG,Sensor at pin 14 has 0.10 error
+1497585486,WARN,Retry reading temperature
+1497585486,WARN,Retry reading temperature
+1497585486,WARN,Retry reading temperature
+1497585486,ERROR,Failed reading temperature
+1497585486,INFO,730, 1,   -1.00
+1497585496,DEBUG,Sensor at pin 15 has 0.10 error
+1497585496,WARN,Retry reading temperature
+1497585496,WARN,Retry reading temperature
+1497585496,WARN,Retry reading temperature
+1497585496,ERROR,Failed reading temperature
+1497585496,INFO,728, 2,   -1.00
+1497585506,DEBUG,Sensor at pin 16 has 0.31 error
+1497585506,WARN,Retry reading temperature
+1497585506,WARN,Retry reading temperature
+1497585506,WARN,Retry reading temperature
+1497585506,ERROR,Failed reading temperature
+1497585506,INFO,748, 3,   -1.00
+1497586699,DEBUG,Free memory: 519
+1497586709,DEBUG,Sensor at pin 14 has 0.23 error
+1497586709,WARN,Retry reading temperature
+1497586709,WARN,Retry reading temperature
+1497586709,WARN,Retry reading temperature
+1497586709,ERROR,Failed reading temperature
+1497586709,INFO,729, 1,   -1.00
+1497586719,DEBUG,Sensor at pin 15 has 0.13 error
+1497586719,WARN,Retry reading temperature
+1497586719,WARN,Retry reading temperature
+1497586719,WARN,Retry reading temperature
+1497586719,ERROR,Failed reading temperature
+1497586719,INFO,735, 2,   -1.00
+1497586729,DEBUG,Sensor at pin 16 has 0.15 error
+1497586729,WARN,Retry reading temperature
+1497586729,WARN,Retry reading temperature
+1497586729,WARN,Retry reading temperature
+1497586729,ERROR,Failed reading temperature
+1497586729,INFO,741, 3,   -1.00
+1497587921,DEBUG,Free memory: 519
+1497587931,DEBUG,Sensor at pin 14 has 0.17 error
+1497587931,WARN,Retry reading temperature
+1497587931,WARN,Retry reading temperature
+1497587931,WARN,Retry reading temperature
+1497587931,ERROR,Failed reading temperature
+1497587931,INFO,728, 1,   -1.00
+1497587941,DEBUG,Sensor at pin 15 has 0.22 error
+1497587941,WARN,Retry reading temperature
+1497587941,WARN,Retry reading temperature
+1497587941,WARN,Retry reading temperature
+1497587941,ERROR,Failed reading temperature
+1497587941,INFO,733, 2,   -1.00
+1497587951,DEBUG,Sensor at pin 16 has 0.17 error
+1497587951,WARN,Retry reading temperature
+1497587951,WARN,Retry reading temperature
+1497587951,WARN,Retry reading temperature
+1497587951,ERROR,Failed reading temperature
+1497587951,INFO,741, 3,   -1.00
+1497589144,DEBUG,Free memory: 519
+1497589154,DEBUG,Sensor at pin 14 has 0.23 error
+1497589154,WARN,Retry reading temperature
+1497589154,WARN,Retry reading temperature
+1497589154,WARN,Retry reading temperature
+1497589154,ERROR,Failed reading temperature
+1497589154,INFO,728, 1,   -1.00
+1497589164,DEBUG,Sensor at pin 15 has 0.10 error
+1497589164,WARN,Retry reading temperature
+1497589164,WARN,Retry reading temperature
+1497589164,WARN,Retry reading temperature
+1497589164,ERROR,Failed reading temperature
+1497589164,INFO,729, 2,   -1.00
+1497589174,DEBUG,Sensor at pin 16 has 0.22 error
+1497589174,WARN,Retry reading temperature
+1497589174,WARN,Retry reading temperature
+1497589174,WARN,Retry reading temperature
+1497589174,ERROR,Failed reading temperature
+1497589174,INFO,740, 3,   -1.00
+1497590367,DEBUG,Free memory: 519
+1497590377,DEBUG,Sensor at pin 14 has 0.10 error
+1497590377,WARN,Retry reading temperature
+1497590377,WARN,Retry reading temperature
+1497590377,WARN,Retry reading temperature
+1497590377,ERROR,Failed reading temperature
+1497590377,INFO,727, 1,   -1.00
+1497590387,DEBUG,Sensor at pin 15 has 0.17 error
+1497590387,WARN,Retry reading temperature
+1497590387,WARN,Retry reading temperature
+1497590387,WARN,Retry reading temperature
+1497590387,ERROR,Failed reading temperature
+1497590387,INFO,724, 2,   -1.00
+1497590397,DEBUG,Sensor at pin 16 has 0.15 error
+1497590397,WARN,Retry reading temperature
+1497590397,WARN,Retry reading temperature
+1497590397,WARN,Retry reading temperature
+1497590397,ERROR,Failed reading temperature
+1497590397,INFO,743, 3,   -1.00
+1497591590,DEBUG,Free memory: 519
+1497591600,DEBUG,Sensor at pin 14 has 0.45 error
+1497591600,WARN,Retry reading temperature
+1497591600,WARN,Retry reading temperature
+1497591600,WARN,Retry reading temperature
+1497591600,ERROR,Failed reading temperature
+1497591600,INFO,716, 1,   -1.00
+1497591610,DEBUG,Sensor at pin 15 has 0.39 error
+1497591610,WARN,Retry reading temperature
+1497591610,WARN,Retry reading temperature
+1497591610,WARN,Retry reading temperature
+1497591610,ERROR,Failed reading temperature
+1497591610,INFO,733, 2,   -1.00
+1497591620,DEBUG,Sensor at pin 16 has 0.15 error
+1497591620,WARN,Retry reading temperature
+1497591620,WARN,Retry reading temperature
+1497591620,WARN,Retry reading temperature
+1497591620,ERROR,Failed reading temperature
+1497591620,INFO,744, 3,   -1.00
+1497592814,DEBUG,Free memory: 519
+1497592824,DEBUG,Sensor at pin 14 has 0.43 error
+1497592824,WARN,Retry reading temperature
+1497592824,WARN,Retry reading temperature
+1497592824,WARN,Retry reading temperature
+1497592824,ERROR,Failed reading temperature
+1497592824,INFO,714, 1,   -1.00
+1497592834,DEBUG,Sensor at pin 15 has 0.20 error
+1497592834,WARN,Retry reading temperature
+1497592834,WARN,Retry reading temperature
+1497592834,WARN,Retry reading temperature
+1497592834,ERROR,Failed reading temperature
+1497592834,INFO,735, 2,   -1.00
+1497592844,DEBUG,Sensor at pin 16 has 0.16 error
+1497592844,WARN,Retry reading temperature
+1497592844,WARN,Retry reading temperature
+1497592844,WARN,Retry reading temperature
+1497592844,ERROR,Failed reading temperature
+1497592844,INFO,745, 3,   -1.00
+1497594037,DEBUG,Free memory: 519
+1497594047,DEBUG,Sensor at pin 14 has 0.13 error
+1497594047,WARN,Retry reading temperature
+1497594047,WARN,Retry reading temperature
+1497594047,WARN,Retry reading temperature
+1497594047,ERROR,Failed reading temperature
+1497594047,INFO,721, 1,   -1.00
+1497594057,DEBUG,Sensor at pin 15 has 0.16 error
+1497594057,WARN,Retry reading temperature
+1497594057,WARN,Retry reading temperature
+1497594057,WARN,Retry reading temperature
+1497594057,ERROR,Failed reading temperature
+1497594057,INFO,726, 2,   -1.00
+1497594067,DEBUG,Sensor at pin 16 has 0.56 error
+1497594067,WARN,Retry reading temperature
+1497594067,WARN,Retry reading temperature
+1497594067,WARN,Retry reading temperature
+1497594067,ERROR,Failed reading temperature
+1497594067,INFO,748, 3,   -1.00
+1497595261,DEBUG,Free memory: 519
+1497595271,DEBUG,Sensor at pin 14 has 0.16 error
+1497595271,WARN,Retry reading temperature
+1497595271,WARN,Retry reading temperature
+1497595271,WARN,Retry reading temperature
+1497595271,ERROR,Failed reading temperature
+1497595271,INFO,718, 1,   -1.00
+1497595281,DEBUG,Sensor at pin 15 has 0.17 error
+1497595281,WARN,Retry reading temperature
+1497595281,WARN,Retry reading temperature
+1497595281,WARN,Retry reading temperature
+1497595281,ERROR,Failed reading temperature
+1497595281,INFO,724, 2,   -1.00
+1497595291,DEBUG,Sensor at pin 16 has 0.20 error
+1497595291,WARN,Retry reading temperature
+1497595291,WARN,Retry reading temperature
+1497595291,WARN,Retry reading temperature
+1497595291,ERROR,Failed reading temperature
+1497595291,INFO,747, 3,   -1.00
+1497596484,DEBUG,Free memory: 519
+1497596494,DEBUG,Sensor at pin 14 has 0.00 error
+1497596494,WARN,Retry reading temperature
+1497596494,WARN,Retry reading temperature
+1497596494,WARN,Retry reading temperature
+1497596494,ERROR,Failed reading temperature
+1497596494,INFO,717, 1,   -1.00
+1497596504,DEBUG,Sensor at pin 15 has 0.17 error
+1497596504,WARN,Retry reading temperature
+1497596504,WARN,Retry reading temperature
+1497596504,WARN,Retry reading temperature
+1497596504,ERROR,Failed reading temperature
+1497596504,INFO,722, 2,   -1.00
+1497596514,DEBUG,Sensor at pin 16 has 0.13 error
+1497596514,WARN,Retry reading temperature
+1497596514,WARN,Retry reading temperature
+1497596514,WARN,Retry reading temperature
+1497596514,ERROR,Failed reading temperature
+1497596514,INFO,748, 3,   -1.00
+1497597709,DEBUG,Free memory: 519
+1497597719,DEBUG,Sensor at pin 14 has 0.13 error
+1497597719,WARN,Retry reading temperature
+1497597719,WARN,Retry reading temperature
+1497597719,WARN,Retry reading temperature
+1497597719,ERROR,Failed reading temperature
+1497597719,INFO,713, 1,   -1.00
+1497597729,DEBUG,Sensor at pin 15 has 0.17 error
+1497597729,WARN,Retry reading temperature
+1497597729,WARN,Retry reading temperature
+1497597729,WARN,Retry reading temperature
+1497597729,ERROR,Failed reading temperature
+1497597729,INFO,714, 2,   -1.00
+1497597739,DEBUG,Sensor at pin 16 has 0.10 error
+1497597739,WARN,Retry reading temperature
+1497597739,WARN,Retry reading temperature
+1497597739,WARN,Retry reading temperature
+1497597739,ERROR,Failed reading temperature
+1497597739,INFO,750, 3,   -1.00
+1497598933,DEBUG,Free memory: 519
+1497598943,DEBUG,Sensor at pin 14 has 0.26 error
+1497598943,WARN,Retry reading temperature
+1497598943,WARN,Retry reading temperature
+1497598943,WARN,Retry reading temperature
+1497598943,ERROR,Failed reading temperature
+1497598943,INFO,718, 1,   -1.00
+1497598953,DEBUG,Sensor at pin 15 has 0.10 error
+1497598953,WARN,Retry reading temperature
+1497598953,WARN,Retry reading temperature
+1497598953,WARN,Retry reading temperature
+1497598953,ERROR,Failed reading temperature
+1497598953,INFO,711, 2,   -1.00
+1497598963,DEBUG,Sensor at pin 16 has 0.39 error
+1497598963,WARN,Retry reading temperature
+1497598963,WARN,Retry reading temperature
+1497598963,WARN,Retry reading temperature
+1497598963,ERROR,Failed reading temperature
+1497598963,INFO,753, 3,   -1.00
+1497600157,DEBUG,Free memory: 519
+1497600167,DEBUG,Sensor at pin 14 has 0.93 error
+1497600167,WARN,Retry reading temperature
+1497600167,WARN,Retry reading temperature
+1497600167,WARN,Retry reading temperature
+1497600167,ERROR,Failed reading temperature
+1497600167,INFO,707, 1,   -1.00
+1497600177,DEBUG,Sensor at pin 15 has 0.13 error
+1497600177,WARN,Retry reading temperature
+1497600177,WARN,Retry reading temperature
+1497600177,WARN,Retry reading temperature
+1497600177,ERROR,Failed reading temperature
+1497600177,INFO,711, 2,   -1.00
+1497600187,DEBUG,Sensor at pin 16 has 0.22 error
+1497600187,WARN,Retry reading temperature
+1497600187,WARN,Retry reading temperature
+1497600187,WARN,Retry reading temperature
+1497600187,ERROR,Failed reading temperature
+1497600187,INFO,755, 3,   -1.00
+1497601381,DEBUG,Free memory: 519
+1497601391,DEBUG,Sensor at pin 14 has 0.10 error
+1497601391,WARN,Retry reading temperature
+1497601391,WARN,Retry reading temperature
+1497601391,WARN,Retry reading temperature
+1497601391,ERROR,Failed reading temperature
+1497601391,INFO,694, 1,   -1.00
+1497601401,DEBUG,Sensor at pin 15 has 0.16 error
+1497601401,WARN,Retry reading temperature
+1497601401,WARN,Retry reading temperature
+1497601401,WARN,Retry reading temperature
+1497601401,ERROR,Failed reading temperature
+1497601401,INFO,717, 2,   -1.00
+1497601411,DEBUG,Sensor at pin 16 has 0.10 error
+1497601411,WARN,Retry reading temperature
+1497601411,WARN,Retry reading temperature
+1497601411,WARN,Retry reading temperature
+1497601411,ERROR,Failed reading temperature
+1497601411,INFO,753, 3,   -1.00
+1497602606,DEBUG,Free memory: 519
+1497602616,DEBUG,Sensor at pin 14 has 0.15 error
+1497602616,WARN,Retry reading temperature
+1497602616,WARN,Retry reading temperature
+1497602616,WARN,Retry reading temperature
+1497602616,ERROR,Failed reading temperature
+1497602616,INFO,690, 1,   -1.00
+1497602626,DEBUG,Sensor at pin 15 has 0.18 error
+1497602626,WARN,Retry reading temperature
+1497602626,WARN,Retry reading temperature
+1497602626,WARN,Retry reading temperature
+1497602626,ERROR,Failed reading temperature
+1497602626,INFO,719, 2,   -1.00
+1497602636,DEBUG,Sensor at pin 16 has 0.16 error
+1497602636,WARN,Retry reading temperature
+1497602636,WARN,Retry reading temperature
+1497602636,WARN,Retry reading temperature
+1497602636,ERROR,Failed reading temperature
+1497602636,INFO,752, 3,   -1.00
+1497603830,DEBUG,Free memory: 519
+1497603840,DEBUG,Sensor at pin 14 has 0.20 error
+1497603840,WARN,Retry reading temperature
+1497603840,WARN,Retry reading temperature
+1497603840,WARN,Retry reading temperature
+1497603840,ERROR,Failed reading temperature
+1497603840,INFO,698, 1,   -1.00
+1497603850,DEBUG,Sensor at pin 15 has 0.15 error
+1497603850,WARN,Retry reading temperature
+1497603850,WARN,Retry reading temperature
+1497603850,WARN,Retry reading temperature
+1497603850,ERROR,Failed reading temperature
+1497603850,INFO,709, 2,   -1.00
+1497603860,DEBUG,Sensor at pin 16 has 0.26 error
+1497603860,WARN,Retry reading temperature
+1497603860,WARN,Retry reading temperature
+1497603860,WARN,Retry reading temperature
+1497603860,ERROR,Failed reading temperature
+1497603860,INFO,753, 3,   -1.00
+1497605055,DEBUG,Free memory: 519
+1497605065,DEBUG,Sensor at pin 14 has 0.00 error
+1497605065,WARN,Retry reading temperature
+1497605065,WARN,Retry reading temperature
+1497605065,WARN,Retry reading temperature
+1497605065,ERROR,Failed reading temperature
+1497605065,INFO,687, 1,   -1.00
+1497605075,DEBUG,Sensor at pin 15 has 0.22 error
+1497605075,WARN,Retry reading temperature
+1497605075,WARN,Retry reading temperature
+1497605075,WARN,Retry reading temperature
+1497605075,ERROR,Failed reading temperature
+1497605075,INFO,706, 2,   -1.00
+1497605085,DEBUG,Sensor at pin 16 has 0.29 error
+1497605085,WARN,Retry reading temperature
+1497605085,WARN,Retry reading temperature
+1497605085,WARN,Retry reading temperature
+1497605085,ERROR,Failed reading temperature
+1497605085,INFO,754, 3,   -1.00
+1497606279,DEBUG,Free memory: 519
+1497606289,DEBUG,Sensor at pin 14 has 0.17 error
+1497606289,WARN,Retry reading temperature
+1497606289,WARN,Retry reading temperature
+1497606289,WARN,Retry reading temperature
+1497606289,ERROR,Failed reading temperature
+1497606289,INFO,682, 1,   -1.00
+1497606299,DEBUG,Sensor at pin 15 has 0.16 error
+1497606299,WARN,Retry reading temperature
+1497606299,WARN,Retry reading temperature
+1497606299,WARN,Retry reading temperature
+1497606299,ERROR,Failed reading temperature
+1497606299,INFO,713, 2,   -1.00
+1497606309,DEBUG,Sensor at pin 16 has 0.28 error
+1497606309,WARN,Retry reading temperature
+1497606309,WARN,Retry reading temperature
+1497606309,WARN,Retry reading temperature
+1497606309,ERROR,Failed reading temperature
+1497606309,INFO,750, 3,   -1.00
+1497607504,DEBUG,Free memory: 519
+1497607514,DEBUG,Sensor at pin 14 has 0.10 error
+1497607514,WARN,Retry reading temperature
+1497607514,WARN,Retry reading temperature
+1497607514,WARN,Retry reading temperature
+1497607514,ERROR,Failed reading temperature
+1497607514,INFO,696, 1,   -1.00
+1497607524,DEBUG,Sensor at pin 15 has 0.15 error
+1497607524,WARN,Retry reading temperature
+1497607524,WARN,Retry reading temperature
+1497607524,WARN,Retry reading temperature
+1497607524,ERROR,Failed reading temperature
+1497607524,INFO,724, 2,   -1.00
+1497607534,DEBUG,Sensor at pin 16 has 0.10 error
+1497607534,WARN,Retry reading temperature
+1497607534,WARN,Retry reading temperature
+1497607534,WARN,Retry reading temperature
+1497607534,ERROR,Failed reading temperature
+1497607534,INFO,758, 3,   -1.00
+1497608729,DEBUG,Free memory: 519
+1497608739,DEBUG,Sensor at pin 14 has 0.20 error
+1497608739,WARN,Retry reading temperature
+1497608739,WARN,Retry reading temperature
+1497608739,WARN,Retry reading temperature
+1497608739,ERROR,Failed reading temperature
+1497608739,INFO,706, 1,   -1.00
+1497608749,DEBUG,Sensor at pin 15 has 0.23 error
+1497608749,WARN,Retry reading temperature
+1497608749,WARN,Retry reading temperature
+1497608749,WARN,Retry reading temperature
+1497608749,ERROR,Failed reading temperature
+1497608749,INFO,712, 2,   -1.00
+1497608759,DEBUG,Sensor at pin 16 has 0.16 error
+1497608759,WARN,Retry reading temperature
+1497608759,WARN,Retry reading temperature
+1497608759,WARN,Retry reading temperature
+1497608759,ERROR,Failed reading temperature
+1497608759,INFO,756, 3,   -1.00
+1497609954,DEBUG,Free memory: 519
+1497609964,DEBUG,Sensor at pin 14 has 0.15 error
+1497609964,WARN,Retry reading temperature
+1497609964,WARN,Retry reading temperature
+1497609964,WARN,Retry reading temperature
+1497609964,ERROR,Failed reading temperature
+1497609964,INFO,696, 1,   -1.00
+1497609974,DEBUG,Sensor at pin 15 has 0.76 error
+1497609974,WARN,Retry reading temperature
+1497609974,WARN,Retry reading temperature
+1497609974,WARN,Retry reading temperature
+1497609974,ERROR,Failed reading temperature
+1497609974,INFO,714, 2,   -1.00
+1497609984,DEBUG,Sensor at pin 16 has 0.13 error
+1497609984,WARN,Retry reading temperature
+1497609984,WARN,Retry reading temperature
+1497609984,WARN,Retry reading temperature
+1497609984,ERROR,Failed reading temperature
+1497609984,INFO,752, 3,   -1.00
+1497611179,DEBUG,Free memory: 519
+1497611189,DEBUG,Sensor at pin 14 has 0.10 error
+1497611189,WARN,Retry reading temperature
+1497611189,WARN,Retry reading temperature
+1497611189,WARN,Retry reading temperature
+1497611189,ERROR,Failed reading temperature
+1497611189,INFO,703, 1,   -1.00
+1497611199,DEBUG,Sensor at pin 15 has 0.68 error
+1497611199,WARN,Retry reading temperature
+1497611199,WARN,Retry reading temperature
+1497611199,WARN,Retry reading temperature
+1497611199,ERROR,Failed reading temperature
+1497611199,INFO,722, 2,   -1.00
+1497611209,DEBUG,Sensor at pin 16 has 0.22 error
+1497611209,WARN,Retry reading temperature
+1497611209,WARN,Retry reading temperature
+1497611209,WARN,Retry reading temperature
+1497611209,ERROR,Failed reading temperature
+1497611209,INFO,755, 3,   -1.00
+1497612404,DEBUG,Free memory: 519
+1497612414,DEBUG,Sensor at pin 14 has 0.57 error
+1497612414,WARN,Retry reading temperature
+1497612414,WARN,Retry reading temperature
+1497612414,WARN,Retry reading temperature
+1497612414,ERROR,Failed reading temperature
+1497612414,INFO,711, 1,   -1.00
+1497612424,DEBUG,Sensor at pin 15 has 0.42 error
+1497612424,WARN,Retry reading temperature
+1497612424,WARN,Retry reading temperature
+1497612424,WARN,Retry reading temperature
+1497612424,ERROR,Failed reading temperature
+1497612424,INFO,714, 2,   -1.00
+1497612434,DEBUG,Sensor at pin 16 has 0.25 error
+1497612434,WARN,Retry reading temperature
+1497612434,WARN,Retry reading temperature
+1497612434,WARN,Retry reading temperature
+1497612434,ERROR,Failed reading temperature
+1497612434,INFO,756, 3,   -1.00
+1497613628,DEBUG,Free memory: 519
+1497613638,DEBUG,Sensor at pin 14 has 0.10 error
+1497613638,WARN,Retry reading temperature
+1497613638,WARN,Retry reading temperature
+1497613638,WARN,Retry reading temperature
+1497613638,ERROR,Failed reading temperature
+1497613638,INFO,710, 1,   -1.00
+1497613648,DEBUG,Sensor at pin 15 has 0.18 error
+1497613648,WARN,Retry reading temperature
+1497613648,WARN,Retry reading temperature
+1497613648,WARN,Retry reading temperature
+1497613648,ERROR,Failed reading temperature
+1497613648,INFO,711, 2,   -1.00
+1497613658,DEBUG,Sensor at pin 16 has 0.10 error
+1497613658,WARN,Retry reading temperature
+1497613658,WARN,Retry reading temperature
+1497613658,WARN,Retry reading temperature
+1497613658,ERROR,Failed reading temperature
+1497613658,INFO,756, 3,   -1.00
+1497614854,DEBUG,Free memory: 519
+1497614864,DEBUG,Sensor at pin 14 has 0.16 error
+1497614864,WARN,Retry reading temperature
+1497614864,WARN,Retry reading temperature
+1497614864,WARN,Retry reading temperature
+1497614864,ERROR,Failed reading temperature
+1497614864,INFO,711, 1,   -1.00
+1497614874,DEBUG,Sensor at pin 15 has 0.16 error
+1497614874,WARN,Retry reading temperature
+1497614874,WARN,Retry reading temperature
+1497614874,WARN,Retry reading temperature
+1497614874,ERROR,Failed reading temperature
+1497614874,INFO,715, 2,   -1.00
+1497614884,DEBUG,Sensor at pin 16 has 0.21 error
+1497614884,WARN,Retry reading temperature
+1497614884,WARN,Retry reading temperature
+1497614884,WARN,Retry reading temperature
+1497614884,ERROR,Failed reading temperature
+1497614884,INFO,756, 3,   -1.00
