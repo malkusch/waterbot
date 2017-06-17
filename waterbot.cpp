@@ -3,6 +3,9 @@
 #include "waterbot.h"
 
 #include <Arduino.h>
+
+#include "src/infrastructure/drystrategy/TimerDryStrategy.h"
+
 #define REQUIRESALARMS false
 #include <Arduino-Temperature-Control-Library/DallasTemperature.h>
 #include <OneWire/OneWire.h>
@@ -28,6 +31,7 @@ using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
 using waterbot::infrastructure::pin::onboard::OnboardAnalogInputPin;
 using waterbot::infrastructure::onboard::OnboardValve;
 using waterbot::infrastructure::onboard::OnboardDCMoistureSensor;
+using waterbot::infrastructure::drystrategy::TimerDryStrategy;
 using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
@@ -65,8 +69,7 @@ DallasTemperatureSensor temperatureSensor(&dallasTemperature, NULL);
 AutomaticWaterService automaticWaterService(WATER_SECONDS, COOL_DOWN_SECONDS,
 MAX_WATERLESS_DAYS);
 
-ThresholdDryStrategy thresholdDryStrategy(MOISTURE_THRESHOLD);
-
+TimerDryStrategy dryTimer1(DRY_TIMER_HOURS);
 OnboardAnalogInputPin moistureSensor1SensorPin(PIN_POT1_MOISTURE_SENSOR);
 OnboardDigitalOutputPin moistureSensor1VoltagePin(PIN_POT1_MOISTURE_VOLTAGE);
 OnboardDCMoistureSensor moistureSensor1(&moistureSensor1VoltagePin,
@@ -74,9 +77,10 @@ OnboardDCMoistureSensor moistureSensor1(&moistureSensor1VoltagePin,
 		MOISTURE_VOLTAGE_DELAY_MILLIS);
 OnboardDigitalOutputPin valve1Pin(PIN_POT1_VALVE);
 OnboardValve valve1(&valve1Pin, VALVE_DELAY_MILLIS);
-Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &thresholdDryStrategy,
-		&valve1, &pump);
+Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &dryTimer1, &valve1,
+		&pump);
 
+TimerDryStrategy dryTimer2(DRY_TIMER_HOURS);
 OnboardAnalogInputPin moistureSensor2SensorPin(PIN_POT2_MOISTURE_SENSOR);
 OnboardDigitalOutputPin moistureSensor2VoltagePin(PIN_POT2_MOISTURE_VOLTAGE);
 OnboardDCMoistureSensor moistureSensor2(&moistureSensor2VoltagePin,
@@ -84,9 +88,10 @@ OnboardDCMoistureSensor moistureSensor2(&moistureSensor2VoltagePin,
 		MOISTURE_VOLTAGE_DELAY_MILLIS);
 OnboardDigitalOutputPin valve2Pin(PIN_POT2_VALVE);
 OnboardValve valve2(&valve2Pin, VALVE_DELAY_MILLIS);
-Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &thresholdDryStrategy,
-		&valve2, &pump);
+Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &dryTimer2, &valve2,
+		&pump);
 
+TimerDryStrategy dryTimer3(DRY_TIMER_HOURS);
 OnboardAnalogInputPin moistureSensor3SensorPin(PIN_POT3_MOISTURE_SENSOR);
 OnboardDigitalOutputPin moistureSensor3VoltagePin(PIN_POT3_MOISTURE_VOLTAGE);
 OnboardDCMoistureSensor moistureSensor3(&moistureSensor3VoltagePin,
@@ -94,8 +99,8 @@ OnboardDCMoistureSensor moistureSensor3(&moistureSensor3VoltagePin,
 		MOISTURE_VOLTAGE_DELAY_MILLIS);
 OnboardDigitalOutputPin valve3Pin(PIN_POT3_VALVE);
 OnboardValve valve3(&valve3Pin, VALVE_DELAY_MILLIS);
-Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &thresholdDryStrategy,
-		&valve3, &pump);
+Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &dryTimer3, &valve3,
+		&pump);
 
 Pot pots[] = { pot1, pot2, pot3 };
 
