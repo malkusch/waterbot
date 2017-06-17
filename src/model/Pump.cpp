@@ -31,9 +31,9 @@ void Pump::turnOff() {
 }
 
 void Pump::turnOffWithoutDelay() {
-	pin->write(ON);
+	pin->write(OFF);
 }
 
 void Pump::turnOn() {
-	pin->write(OFF);
+	pin->write(ON);
 }
