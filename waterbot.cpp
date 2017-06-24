@@ -27,6 +27,7 @@
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
+#include "src/application/AutomaticWaterApplicationService.h"
 
 using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
 using waterbot::infrastructure::pin::onboard::OnboardAnalogInputPin;
@@ -37,6 +38,7 @@ using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
 using waterbot::infrastructure::ArrayPotRepository;
+using waterbot::application::AutomaticWaterApplicationService;
 
 #if LOGGER == LOGGER_SD
 
@@ -109,6 +111,9 @@ ArrayPotRepository potRepository(_pots, sizeof(_pots) / sizeof(*_pots));
 
 Sleep sleep;
 
+AutomaticWaterApplicationService automaticWaterApplicationService(
+		&potRepository, &automaticWaterService);
+
 void setup() {
 	rtc.begin();
 	logger.begin();
@@ -126,12 +131,7 @@ void setup() {
 
 void loop() {
 	Debugger::logMemory();
-
-	Pot* pots = potRepository.findAll();
-	for (int i = 0; i < potRepository.count(); i++) {
-		Pot pot = pots[i];
-		automaticWaterService.waterIfNeeded(&pot);
-	}
+	automaticWaterApplicationService.waterAllPotsIfNeeded();
 	pause(PAUSE_SECONDS);
 }
 
