@@ -20,7 +20,7 @@ public:
 	;
 
 	virtual byte count() = 0;
-	virtual Pot* findAll() = 0;
+	virtual Pot** findAll() = 0;
 };
 
 } /* namespace drystrategy */

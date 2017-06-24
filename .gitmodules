@@ -25,3 +25,6 @@
 [submodule "libraries/Arduino-PCF8574"]
 	path = libraries/Arduino-PCF8574
 	url = https://github.com/Beirdo/Arduino-PCF8574.git
+[submodule "libraries/AM2321"]
+	path = libraries/AM2321
+	url = https://github.com/wangdong/AM2321.git

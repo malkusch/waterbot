@@ -10,12 +10,12 @@
 namespace waterbot {
 namespace infrastructure {
 
-ArrayPotRepository::ArrayPotRepository(Pot pots[], const byte size) :
+ArrayPotRepository::ArrayPotRepository(Pot** pots, const byte size) :
 		pots(pots), size(size) {
 
 }
 
-Pot* ArrayPotRepository::findAll() {
+Pot** ArrayPotRepository::findAll() {
 	return pots;
 }
 

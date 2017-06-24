@@ -19,13 +19,13 @@ namespace infrastructure {
 
 class ArrayPotRepository: public PotRepository {
 public:
-	ArrayPotRepository(Pot pots[], const byte size);
+	ArrayPotRepository(Pot** pots, const byte size);
 
 	virtual byte count();
-	virtual Pot* findAll();
+	virtual Pot** findAll();
 
 private:
-	Pot* pots;
+	Pot** pots;
 	const byte size;
 
 };

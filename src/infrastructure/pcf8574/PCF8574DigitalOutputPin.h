@@ -7,12 +7,14 @@
 
 #pragma once
 
-#include "../DigitalOutputPin.h"
+#include "../pin/DigitalOutputPin.h"
 #include "Arduino-PCF8574/src/PCF8574.h"
+
+using waterbot::infrastructure::pin::DigitalOutputPin;
+using waterbot::infrastructure::pin::State;
 
 namespace waterbot {
 namespace infrastructure {
-namespace pin {
 namespace pcf8574 {
 
 class PCF8574DigitalOutputPin: public DigitalOutputPin {
@@ -29,6 +31,5 @@ private:
 
 } /* namespace pcf8574 */
 } /* namespace pin */
-} /* namespace infrastructure */
 } /* namespace waterbot */
 

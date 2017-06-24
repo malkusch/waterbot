@@ -21,11 +21,11 @@ AutomaticWaterApplicationService::AutomaticWaterApplicationService(
 }
 
 void AutomaticWaterApplicationService::waterAllPotsIfNeeded() {
-	Pot* pots = potRepository->findAll();
+	Pot** pots = potRepository->findAll();
 	for (int i = 0; i < potRepository->count(); i++) {
-		Pot pot = pots[i];
+		Pot* pot = pots[i];
 
-		waterService->waterIfNeeded(&pot);
+		waterService->waterIfNeeded(pot);
 	}
 }
 

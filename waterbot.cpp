@@ -7,8 +7,6 @@
 #include "src/infrastructure/drystrategy/TimerDryStrategy.h"
 
 #define REQUIRESALARMS false
-#include <Arduino-Temperature-Control-Library/DallasTemperature.h>
-#include <OneWire/OneWire.h>
 #include <pins_arduino.h>
 #include <RTClib/RTClib.h>
 #include <stddef.h>
@@ -16,11 +14,8 @@
 
 #include "src/infrastructure/drystrategy/ThresholdDryStrategy.h"
 #include "src/infrastructure/Debugger.h"
-#include "src/infrastructure/onboard/OnboardDCMoistureSensor.h"
-#include "src/infrastructure/onboard/OnboardValve.h"
-#include "src/infrastructure/onewire/DallasTemperatureSensor.h"
-#include "src/infrastructure/pin/onboard/OnboardAnalogInputPin.h"
 #include "src/infrastructure/pin/onboard/OnboardDigitalOutputPin.h"
+#include "src/infrastructure/onboard/OnboardValve.h"
 #include "src/infrastructure/rtc/DS1307RTC.h"
 #include "src/infrastructure/TimeUnits.h"
 #include "src/infrastructure/ArrayPotRepository.h"
@@ -28,17 +23,16 @@
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
 #include "src/application/AutomaticWaterApplicationService.h"
+#include  "src/infrastructure/pcf8574/PCF8574PotRepository.h"
 
 using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
-using waterbot::infrastructure::pin::onboard::OnboardAnalogInputPin;
 using waterbot::infrastructure::onboard::OnboardValve;
-using waterbot::infrastructure::onboard::OnboardDCMoistureSensor;
 using waterbot::infrastructure::drystrategy::TimerDryStrategy;
 using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
-using waterbot::infrastructure::ArrayPotRepository;
 using waterbot::application::AutomaticWaterApplicationService;
+using waterbot::infrastructure::pcf8574::PCF8574PotRepository;
 
 #if LOGGER == LOGGER_SD
 
@@ -66,48 +60,12 @@ Pump pump(&pumpPin, PUMP_TURN_OFF_DELAY_MILLIS);
 RTC_DS1307 ds1307;
 DS1307RTC rtc(&ds1307);
 
-OneWire onewire(PIN_ONEWIRE);
-DallasTemperature dallasTemperature(&onewire);
-DallasTemperatureSensor temperatureSensor(&dallasTemperature, NULL);
-
 AutomaticWaterService automaticWaterService(WATER_SECONDS, COOL_DOWN_SECONDS,
 MAX_WATERLESS_DAYS);
 
-TimerDryStrategy dryTimer1(DRY_TIMER_HOURS);
-OnboardAnalogInputPin moistureSensor1SensorPin(PIN_POT1_MOISTURE_SENSOR);
-OnboardDigitalOutputPin moistureSensor1VoltagePin(PIN_POT1_MOISTURE_VOLTAGE);
-OnboardDCMoistureSensor moistureSensor1(&moistureSensor1VoltagePin,
-		&moistureSensor1SensorPin, MOISTURE_READ_COUNT,
-		MOISTURE_VOLTAGE_DELAY_MILLIS);
-OnboardDigitalOutputPin valve1Pin(PIN_POT1_VALVE);
-OnboardValve valve1(&valve1Pin, VALVE_DELAY_MILLIS);
-Pot pot1 = Pot(&moistureSensor1, &temperatureSensor, &dryTimer1, &valve1,
-		&pump);
+TimerDryStrategy dryTimer(DRY_TIMER_HOURS);
 
-TimerDryStrategy dryTimer2(DRY_TIMER_HOURS);
-OnboardAnalogInputPin moistureSensor2SensorPin(PIN_POT2_MOISTURE_SENSOR);
-OnboardDigitalOutputPin moistureSensor2VoltagePin(PIN_POT2_MOISTURE_VOLTAGE);
-OnboardDCMoistureSensor moistureSensor2(&moistureSensor2VoltagePin,
-		&moistureSensor2SensorPin, MOISTURE_READ_COUNT,
-		MOISTURE_VOLTAGE_DELAY_MILLIS);
-OnboardDigitalOutputPin valve2Pin(PIN_POT2_VALVE);
-OnboardValve valve2(&valve2Pin, VALVE_DELAY_MILLIS);
-Pot pot2 = Pot(&moistureSensor2, &temperatureSensor, &dryTimer2, &valve2,
-		&pump);
-
-TimerDryStrategy dryTimer3(DRY_TIMER_HOURS);
-OnboardAnalogInputPin moistureSensor3SensorPin(PIN_POT3_MOISTURE_SENSOR);
-OnboardDigitalOutputPin moistureSensor3VoltagePin(PIN_POT3_MOISTURE_VOLTAGE);
-OnboardDCMoistureSensor moistureSensor3(&moistureSensor3VoltagePin,
-		&moistureSensor3SensorPin, MOISTURE_READ_COUNT,
-		MOISTURE_VOLTAGE_DELAY_MILLIS);
-OnboardDigitalOutputPin valve3Pin(PIN_POT3_VALVE);
-OnboardValve valve3(&valve3Pin, VALVE_DELAY_MILLIS);
-Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &dryTimer3, &valve3,
-		&pump);
-
-Pot _pots[] = { pot1, pot2, pot3 };
-ArrayPotRepository potRepository(_pots, sizeof(_pots) / sizeof(*_pots));
+PCF8574PotRepository potRepository;
 
 Sleep sleep;
 
@@ -117,15 +75,17 @@ AutomaticWaterApplicationService automaticWaterApplicationService(
 void setup() {
 	rtc.begin();
 	logger.begin();
-	dallasTemperature.begin();
-	dallasTemperature.setResolution(TEMPERATURE_RESOLUTION);
 	Debugger::logAndClearResetReason();
 
+	potRepository.begin(&dryTimer, &pump,
+	PIN_PCF8574_VALVE, VALVE_DELAY_MILLIS,
+	PIN_PCF8574_SENSOR);
+
 	// Water all pots, as a visual self test
-	Pot* pots = potRepository.findAll();
+	Pot** pots = potRepository.findAll();
 	for (int i = 0; i < potRepository.count(); i++) {
-		Pot pot = pots[i];
-		pot.water(BOOT_WATER_SECONDS);
+		Pot* pot = pots[i];
+		pot->water(BOOT_WATER_SECONDS);
 	}
 }
 
