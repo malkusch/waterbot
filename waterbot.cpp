@@ -23,6 +23,7 @@
 #include "src/infrastructure/pin/onboard/OnboardDigitalOutputPin.h"
 #include "src/infrastructure/rtc/DS1307RTC.h"
 #include "src/infrastructure/TimeUnits.h"
+#include "src/infrastructure/ArrayPotRepository.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pot.h"
 #include "src/model/Pump.h"
@@ -35,6 +36,7 @@ using waterbot::infrastructure::drystrategy::TimerDryStrategy;
 using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
+using waterbot::infrastructure::ArrayPotRepository;
 
 #if LOGGER == LOGGER_SD
 
@@ -102,7 +104,8 @@ OnboardValve valve3(&valve3Pin, VALVE_DELAY_MILLIS);
 Pot pot3 = Pot(&moistureSensor3, &temperatureSensor, &dryTimer3, &valve3,
 		&pump);
 
-Pot pots[] = { pot1, pot2, pot3 };
+Pot _pots[] = { pot1, pot2, pot3 };
+ArrayPotRepository potRepository(_pots, sizeof(_pots) / sizeof(*_pots));
 
 Sleep sleep;
 
@@ -114,7 +117,9 @@ void setup() {
 	Debugger::logAndClearResetReason();
 
 	// Water all pots, as a visual self test
-	for (auto & pot : pots) {
+	Pot* pots = potRepository.findAll();
+	for (int i = 0; i < potRepository.count(); i++) {
+		Pot pot = pots[i];
 		pot.water(BOOT_WATER_SECONDS);
 	}
 }
@@ -122,7 +127,9 @@ void setup() {
 void loop() {
 	Debugger::logMemory();
 
-	for (auto & pot : pots) {
+	Pot* pots = potRepository.findAll();
+	for (int i = 0; i < potRepository.count(); i++) {
+		Pot pot = pots[i];
 		automaticWaterService.waterIfNeeded(&pot);
 	}
 	pause(PAUSE_SECONDS);
