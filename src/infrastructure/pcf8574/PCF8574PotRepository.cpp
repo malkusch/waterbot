@@ -17,12 +17,14 @@
 #include "../../model/Pot.h"
 #include "../../model/Pump.h"
 #include "../logger/Logger.h"
+#include "../LED.h"
 #include "../onboard/OnboardValve.h"
 #include "AM2321Sensor.h"
 #include "PCF8574DigitalOutputPin.h"
 
 using waterbot::model::Valve;
 using waterbot::infrastructure::onboard::OnboardValve;
+using waterbot::infrastructure::LED;
 
 namespace waterbot {
 namespace infrastructure {
@@ -42,7 +44,7 @@ PCF8574PotRepository::~PCF8574PotRepository() {
 
 void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 		const byte valvePin, unsigned int valveDelayMillis,
-		const byte am2321Pin) {
+		const byte am2321Pin, const byte ledPin) {
 
 	Wire.begin();
 	byte addresses[16];
@@ -80,6 +82,12 @@ void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 
 		Pot* pot = new Pot(moistureSensor, temperatureSensor, dryStrategy,
 				valve, pump);
+
+		PCF8574DigitalOutputPin _ledPin = PCF8574DigitalOutputPin(expander,
+				ledPin);
+		_ledPin.begin();
+		LED led(&_ledPin);
+		led.turnOn();
 
 		pots[i] = pot;
 	}
