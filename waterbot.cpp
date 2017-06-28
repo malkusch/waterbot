@@ -99,7 +99,7 @@ void pause(unsigned long seconds) {
 	logger.flush();
 	byte delaySleepMillis = 100;
 	delay(delaySleepMillis); // Give serial data some time to print
-	sleep.pwrDownMode();
+	sleep.idleMode();
 	sleep.sleepDelay(TimeUnits::secondsToMillis(seconds) - delaySleepMillis);
 }
 
