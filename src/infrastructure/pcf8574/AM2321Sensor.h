@@ -10,6 +10,9 @@
 #include "../../model/MoistureSensor.h"
 #include "../../model/TemperatureSensor.h"
 #include "../pin/DigitalOutputPin.h"
+#include <AM2321/AM2321.h>
+
+#define AM2321_STALE_MILLIS	1000
 
 using waterbot::infrastructure::pin::DigitalOutputPin;
 
@@ -24,7 +27,10 @@ public:
 	virtual float readTemperature();
 
 private:
-	DigitalOutputPin* powerPin;
+	AM2321 am2321;
+	unsigned long lastReadTime;
+	DigitalOutputPin* busSwitch;
+	void readIfStale();
 };
 
 } /* namespace pcf8574 */

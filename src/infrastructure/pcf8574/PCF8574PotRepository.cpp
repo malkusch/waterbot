@@ -21,6 +21,7 @@
 #include "../onboard/OnboardValve.h"
 #include "AM2321Sensor.h"
 #include "PCF8574DigitalOutputPin.h"
+#include "PCF8574SinkPin.h"
 
 using waterbot::model::Valve;
 using waterbot::infrastructure::onboard::OnboardValve;
@@ -75,16 +76,14 @@ void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 		MoistureSensor* moistureSensor = aM2321;
 		TemperatureSensor* temperatureSensor = aM2321;
 
-		PCF8574DigitalOutputPin* _valvePin = new PCF8574DigitalOutputPin(
-				expander, valvePin);
+		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();
 		Valve* valve = new OnboardValve(_valvePin, valveDelayMillis);
 
 		Pot* pot = new Pot(moistureSensor, temperatureSensor, dryStrategy,
 				valve, pump);
 
-		PCF8574DigitalOutputPin _ledPin = PCF8574DigitalOutputPin(expander,
-				ledPin);
+		PCF8574SinkPin _ledPin = PCF8574SinkPin(expander, ledPin);
 		_ledPin.begin();
 		LED led(&_ledPin);
 		led.turnOn();

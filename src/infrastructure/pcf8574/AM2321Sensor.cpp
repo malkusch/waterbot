@@ -7,7 +7,11 @@
 
 #include "AM2321Sensor.h"
 
-#include <AM2321/AM2321.h>
+#include <Arduino.h>
+#include <WString.h>
+
+#include "../logger/Logger.h"
+#include "../TimeUnits.h"
 
 using waterbot::infrastructure::pin::State;
 using waterbot::infrastructure::pin::State;
@@ -16,32 +20,34 @@ namespace waterbot {
 namespace infrastructure {
 namespace pcf8574 {
 
-AM2321Sensor::AM2321Sensor(DigitalOutputPin* powerPin) :
-		powerPin(powerPin) {
+AM2321Sensor::AM2321Sensor(DigitalOutputPin* busSwitch) :
+		busSwitch(busSwitch) {
 
-	powerPin->write(State::OFF);
+	busSwitch->write(State::OFF);
+	lastReadTime = millis();
 }
 
 int AM2321Sensor::readMoisture() {
-	powerPin->write(State::ON);
+	readIfStale();
+	return am2321.humidity;
+}
 
-	AM2321 am2321;
-	am2321.read();
-	const int moisture = am2321.humidity;
+void AM2321Sensor::readIfStale() {
+	if (!TimeUnits::millisSince(lastReadTime) > AM2321_STALE_MILLIS) {
+		return;
+	}
+	lastReadTime = millis();
 
-	powerPin->write(State::OFF);
-	return moisture;
+	busSwitch->write(State::ON);
+	if (!am2321.read()) {
+		Logger::getLogger()->warn(F("Failed reading sensor"));
+	}
+	busSwitch->write(State::OFF);
 }
 
 float AM2321Sensor::readTemperature() {
-	powerPin->write(State::ON);
-
-	AM2321 am2321;
-	am2321.read();
-	const float temperature = am2321.temperature / 10;
-
-	powerPin->write(State::OFF);
-	return temperature;
+	readIfStale();
+	return am2321.temperature / 10.0;
 }
 
 } /* namespace pcf8574 */
