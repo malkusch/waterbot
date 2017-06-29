@@ -21,7 +21,7 @@ PCF8574SinkPin::PCF8574SinkPin(PCF8574* pcf8574,
 
 void PCF8574SinkPin::begin() {
 	pcf8574->pinMode(pin, OUTPUT, false);
-	write(State::OFF);
+	write(OFF);
 }
 
 void PCF8574SinkPin::write(const State state) {
@@ -31,7 +31,7 @@ void PCF8574SinkPin::write(const State state) {
 	 * state (HIGH) as OFF. Use a p-channel MOSFET, which is off when the gate is
 	 * HIGH or use the pins to sink current (max. 10 mA).
 	 */
-	pcf8574->digitalWrite(pin, state == State::ON ? LOW : HIGH);
+	pcf8574->digitalWrite(pin, state == ON ? LOW : HIGH);
 }
 
 } /* namespace pcf8574 */

@@ -18,7 +18,7 @@ void DS1307RTC::begin() {
 	if (!ds1307->isrunning()) {
 		ds1307->adjust(DateTime(F(__DATE__), F(__TIME__)));
 	}
-	RTC::setRTC(this);
+	RTC::begin();
 }
 
 uint32_t DS1307RTC::timestamp() const {

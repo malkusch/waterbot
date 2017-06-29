@@ -16,6 +16,7 @@ public:
 	}
 	;
 	virtual uint32_t timestamp() const = 0;
+	virtual void begin();
 	static RTC* getRTC();
 	static void setRTC(RTC*);
 

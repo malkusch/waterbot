@@ -21,11 +21,11 @@ PCF8574DigitalOutputPin::PCF8574DigitalOutputPin(PCF8574* pcf8574,
 
 void PCF8574DigitalOutputPin::begin() {
 	pcf8574->pinMode(pin, OUTPUT);
-	write(State::OFF);
+	write(OFF);
 }
 
 void PCF8574DigitalOutputPin::write(const State state) {
-	pcf8574->digitalWrite(pin, state == State::ON ? HIGH : LOW);
+	pcf8574->digitalWrite(pin, state == ON ? HIGH : LOW);
 }
 
 } /* namespace pcf8574 */

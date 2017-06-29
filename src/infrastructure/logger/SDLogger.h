@@ -25,6 +25,7 @@ public:
 
 protected:
 	virtual void write(const String& message);
+	virtual void writeln(const String& message);
 
 private:
 	SdFat* fs;

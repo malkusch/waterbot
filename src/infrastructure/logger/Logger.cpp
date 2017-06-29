@@ -38,27 +38,24 @@ void Logger::error(const String& message) {
 }
 
 void Logger::log(const LogLevel level, const String& message) {
-	String logMessage = String(RTC::getRTC()->timestamp());
-	logMessage += F(",");
+	write(String(RTC::getRTC()->timestamp()));
+	write(F(","));
 
-	String printableLevel;
 	switch (level) {
 	case DEBUG:
-		printableLevel = F("DEBUG");
+		write(F("DEBUG"));
 		break;
 	case INFO:
-		printableLevel = F("INFO");
+		write(F("INFO"));
 		break;
 	case WARN:
-		printableLevel = F("WARN");
+		write(F("WARN"));
 		break;
 	case ERROR:
-		printableLevel = F("ERROR");
+		write(F("ERROR"));
 		break;
 	}
-	logMessage += printableLevel;
 
-	logMessage += F(",");
-	logMessage += message;
-	write(logMessage);
+	write(F(","));
+	writeln(message);
 }

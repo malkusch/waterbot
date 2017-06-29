@@ -16,15 +16,15 @@
 #include "../../model/DryStrategy.h"
 #include "../../model/Pot.h"
 #include "../../model/Pump.h"
+#include "../../model/Valve.h"
 #include "../logger/Logger.h"
 #include "../LED.h"
-#include "../onboard/OnboardValve.h"
 #include "AM2321Sensor.h"
 #include "PCF8574DigitalOutputPin.h"
 #include "PCF8574SinkPin.h"
 
 using waterbot::model::Valve;
-using waterbot::infrastructure::onboard::OnboardValve;
+using waterbot::model::Valve;
 using waterbot::infrastructure::LED;
 
 namespace waterbot {
@@ -44,7 +44,7 @@ PCF8574PotRepository::~PCF8574PotRepository() {
 }
 
 void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
-		const byte valvePin, unsigned int valveDelayMillis,
+		const byte valvePin, const unsigned int valveDelayMillis,
 		const byte am2321Pin, const byte ledPin) {
 
 	Wire.begin();
@@ -66,22 +66,20 @@ void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 
 	pots = new Pot*[size];
 	for (byte i = 0; i < size; i++) {
+		const byte id = extractId(addresses[i]);
 		PCF8574* expander = new PCF8574();
 		expander->begin(addresses[i]);
 
 		PCF8574DigitalOutputPin* _am2321Pin = new PCF8574DigitalOutputPin(
 				expander, am2321Pin);
 		_am2321Pin->begin();
-		AM2321Sensor* aM2321 = new AM2321Sensor(_am2321Pin);
-		MoistureSensor* moistureSensor = aM2321;
-		TemperatureSensor* temperatureSensor = aM2321;
+		AM2321Sensor* sensor = new AM2321Sensor(_am2321Pin);
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();
-		Valve* valve = new OnboardValve(_valvePin, valveDelayMillis);
+		Valve* valve = new Valve(_valvePin, valveDelayMillis);
 
-		Pot* pot = new Pot(moistureSensor, temperatureSensor, dryStrategy,
-				valve, pump);
+		Pot* pot = new Pot(id, sensor, dryStrategy, valve, pump);
 
 		PCF8574SinkPin _ledPin = PCF8574SinkPin(expander, ledPin);
 		_ledPin.begin();
@@ -89,6 +87,14 @@ void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 		led.turnOn();
 
 		pots[i] = pot;
+	}
+}
+
+byte PCF8574PotRepository::extractId(const byte address) {
+	if ((address & B1110000) == B0100000) {
+		return address & B111;
+	} else {
+		return ((address & B1111) >> 1) + 8;
 	}
 }
 

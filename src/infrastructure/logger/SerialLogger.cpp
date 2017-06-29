@@ -8,9 +8,8 @@
 #include "SerialLogger.h"
 
 #include <HardwareSerial.h>
-#include <WString.h>
 
-SerialLogger::SerialLogger(LED warnLED, LED errorLED) :
+SerialLogger::SerialLogger(LED* warnLED, LED* errorLED) :
 		warnLED(warnLED), errorLED(errorLED) {
 }
 
@@ -20,12 +19,12 @@ void SerialLogger::begin() {
 }
 
 void SerialLogger::warn(const String& message) {
-	warnLED.turnOn();
+	warnLED->turnOn();
 	Logger::warn(message);
 }
 
 void SerialLogger::error(const String& message) {
-	errorLED.turnOn();
+	errorLED->turnOn();
 	Logger::error(message);
 }
 
@@ -34,5 +33,9 @@ void SerialLogger::flush() {
 }
 
 void SerialLogger::write(const String& message) {
+	Serial.print(message);
+}
+
+void SerialLogger::writeln(const String& message) {
 	Serial.println(message);
 }

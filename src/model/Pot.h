@@ -11,10 +11,9 @@
 
 #include "SensorData.h"
 #include "DryStrategy.h"
-#include "MoistureSensor.h"
 #include "Pump.h"
+#include "Sensor.h"
 #include "SensorData.h"
-#include "TemperatureSensor.h"
 #include "Valve.h"
 
 namespace waterbot {
@@ -22,22 +21,20 @@ namespace model {
 
 class Pot {
 public:
-	Pot(MoistureSensor*, TemperatureSensor*, DryStrategy*, Valve*, Pump*);
+	Pot(const byte id, Sensor*, DryStrategy*, Valve*, Pump*);
 	void water(byte seconds);
 	unsigned long getLastWaterTime() const;
 	byte getId();bool isDry();
 
 private:
 	const byte id;
-	MoistureSensor* moistureSensor;
-	TemperatureSensor* temperatureSensor;
-	static byte nextId;
+	Sensor* sensor;
 	DryStrategy* dryStrategy;
 	Valve* valve;
 	Pump* pump;
 	unsigned long lastWaterTime;
 
-	SensorData readSensors();
+	SensorData readSensor();
 };
 
 }

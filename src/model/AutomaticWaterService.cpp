@@ -31,18 +31,22 @@ void AutomaticWaterService::waterIfNeeded(Pot *pot) {
 	}
 
 	if (isTooLongWaterLess(pot)) {
-		String warning = F("Pot ");
-		warning += pot->getId();
-		warning += F(" wasn't watered too long. Check sensors!");
-		Logger::getLogger()->warn(warning);
+		{
+			String warning = F("Pot ");
+			warning += pot->getId();
+			warning += F(" wasn't watered too long. Check sensors!");
+			Logger::getLogger()->warn(warning);
+		}
 		pot->water(waterSeconds);
 		return;
 	}
 
 	if (pot->isDry()) {
-		String info = F("Automatically watering pot ");
-		info += pot->getId();
-		Logger::getLogger()->info(info);
+		{
+			String info = F("Automatically watering pot ");
+			info += pot->getId();
+			Logger::getLogger()->info(info);
+		}
 		pot->water(waterSeconds);
 	}
 }

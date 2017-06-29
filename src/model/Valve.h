@@ -1,25 +1,36 @@
 /*
- * Valve.h
+ * OnboardValve.h
  *
- *  Created on: 18.05.2017
+ *  Created on: 19.05.2017
  *      Author: malkusch
  */
 
 #pragma once
 
+#include <Arduino.h>
+
+#include "../infrastructure/pin/DigitalOutputPin.h"
+
 namespace waterbot {
 namespace model {
 
-class Valve {
-	friend class Pot;
-public:
-	virtual ~Valve() {
-	}
-	;
-protected:
-	virtual void open() = 0;
-	virtual void close() = 0;
+using infrastructure::pin::DigitalOutputPin;
 
+class Valve {
+
+	friend class Pot;
+
+public:
+	Valve(DigitalOutputPin* pin, const unsigned int delayMillis);
+
+protected:
+	void open();
+	void close();
+
+private:
+	DigitalOutputPin* pin;
+	const unsigned int delayMillis;
+	void closeWithoutDelay();
 };
 
 }

@@ -31,6 +31,7 @@ public:
 
 protected:
 	virtual void write(const String& message) = 0;
+	virtual void writeln(const String& message) = 0;
 
 private:
 	static Logger* logger;

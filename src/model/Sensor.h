@@ -8,13 +8,15 @@
 #ifndef MOISTURESENSOR_H_
 #define MOISTURESENSOR_H_
 
-class MoistureSensor {
+#include "SensorData.h"
+
+class Sensor {
 
 public:
-	virtual ~MoistureSensor() {
+	virtual ~Sensor() {
 	}
 	;
-	virtual int readMoisture() = 0;
+	virtual SensorData read() = 0;
 };
 
 #endif /* MOISTURESENSOR_H_ */

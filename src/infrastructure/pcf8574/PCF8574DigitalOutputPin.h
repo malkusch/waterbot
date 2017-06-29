@@ -12,6 +12,8 @@
 
 using waterbot::infrastructure::pin::DigitalOutputPin;
 using waterbot::infrastructure::pin::State;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
 
 namespace waterbot {
 namespace infrastructure {

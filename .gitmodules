@@ -1,21 +1,12 @@
 [submodule "libraries/MemoryFree"]
 	path = libraries/MemoryFree
 	url = https://github.com/McNeight/MemoryFree.git
-[submodule "libraries/QuickStats"]
-	path = libraries/QuickStats
-	url = https://github.com/dndubins/QuickStats.git
 [submodule "test/libraries/Catch"]
 	path = test/libraries/Catch
 	url = https://github.com/philsquared/Catch.git
 [submodule "libraries/Sleep_n0m1"]
 	path = libraries/Sleep_n0m1
 	url = https://github.com/n0m1/Sleep_n0m1.git
-[submodule "libraries/OneWire"]
-	path = libraries/OneWire
-	url = https://github.com/PaulStoffregen/OneWire.git
-[submodule "libraries/Arduino-Temperature-Control-Library"]
-	path = libraries/Arduino-Temperature-Control-Library
-	url = https://github.com/milesburton/Arduino-Temperature-Control-Library.git
 [submodule "libraries/RTClib"]
 	path = libraries/RTClib
 	url = https://github.com/adafruit/RTClib.git

@@ -25,6 +25,16 @@ SDLogger::~SDLogger() {
 }
 
 void SDLogger::write(const String& message) {
+	file.print(message);
+	if (file.getWriteError()) {
+		if (initCard()) {
+			file.clearWriteError();
+			file.print(message);
+		}
+	}
+}
+
+void SDLogger::writeln(const String& message) {
 	file.println(message);
 	if (file.getWriteError()) {
 		if (initCard()) {

@@ -1,5 +1,4 @@
 #include "RTC.h"
-#include "MillisRTC.h"
 
 RTC* RTC::rtc;
 
@@ -9,4 +8,8 @@ RTC* RTC::getRTC() {
 
 void RTC::setRTC(RTC* rtc) {
 	RTC::rtc = rtc;
+}
+
+void RTC::begin() {
+	setRTC(this);
 }

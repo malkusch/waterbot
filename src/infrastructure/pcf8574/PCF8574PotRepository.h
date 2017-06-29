@@ -25,13 +25,14 @@ public:
 	PCF8574PotRepository();
 	~PCF8574PotRepository();
 	void begin(DryStrategy*, Pump*, const byte valvePin,
-			unsigned int valveDelayMillis, const byte am2321Pin,
+			const unsigned int valveDelayMillis, const byte am2321Pin,
 			const byte ledPin);
 	virtual byte count();
 	virtual Pot** findAll();
 
 private:
 	bool probeAddress(const byte address);
+	byte extractId(const byte address);
 	Pot** pots;
 	byte size;
 };

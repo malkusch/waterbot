@@ -15,21 +15,20 @@
 
 using waterbot::model::Pot;
 
-byte Pot::nextId = 1;
-
-Pot::Pot(MoistureSensor* moistureSensor, TemperatureSensor* temperatureSensor,
-		DryStrategy* dryStrategy, Valve* valve, Pump* pump) :
-		id(nextId++), moistureSensor(moistureSensor), temperatureSensor(
-				temperatureSensor), dryStrategy(dryStrategy), valve(valve), pump(
+Pot::Pot(const byte id, Sensor* moistureSensor, DryStrategy* dryStrategy,
+		Valve* valve, Pump* pump) :
+		id(id), sensor(moistureSensor), dryStrategy(dryStrategy), valve(valve), pump(
 				pump) {
 
 	lastWaterTime = millis();
 }
 
 void Pot::water(byte seconds) {
-	String message = F("Watering pot ");
-	message += id;
-	Logger::getLogger()->info(message);
+	{
+		String message = F("Watering pot ");
+		message += id;
+		Logger::getLogger()->info(message);
+	}
 
 	valve->open();
 	pump->pump(seconds);
@@ -46,16 +45,12 @@ unsigned long Pot::getLastWaterTime() const {
 }
 
 bool Pot::isDry() {
-	SensorData data = readSensors();
+	SensorData data = readSensor();
 	return dryStrategy->isDry(data);
 }
 
-SensorData Pot::readSensors() {
-	SensorData data;
-	data.moisture = moistureSensor->readMoisture();
-	if (temperatureSensor != NULL) {
-		data.temperature = temperatureSensor->readTemperature();
-	}
+SensorData Pot::readSensor() {
+	SensorData data = sensor->read();
 
 	char message[20];
 	char temperature[8];
