@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:pot-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -44,28 +45,17 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L RJ45_LEDS J1
+L RJ45_LEDS-RESCUE-pot-RESCUE-pot J1
 U 1 1 5951851F
 P 4250 2900
 F 0 "J1" H 4250 2400 50  0000 C CNN
-F 1 "RJ45_LEDS" H 4250 3300 50  0000 C CNN
+F 1 "Bus" H 4250 3300 50  0000 C CNN
 F 2 "Connect:RJHSE538X" H 4250 2850 50  0001 C CNN
 F 3 "" H 4250 2850 50  0000 C CNN
 	1    4250 2900
 	1    0    0    -1  
 $EndComp
 NoConn ~ 4550 3400
-$Comp
-L RJ45 J2
-U 1 1 595189F3
-P 2850 3000
-F 0 "J2" H 3050 3500 50  0000 C CNN
-F 1 "RJ45" H 2700 3500 50  0000 C CNN
-F 2 "Connect:RJ45_8" H 2850 3000 50  0001 C CNN
-F 3 "" H 2850 3000 50  0000 C CNN
-	1    2850 3000
-	1    0    0    -1  
-$EndComp
 $Comp
 L +12V #PWR01
 U 1 1 59518AE4
@@ -99,8 +89,6 @@ F 3 "" H 1700 4200 50  0000 C CNN
 	1    1700 4200
 	1    0    0    -1  
 $EndComp
-NoConn ~ 3100 3450
-NoConn ~ 3400 2650
 $Comp
 L PCF8574 U1
 U 1 1 59518F2E
@@ -451,6 +439,77 @@ F 3 "" H 6550 3100 50  0000 C CNN
 	1    6550 3100
 	1    0    0    -1  
 $EndComp
+$Comp
+L R R6
+U 1 1 5952EC88
+P 6250 3600
+F 0 "R6" V 6330 3600 50  0000 C CNN
+F 1 "100k" V 6250 3600 50  0000 C CNN
+F 2 "Resistors_ThroughHole:R_Box_L13.0mm_W4.0mm_P9.00mm" V 6180 3600 50  0001 C CNN
+F 3 "" H 6250 3600 50  0000 C CNN
+	1    6250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L JUMPER JP4
+U 1 1 59530192
+P 5000 2850
+F 0 "JP4" H 5000 3000 50  0000 C CNN
+F 1 "LED" H 5000 2770 50  0000 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_2x01_Pitch2.54mm" H 5000 2850 50  0001 C CNN
+F 3 "" H 5000 2850 50  0000 C CNN
+	1    5000 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L BC237 Q3
+U 1 1 59535056
+P 6250 3100
+F 0 "Q3" H 6450 3175 50  0000 L CNN
+F 1 "2N3904" H 6450 3100 50  0000 L CNN
+F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 6450 3025 50  0000 L CIN
+F 3 "" H 6250 3100 50  0000 L CNN
+	1    6250 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L FUSE F1
+U 1 1 59537D6E
+P 2100 3600
+F 0 "F1" H 2200 3650 50  0000 C CNN
+F 1 "0.5A" H 2000 3550 50  0000 C CNN
+F 2 "Fuse_Holders_and_Fuses:Fuse_TE5_Littlefuse-395Series" H 2100 3600 50  0001 C CNN
+F 3 "" H 2100 3600 50  0000 C CNN
+	1    2100 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L FUSE F2
+U 1 1 59537F73
+P 2100 3900
+F 0 "F2" H 2200 3950 50  0000 C CNN
+F 1 "50mA" H 2000 3850 50  0000 C CNN
+F 2 "Fuse_Holders_and_Fuses:Fuse_TE5_Littlefuse-395Series" H 2100 3900 50  0001 C CNN
+F 3 "" H 2100 3900 50  0000 C CNN
+	1    2100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L RJ45_LEDS-RESCUE-pot-RESCUE-pot J2
+U 1 1 59541C7B
+P 2900 2900
+F 0 "J2" H 2900 2400 50  0000 C CNN
+F 1 "Bus" H 2900 3300 50  0000 C CNN
+F 2 "Connect:RJHSE538X" H 2900 2850 50  0001 C CNN
+F 3 "" H 2900 2850 50  0000 C CNN
+	1    2900 2900
+	1    0    0    -1  
+$EndComp
+NoConn ~ 3200 3400
+NoConn ~ 3300 2400
+NoConn ~ 3200 2400
+NoConn ~ 2600 2400
+NoConn ~ 2500 2400
 Wire Wire Line
 	1400 3600 1850 3600
 Wire Wire Line
@@ -470,20 +529,18 @@ Wire Wire Line
 	4350 4200 4350 3400
 Connection ~ 4150 4200
 Wire Wire Line
-	2500 3600 2500 3450
+	2500 3600 2500 3400
 Wire Wire Line
-	2600 3600 2600 3450
+	2600 3600 2600 3400
 Connection ~ 2500 3600
 Wire Wire Line
-	2700 3900 2700 3450
+	2700 3900 2700 3400
 Wire Wire Line
 	1400 3900 1850 3900
 Wire Wire Line
 	2350 3900 4050 3900
 Wire Wire Line
-	2800 4200 2800 3450
-Wire Wire Line
-	2900 4200 2900 3450
+	2800 4200 2800 3400
 Connection ~ 2800 4200
 Connection ~ 1700 4200
 Connection ~ 1700 3900
@@ -506,14 +563,6 @@ Wire Wire Line
 	6050 5500 6350 5500
 Wire Wire Line
 	6350 5500 6350 4650
-Wire Wire Line
-	3000 3450 3000 4400
-Wire Wire Line
-	3000 4400 6650 4400
-Wire Wire Line
-	3200 3450 3200 4300
-Wire Wire Line
-	3200 4300 6050 4300
 Wire Wire Line
 	4900 5500 5050 5500
 Wire Wire Line
@@ -598,77 +647,36 @@ Wire Wire Line
 	6650 3000 6450 3000
 Wire Wire Line
 	6050 4300 6050 3000
-$Comp
-L R R6
-U 1 1 5952EC88
-P 6250 3600
-F 0 "R6" V 6330 3600 50  0000 C CNN
-F 1 "100k" V 6250 3600 50  0000 C CNN
-F 2 "Resistors_ThroughHole:R_Box_L13.0mm_W4.0mm_P9.00mm" V 6180 3600 50  0001 C CNN
-F 3 "" H 6250 3600 50  0000 C CNN
-	1    6250 3600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6250 3300 6250 3450
 Wire Wire Line
 	6250 5600 6050 5600
 Wire Wire Line
 	6250 3750 6250 5600
-$Comp
-L JUMPER JP4
-U 1 1 59530192
-P 5000 2850
-F 0 "JP4" H 5000 3000 50  0000 C CNN
-F 1 "LED" H 5000 2770 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x01_Pitch2.54mm" H 5000 2850 50  0001 C CNN
-F 3 "" H 5000 2850 50  0000 C CNN
-	1    5000 2850
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	5000 2200 5000 2550
 Wire Wire Line
 	5000 4650 5000 3150
-$Comp
-L BC237 Q3
-U 1 1 59535056
-P 6250 3100
-F 0 "Q3" H 6450 3175 50  0000 L CNN
-F 1 "2N3904" H 6450 3100 50  0000 L CNN
-F 2 "TO_SOT_Packages_THT:TO-92_Inline_Wide" H 6450 3025 50  0000 L CIN
-F 3 "" H 6250 3100 50  0000 L CNN
-	1    6250 3100
-	0    -1   -1   0   
-$EndComp
 Connection ~ 2600 3600
 Connection ~ 2700 3900
-Connection ~ 2900 4200
-$Comp
-L FUSE F1
-U 1 1 59537D6E
-P 2100 3600
-F 0 "F1" H 2200 3650 50  0000 C CNN
-F 1 "0.5A" H 2000 3550 50  0000 C CNN
-F 2 "Fuse_Holders_and_Fuses:Fuse_TE5_Littlefuse-395Series" H 2100 3600 50  0001 C CNN
-F 3 "" H 2100 3600 50  0000 C CNN
-	1    2100 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L FUSE F2
-U 1 1 59537F73
-P 2100 3900
-F 0 "F2" H 2200 3950 50  0000 C CNN
-F 1 "50mA" H 2000 3850 50  0000 C CNN
-F 2 "Fuse_Holders_and_Fuses:Fuse_TE5_Littlefuse-395Series" H 2100 3900 50  0001 C CNN
-F 3 "" H 2100 3900 50  0000 C CNN
-	1    2100 3900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8150 2500 8500 2500
 Connection ~ 8400 2500
 Connection ~ 2450 3900
 Connection ~ 2450 4200
+Wire Wire Line
+	3000 3400 3000 4200
+Connection ~ 3000 4200
+Wire Wire Line
+	3100 3400 3100 4400
+Wire Wire Line
+	3100 4400 6650 4400
+Wire Wire Line
+	3300 3400 3300 4300
+Wire Wire Line
+	3300 4300 6050 4300
+Wire Wire Line
+	3650 2700 3500 2700
+NoConn ~ 4850 2700
+NoConn ~ 2300 2700
 $EndSCHEMATC
