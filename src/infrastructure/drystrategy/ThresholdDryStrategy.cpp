@@ -7,7 +7,7 @@
 
 #include "ThresholdDryStrategy.h"
 
-ThresholdDryStrategy::ThresholdDryStrategy(int moistureThreshold) :
+ThresholdDryStrategy::ThresholdDryStrategy(const float moistureThreshold) :
 		moistureThreshold(moistureThreshold) {
 
 }

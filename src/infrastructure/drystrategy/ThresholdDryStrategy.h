@@ -15,13 +15,13 @@ using waterbot::model::DryStrategy;
 
 class ThresholdDryStrategy: public DryStrategy {
 public:
-	ThresholdDryStrategy(int moistureThreshold);
+	ThresholdDryStrategy(const float moistureThreshold);
 
 protected:
 	virtual bool isDry(SensorData);
 
 private:
-	const int moistureThreshold;
+	const float moistureThreshold;
 };
 
 #endif /* INFRASTRUCTURE_DRYSTRATEGY_THRESHOLDDRYSTRATEGY_H_ */

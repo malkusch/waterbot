@@ -55,7 +55,9 @@ SensorData Pot::readSensor() {
 	char message[20];
 	char temperature[8];
 	dtostrf(data.temperature, 7, 2, temperature);
-	sprintf(message, "%d, %d, %s", data.moisture, id, temperature);
+	char moisture[6];
+	dtostrf(data.moisture, 5, 3, moisture);
+	sprintf(message, "%d, %s, %s", id, moisture, temperature);
 	Logger::getLogger()->info(message);
 
 	return data;

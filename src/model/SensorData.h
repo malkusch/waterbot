@@ -2,7 +2,7 @@
 #define SENSORDATA_H_
 
 typedef struct {
-	int moisture;
+	float moisture;
 	float temperature;
 } SensorData;
 

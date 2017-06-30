@@ -34,7 +34,7 @@ SensorData AM2321Sensor::read() {
 	busSwitch->write(State::OFF);
 
 	SensorData data;
-	data.moisture = am2321.humidity;
+	data.moisture = am2321.humidity / 1000.0;
 	data.temperature = am2321.temperature / 10.0;
 
 	return data;
