@@ -7,9 +7,10 @@
 
 #include "AM2321Sensor.h"
 
-#include <WString.h>
 #include <AM2321/AM2321.h>
+#include <WString.h>
 
+#include "../../model/SensorData.h"
 #include "../logger/Logger.h"
 
 using waterbot::infrastructure::pin::State;

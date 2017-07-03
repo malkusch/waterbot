@@ -10,11 +10,13 @@
 #include <Arduino.h>
 
 #include "../../model/PotRepository.h"
+#include "../../model/DryStrategyFactory.h"
 
 using waterbot::model::PotRepository;
 using waterbot::model::Pot;
 using waterbot::model::DryStrategy;
 using waterbot::model::Pump;
+using waterbot::model::DryStrategyFactory;
 
 namespace waterbot {
 namespace infrastructure {
@@ -24,7 +26,7 @@ class PCF8574PotRepository: public PotRepository {
 public:
 	PCF8574PotRepository();
 	~PCF8574PotRepository();
-	void begin(DryStrategy*, Pump*, const byte valvePin,
+	void begin(DryStrategyFactory*, Pump*, const byte valvePin,
 			const unsigned int valveDelayMillis, const byte am2321Pin,
 			const byte ledPin);
 	virtual byte count();

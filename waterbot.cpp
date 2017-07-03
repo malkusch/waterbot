@@ -11,14 +11,14 @@
 #include "src/infrastructure/Debugger.h"
 #include "src/infrastructure/pin/onboard/OnboardDigitalOutputPin.h"
 #include "src/infrastructure/TimeUnits.h"
-#include "src/infrastructure/drystrategy/TimerDryStrategy.h"
+#include "src/infrastructure/drystrategy/TimerDryStrategyFactory.h"
 #include "src/infrastructure/pcf8574/PCF8574PotRepository.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pump.h"
 #include "src/application/AutomaticWaterApplicationService.h"
 
 using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
-using waterbot::infrastructure::drystrategy::TimerDryStrategy;
+using waterbot::infrastructure::drystrategy::TimerDryStrategyFactory;
 using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
@@ -54,7 +54,7 @@ Pump pump(&pumpPin, PUMP_TURN_OFF_DELAY_MILLIS);
 AutomaticWaterService automaticWaterService(WATER_SECONDS, COOL_DOWN_SECONDS,
 MAX_WATERLESS_DAYS);
 
-TimerDryStrategy dryTimer(DRY_TIMER_HOURS);
+TimerDryStrategyFactory dryTimerFactory(DRY_TIMER_HOURS);
 
 PCF8574PotRepository potRepository;
 
@@ -66,7 +66,7 @@ void setup() {
 	logger.begin();
 	Debugger::logAndClearResetReason();
 
-	potRepository.begin(&dryTimer, &pump,
+	potRepository.begin(&dryTimerFactory, &pump,
 	PIN_PCF8574_VALVE, VALVE_DELAY_MILLIS,
 	PIN_PCF8574_SENSOR, PIN_PCF8574_LED);
 

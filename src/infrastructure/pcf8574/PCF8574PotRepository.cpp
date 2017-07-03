@@ -13,7 +13,6 @@
 #include <Wire.h>
 #include <WString.h>
 
-#include "../../model/DryStrategy.h"
 #include "../../model/Pot.h"
 #include "../../model/Pump.h"
 #include "../../model/Valve.h"
@@ -43,8 +42,8 @@ PCF8574PotRepository::~PCF8574PotRepository() {
 	delete pots;
 }
 
-void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
-		const byte valvePin, const unsigned int valveDelayMillis,
+void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
+		Pump* pump, const byte valvePin, const unsigned int valveDelayMillis,
 		const byte am2321Pin, const byte ledPin) {
 
 	Wire.begin();
@@ -79,7 +78,9 @@ void PCF8574PotRepository::begin(DryStrategy* dryStrategy, Pump* pump,
 		_valvePin->begin();
 		Valve* valve = new Valve(_valvePin, valveDelayMillis);
 
-		Pot* pot = new Pot(id, sensor, dryStrategy, valve, pump);
+		DryStrategy* drystrategy = dryStrategyFactory->build();
+
+		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump);
 
 		PCF8574SinkPin _ledPin = PCF8574SinkPin(expander, ledPin);
 		_ledPin.begin();
