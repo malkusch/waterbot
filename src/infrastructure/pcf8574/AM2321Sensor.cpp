@@ -33,6 +33,11 @@ SensorData AM2321Sensor::read() {
 
 	for (byte i = 0; i < AM2321_SENSOR_RETRY_COUNT; i++) {
 		busSwitch->write(State::ON);
+
+		String debug = F("Reading sensor ");
+		debug += String(am2321.uid());
+		Logger::getLogger()->debug(debug);
+
 		if (!am2321.read()) {
 			Logger::getLogger()->warn(F("Failed reading sensor"));
 			continue;
