@@ -8,13 +8,14 @@
 #include "AM2321Sensor.h"
 
 #include <AM2321/AM2321.h>
+#include <Arduino.h>
 #include <WString.h>
 
 #include "../../model/SensorData.h"
 #include "../logger/Logger.h"
 
-using waterbot::infrastructure::pin::State;
-using waterbot::infrastructure::pin::State;
+using waterbot::infrastructure::pin::ON;
+using waterbot::infrastructure::pin::OFF;
 
 #define AM2321_SENSOR_RETRY_COUNT 3
 
@@ -25,26 +26,27 @@ namespace pcf8574 {
 AM2321Sensor::AM2321Sensor(DigitalOutputPin* busSwitch) :
 		busSwitch(busSwitch) {
 
-	busSwitch->write(State::OFF);
+	busSwitch->write(OFF);
 }
 
 SensorData AM2321Sensor::read() {
 	AM2321 am2321;
+	busSwitch->write(ON);
 
 	for (byte i = 0; i < AM2321_SENSOR_RETRY_COUNT; i++) {
-		busSwitch->write(State::ON);
-
 		String debug = F("Reading sensor ");
 		debug += String(am2321.uid());
 		Logger::getLogger()->debug(debug);
 
-		if (!am2321.read()) {
+		if (am2321.read()) {
+			break;
+
+		} else {
 			Logger::getLogger()->warn(F("Failed reading sensor"));
 			continue;
 		}
-		break;
 	}
-	busSwitch->write(State::OFF);
+	busSwitch->write(OFF);
 
 	SensorData data;
 	data.moisture = am2321.humidity / 1000.0;

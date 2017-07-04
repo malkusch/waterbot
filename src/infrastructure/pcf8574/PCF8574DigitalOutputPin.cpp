@@ -8,6 +8,11 @@
 #include "PCF8574DigitalOutputPin.h"
 
 #include <Arduino.h>
+#include <WString.h>
+
+#include "../logger/Logger.h"
+
+#define PCF8574_DIGITAL_RETRY 3
 
 namespace waterbot {
 namespace infrastructure {
@@ -25,7 +30,20 @@ void PCF8574DigitalOutputPin::begin() {
 }
 
 void PCF8574DigitalOutputPin::write(const State state) {
-	pcf8574->digitalWrite(pin, state == ON ? HIGH : LOW);
+	for (byte i = 0; i < PCF8574_DIGITAL_RETRY; i++) {
+		uint8_t error = pcf8574->digitalWrite(pin, state == ON ? HIGH : LOW);
+		if (error == 0) {
+			return;
+
+		} else {
+			String warning = F("Failed to write pin ");
+			warning += pin;
+			warning += F(". Error code: ");
+			warning += error;
+			Logger::getLogger()->warn(warning);
+			continue;
+		}
+	}
 }
 
 } /* namespace pcf8574 */
