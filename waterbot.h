@@ -4,7 +4,6 @@
 
 #define PIN_PCF8574_VALVE			0
 #define PIN_PCF8574_SENSOR			1
-#define PIN_PCF8574_LED				2
 
 #define PROFILE_DEV 		1
 #define PROFILE_PRODUCTION 	2

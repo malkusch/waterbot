@@ -9,7 +9,7 @@
     (tracks 0)
     (zones 0)
     (modules 26)
-    (nets 24)
+    (nets 23)
   )
 
   (page A4)
@@ -112,8 +112,7 @@
   (net 19 "Net-(Q2-Pad1)")
   (net 20 "Net-(Q3-Pad2)")
   (net 21 "Net-(R4-Pad2)")
-  (net 22 "Net-(R6-Pad2)")
-  (net 23 "Net-(J1-Pad13)")
+  (net 22 "Net-(J1-Pad13)")
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -141,7 +140,6 @@
     (add_net "Net-(Q2-Pad2)")
     (add_net "Net-(Q3-Pad2)")
     (add_net "Net-(R4-Pad2)")
-    (add_net "Net-(R6-Pad2)")
   )
 
   (net_class 12V ""
@@ -178,7 +176,7 @@
     (fp_line (start -4.76 -8.19) (end -4.76 -0.32) (layer F.SilkS) (width 0.12))
     (fp_line (start 11.87 7.62) (end -4.76 7.62) (layer F.SilkS) (width 0.12))
     (pad 13 thru_hole circle (at 11.68 0.89 270) (size 2 2) (drill 1.57) (layers *.Cu *.Mask)
-      (net 23 "Net-(J1-Pad13)"))
+      (net 22 "Net-(J1-Pad13)"))
     (pad 9 thru_hole circle (at -3.3 6.6 270) (size 1.5 1.5) (drill 0.89) (layers *.Cu *.Mask)
       (net 7 "Net-(J1-Pad9)"))
     (pad 10 thru_hole circle (at -1.02 6.6 270) (size 1.5 1.5) (drill 0.89) (layers *.Cu *.Mask)
@@ -944,7 +942,7 @@
     (pad 1 thru_hole circle (at 0 0) (size 2 2) (drill 1) (layers *.Cu *.Mask)
       (net 20 "Net-(Q3-Pad2)"))
     (pad 2 thru_hole circle (at 9 0) (size 2 2) (drill 1) (layers *.Cu *.Mask)
-      (net 22 "Net-(R6-Pad2)"))
+      (net 15 "Net-(JP4-Pad2)"))
     (model Resistors_THT.3dshapes/R_Box_L13.0mm_W4.0mm_P9.00mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 0.393701 0.393701 0.393701))
@@ -953,7 +951,7 @@
   )
 
   (module Housings_DIP:DIP-16_W7.62mm (layer F.Cu) (tedit 58CC8E2D) (tstamp 5953B2CB)
-    (at 287.845 92.130001 270)
+    (at 272.415 76.835 270)
     (descr "16-lead dip package, row spacing 7.62 mm (300 mils)")
     (tags "DIL DIP PDIP 2.54mm 7.62mm 300mil")
     (path /59518F2E)
@@ -994,10 +992,9 @@
       (net 21 "Net-(R4-Pad2)"))
     (pad 12 thru_hole oval (at 7.62 10.16 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
     (pad 5 thru_hole oval (at 0 10.16 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
-      (net 22 "Net-(R6-Pad2)"))
-    (pad 13 thru_hole oval (at 7.62 7.62 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
-    (pad 6 thru_hole oval (at 0 12.7 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 15 "Net-(JP4-Pad2)"))
+    (pad 13 thru_hole oval (at 7.62 7.62 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
+    (pad 6 thru_hole oval (at 0 12.7 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
     (pad 14 thru_hole oval (at 7.62 5.08 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 9 "Net-(J1-Pad6)"))
     (pad 7 thru_hole oval (at 0 15.24 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask))
@@ -1058,7 +1055,7 @@
     (pad "" thru_hole circle (at -2.79 -2.54 270) (size 3.3 3.3) (drill 3.3) (layers *.Cu *.Mask))
     (pad "" thru_hole circle (at 9.91 -2.54 270) (size 3.3 3.3) (drill 3.3) (layers *.Cu *.Mask))
     (pad 14 thru_hole circle (at -4.57 0.89 270) (size 2 2) (drill 1.57) (layers *.Cu *.Mask)
-      (net 23 "Net-(J1-Pad13)"))
+      (net 22 "Net-(J1-Pad13)"))
     (model Connectors.3dshapes/RJHSE538X.wrl
       (at (xyz 0.14 0.06 0.12))
       (scale (xyz 0.4 0.4 0.4))
