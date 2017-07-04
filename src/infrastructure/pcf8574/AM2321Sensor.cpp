@@ -16,6 +16,8 @@
 using waterbot::infrastructure::pin::State;
 using waterbot::infrastructure::pin::State;
 
+#define AM2321_SENSOR_RETRY_COUNT 3
+
 namespace waterbot {
 namespace infrastructure {
 namespace pcf8574 {
@@ -27,10 +29,15 @@ AM2321Sensor::AM2321Sensor(DigitalOutputPin* busSwitch) :
 }
 
 SensorData AM2321Sensor::read() {
-	busSwitch->write(State::ON);
 	AM2321 am2321;
-	if (!am2321.read()) {
-		Logger::getLogger()->warn(F("Failed reading sensor"));
+
+	for (byte i = 0; i < AM2321_SENSOR_RETRY_COUNT; i++) {
+		busSwitch->write(State::ON);
+		if (!am2321.read()) {
+			Logger::getLogger()->warn(F("Failed reading sensor"));
+			continue;
+		}
+		break;
 	}
 	busSwitch->write(State::OFF);
 
