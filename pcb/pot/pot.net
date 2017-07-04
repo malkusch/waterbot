@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/malkusch/workspace/oss/growbot/waterbot/pcb/pot/pot.sch)
-    (date "Di 04 Jul 2017 13:10:50 CEST")
+    (date "Di 04 Jul 2017 14:25:01 CEST")
     (tool "Eeschema 4.0.4-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -112,7 +112,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 59522F91))
     (comp (ref R6)
-      (value 100k)
+      (value 10k)
       (footprint Resistors_ThroughHole:R_Box_L13.0mm_W4.0mm_P9.00mm)
       (libsource (lib device) (part R))
       (sheetpath (names /) (tstamps /))
@@ -307,10 +307,10 @@
         (pin (num 13) (name ~) (type passive))
         (pin (num 14) (name ~) (type passive)))))
   (libraries
-    (library (logical device)
-      (uri /usr/share/kicad/library/device.lib))
     (library (logical pot-rescue)
       (uri /home/malkusch/workspace/oss/growbot/waterbot/pcb/pot/pot-rescue.lib))
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib))
     (library (logical conn)
       (uri /usr/share/kicad/library/conn.lib))
     (library (logical transistors)

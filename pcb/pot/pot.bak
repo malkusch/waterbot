@@ -554,10 +554,6 @@ Wire Wire Line
 Wire Wire Line
 	6650 2900 6550 2900
 Wire Wire Line
-	6050 5700 6150 5700
-Wire Wire Line
-	6150 5700 6150 4650
-Wire Wire Line
 	6150 4650 5000 4650
 Wire Wire Line
 	6050 5500 6350 5500
@@ -679,4 +675,8 @@ Wire Wire Line
 	3650 2700 3500 2700
 NoConn ~ 4850 2700
 NoConn ~ 2300 2700
+NoConn ~ 6050 5700
+Wire Wire Line
+	6150 4650 6150 5600
+Connection ~ 6150 5600
 $EndSCHEMATC
