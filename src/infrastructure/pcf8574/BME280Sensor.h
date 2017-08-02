@@ -1,7 +1,7 @@
 /*
- * AM2321Sensor.h
+ * BME280Sensor.h
  *
- *  Created on: 24.06.2017
+ *  Created on: 02.08.2017
  *      Author: malkusch
  */
 
@@ -16,10 +16,11 @@ namespace waterbot {
 namespace infrastructure {
 namespace pcf8574 {
 
-class AM2321Sensor: public Sensor {
+class BME280Sensor: public Sensor {
 public:
-	AM2321Sensor(DigitalOutputPin* busSwitch);
+	BME280Sensor(DigitalOutputPin* busSwitch);
 	virtual SensorData read();
+	void init();
 
 private:
 	DigitalOutputPin* busSwitch;

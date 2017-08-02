@@ -19,3 +19,6 @@
 [submodule "libraries/AM2321"]
 	path = libraries/AM2321
 	url = https://github.com/wangdong/AM2321.git
+[submodule "libraries/BME280"]
+	path = libraries/BME280
+	url = https://github.com/embeddedadventures/BME280.git
