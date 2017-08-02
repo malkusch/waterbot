@@ -17,6 +17,9 @@ public:
 	}
 	;
 	virtual SensorData read() = 0;
+	virtual void begin() {
+	}
+	;
 };
 
 #endif /* MOISTURESENSOR_H_ */

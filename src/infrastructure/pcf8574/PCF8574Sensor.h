@@ -1,7 +1,7 @@
 /*
- * AM2321Sensor.h
+ * PCF8574Sensor.h
  *
- *  Created on: 24.06.2017
+ *  Created on: 02.08.2017
  *      Author: malkusch
  */
 
@@ -16,13 +16,15 @@ namespace waterbot {
 namespace infrastructure {
 namespace pcf8574 {
 
-class AM2321Sensor: public Sensor {
+class PCF8574Sensor: public Sensor {
 public:
-	AM2321Sensor(DigitalOutputPin* busSwitch);
+	PCF8574Sensor(DigitalOutputPin* busSwitch);
 	virtual SensorData read();
+	virtual void begin();
 
 private:
 	DigitalOutputPin* busSwitch;
+	Sensor* sensor;
 };
 
 } /* namespace pcf8574 */

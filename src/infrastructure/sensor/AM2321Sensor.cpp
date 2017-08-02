@@ -11,28 +11,21 @@
 #include <Arduino.h>
 #include <WString.h>
 
-#include "../../model/SensorData.h"
 #include "../logger/Logger.h"
-
-using waterbot::infrastructure::pin::ON;
-using waterbot::infrastructure::pin::OFF;
 
 #define AM2321_SENSOR_RETRY_COUNT 3
 
 namespace waterbot {
 namespace infrastructure {
-namespace pcf8574 {
+namespace sensor {
 
-AM2321Sensor::AM2321Sensor(DigitalOutputPin* busSwitch) :
-		busSwitch(busSwitch) {
-
-	busSwitch->write(OFF);
+bool AM2321Sensor::isPluggedIn() {
+	AM2321 am2321;
+	return am2321.read();
 }
 
 SensorData AM2321Sensor::read() {
 	AM2321 am2321;
-	busSwitch->write(ON);
-
 	for (byte i = 0; i < AM2321_SENSOR_RETRY_COUNT; i++) {
 		if (am2321.read()) {
 			break;
@@ -42,12 +35,9 @@ SensorData AM2321Sensor::read() {
 			continue;
 		}
 	}
-	busSwitch->write(OFF);
-
 	SensorData data;
 	data.moisture = am2321.humidity / 1000.0;
 	data.temperature = am2321.temperature / 10.0;
-
 	return data;
 }
 

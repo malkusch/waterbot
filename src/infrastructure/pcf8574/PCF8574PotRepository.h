@@ -11,12 +11,14 @@
 
 #include "../../model/PotRepository.h"
 #include "../../model/DryStrategyFactory.h"
+#include "../pin/DigitalOutputPin.h"
 
 using waterbot::model::PotRepository;
 using waterbot::model::Pot;
 using waterbot::model::DryStrategy;
 using waterbot::model::Pump;
 using waterbot::model::DryStrategyFactory;
+using waterbot::infrastructure::pin::DigitalOutputPin;
 
 namespace waterbot {
 namespace infrastructure {

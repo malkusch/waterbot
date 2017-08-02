@@ -13,15 +13,16 @@
 #include <Wire.h>
 #include <WString.h>
 
+#include "../../model/DryStrategy.h"
 #include "../../model/Pot.h"
 #include "../../model/Pump.h"
+#include "../../model/Sensor.h"
 #include "../../model/Valve.h"
 #include "../logger/Logger.h"
-#include "AM2321Sensor.h"
 #include "PCF8574DigitalOutputPin.h"
+#include "PCF8574Sensor.h"
 #include "PCF8574SinkPin.h"
 
-using waterbot::model::Valve;
 using waterbot::model::Valve;
 
 namespace waterbot {
@@ -70,7 +71,9 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		PCF8574DigitalOutputPin* _am2321Pin = new PCF8574DigitalOutputPin(
 				expander, am2321Pin);
 		_am2321Pin->begin();
-		AM2321Sensor* sensor = new AM2321Sensor(_am2321Pin);
+
+		Sensor* sensor = new PCF8574Sensor(_am2321Pin);
+		sensor->begin();
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();

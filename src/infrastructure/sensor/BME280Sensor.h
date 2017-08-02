@@ -7,23 +7,18 @@
 
 #pragma once
 
-#include "../pin/DigitalOutputPin.h"
 #include "../../model/Sensor.h"
-
-using waterbot::infrastructure::pin::DigitalOutputPin;
+#include "../../model/SensorData.h"
 
 namespace waterbot {
 namespace infrastructure {
-namespace pcf8574 {
+namespace sensor {
 
 class BME280Sensor: public Sensor {
 public:
-	BME280Sensor(DigitalOutputPin* busSwitch);
 	virtual SensorData read();
-	void init();
-
-private:
-	DigitalOutputPin* busSwitch;
+	virtual void begin();
+	static bool isPluggedIn();
 };
 
 } /* namespace pcf8574 */
