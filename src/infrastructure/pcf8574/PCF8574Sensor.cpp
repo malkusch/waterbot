@@ -14,9 +14,11 @@
 #include "../logger/Logger.h"
 #include "../sensor/AM2321Sensor.h"
 #include "../sensor/BME280Sensor.h"
+#include "../sensor/HTU21DSensor.h"
 
 using waterbot::infrastructure::sensor::AM2321Sensor;
 using waterbot::infrastructure::sensor::BME280Sensor;
+using waterbot::infrastructure::sensor::HTU21DSensor;
 
 namespace waterbot {
 namespace infrastructure {
@@ -30,6 +32,10 @@ PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
 	if (AM2321Sensor::isPluggedIn()) {
 		Logger::getLogger()->info(F("Found AM2321 sensor"));
 		sensor = new AM2321Sensor();
+
+	} else if (HTU21DSensor::isPluggedIn()) {
+		Logger::getLogger()->info(F("Found HTU21D sensor"));
+		sensor = new HTU21DSensor();
 
 	} else if (BME280Sensor::isPluggedIn()) {
 		Logger::getLogger()->info(F("Found BME280 sensor"));
