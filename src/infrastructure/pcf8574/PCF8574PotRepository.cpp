@@ -8,6 +8,7 @@
 #include "PCF8574PotRepository.h"
 
 #include <Arduino-PCF8574/src/PCF8574.h>
+#include <BME280/BME280_MOD-1022.h>
 #include <binary.h>
 #include <Print.h>
 #include <Wire.h>
@@ -56,6 +57,9 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		}
 
 		address = B01110000 | (addressPins << 1);
+		if (address == addrBME280) {
+			continue;
+		}
 		if (probeAddress(address)) {
 			addresses[size] = address;
 			size++;
