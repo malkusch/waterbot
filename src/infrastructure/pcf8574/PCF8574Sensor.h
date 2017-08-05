@@ -7,10 +7,8 @@
 
 #pragma once
 
-#include "../pin/DigitalOutputPin.h"
+#include "BusSwitch.h"
 #include "../../model/Sensor.h"
-
-using waterbot::infrastructure::pin::DigitalOutputPin;
 
 namespace waterbot {
 namespace infrastructure {
@@ -18,12 +16,12 @@ namespace pcf8574 {
 
 class PCF8574Sensor: public Sensor {
 public:
-	PCF8574Sensor(DigitalOutputPin* busSwitch);
+	PCF8574Sensor(BusSwitch*);
 	virtual SensorData read();
 	virtual void begin();
 
 private:
-	DigitalOutputPin* busSwitch;
+	BusSwitch* busSwitch;
 	Sensor* sensor;
 };
 

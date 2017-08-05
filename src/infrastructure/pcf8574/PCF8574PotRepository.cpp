@@ -20,7 +20,6 @@
 #include "../../model/Sensor.h"
 #include "../../model/Valve.h"
 #include "../logger/Logger.h"
-#include "PCF8574DigitalOutputPin.h"
 #include "../LED.h"
 #include "PCF8574Sensor.h"
 #include "PCF8574SinkPin.h"
@@ -74,11 +73,10 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		PCF8574* expander = new PCF8574();
 		expander->begin(addresses[i]);
 
-		PCF8574DigitalOutputPin* _am2321Pin = new PCF8574DigitalOutputPin(
-				expander, am2321Pin);
-		_am2321Pin->begin();
-
-		Sensor* sensor = new PCF8574Sensor(_am2321Pin);
+		PCF8574SinkPin* _sensorPin = new PCF8574SinkPin(expander, sensorPin);
+		_sensorPin->begin();
+		BusSwitch* busSwitch = new BusSwitch(_sensorPin);
+		Sensor* sensor = new PCF8574Sensor(busSwitch);
 		sensor->begin();
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);

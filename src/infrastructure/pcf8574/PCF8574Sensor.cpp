@@ -17,17 +17,15 @@
 
 using waterbot::infrastructure::sensor::AM2321Sensor;
 using waterbot::infrastructure::sensor::BME280Sensor;
-using waterbot::infrastructure::pin::ON;
-using waterbot::infrastructure::pin::OFF;
 
 namespace waterbot {
 namespace infrastructure {
 namespace pcf8574 {
 
-PCF8574Sensor::PCF8574Sensor(DigitalOutputPin* busSwitch) :
+PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
 		busSwitch(busSwitch) {
 
-	busSwitch->write(ON);
+	busSwitch->turnOn();
 	sensor = NULL;
 	if (AM2321Sensor::isPluggedIn()) {
 		Logger::getLogger()->info(F("Found AM2321 sensor"));
@@ -40,19 +38,19 @@ PCF8574Sensor::PCF8574Sensor(DigitalOutputPin* busSwitch) :
 	} else {
 		Logger::getLogger()->error(F("Could not probe sensor"));
 	}
-	busSwitch->write(OFF);
+	busSwitch->turnOff();
 }
 
 void PCF8574Sensor::begin() {
-	busSwitch->write(ON);
+	busSwitch->turnOn();
 	sensor->begin();
-	busSwitch->write(OFF);
+	busSwitch->turnOff();
 }
 
 SensorData PCF8574Sensor::read() {
-	busSwitch->write(ON);
+	busSwitch->turnOn();
 	SensorData data = sensor->read();
-	busSwitch->write(OFF);
+	busSwitch->turnOff();
 	return data;
 }
 
