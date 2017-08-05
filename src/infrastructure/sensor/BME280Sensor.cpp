@@ -46,7 +46,7 @@ SensorData BME280Sensor::read() {
 	// TODO retry on bus failure
 
 	SensorData data;
-	data.moisture = BME280.getHumidity();
+	data.moisture = BME280.getHumidity() / 100;
 	data.temperature = BME280.getTemperature();
 	return data;
 }
