@@ -67,6 +67,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		}
 	}
 
+	Sensor* sensors[size];
 	pots = new Pot*[size];
 	for (byte i = 0; i < size; i++) {
 		const byte id = extractId(addresses[i]);
@@ -77,7 +78,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		_sensorPin->begin();
 		BusSwitch* busSwitch = new BusSwitch(_sensorPin);
 		Sensor* sensor = new PCF8574Sensor(busSwitch);
-		sensor->begin();
+		sensors[i] = sensor;
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();
@@ -93,6 +94,11 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		led.turnOn();
 
 		pots[i] = pot;
+	}
+
+	// Sensors can only be detected when all bus switches are off
+	for (byte i = 0; i < size; i++) {
+		sensors[i]->begin();
 	}
 }
 

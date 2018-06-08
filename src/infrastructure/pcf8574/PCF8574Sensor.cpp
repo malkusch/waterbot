@@ -15,10 +15,12 @@
 #include "../sensor/AM2321Sensor.h"
 #include "../sensor/BME280Sensor.h"
 #include "../sensor/HTU21DSensor.h"
+#include "../sensor/NullSensor.h"
 
 using waterbot::infrastructure::sensor::AM2321Sensor;
 using waterbot::infrastructure::sensor::BME280Sensor;
 using waterbot::infrastructure::sensor::HTU21DSensor;
+using waterbot::infrastructure::sensor::NullSensor;
 
 namespace waterbot {
 namespace infrastructure {
@@ -27,8 +29,11 @@ namespace pcf8574 {
 PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
 		busSwitch(busSwitch) {
 
+	busSwitch->turnOff();
+}
+
+void PCF8574Sensor::begin() {
 	busSwitch->turnOn();
-	sensor = NULL;
 	if (AM2321Sensor::isPluggedIn()) {
 		Logger::getLogger()->info(F("Found AM2321 sensor"));
 		sensor = new AM2321Sensor();
@@ -43,12 +48,8 @@ PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
 
 	} else {
 		Logger::getLogger()->error(F("Could not probe sensor"));
+		sensor = new NullSensor();
 	}
-	busSwitch->turnOff();
-}
-
-void PCF8574Sensor::begin() {
-	busSwitch->turnOn();
 	sensor->begin();
 	busSwitch->turnOff();
 }
