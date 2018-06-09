@@ -13,7 +13,8 @@
 
 #include "../logger/Logger.h"
 
-#define AM2321_SENSOR_RETRY_COUNT 3
+#define AM2321_SENSOR_RETRY_COUNT 10
+#define AM2321_SENSOR_RETRY_DELAY_MS 300
 
 namespace waterbot {
 namespace infrastructure {
@@ -32,6 +33,7 @@ SensorData AM2321Sensor::read() {
 
 		} else {
 			Logger::getLogger()->warn(F("Failed reading sensor"));
+			delay(AM2321_SENSOR_RETRY_DELAY_MS);
 			continue;
 		}
 	}
