@@ -7,10 +7,6 @@
 
 #include "HTU21DSensor.h"
 
-#include <WString.h>
-
-#include "../logger/Logger.h"
-
 namespace waterbot {
 namespace infrastructure {
 namespace sensor {
@@ -20,10 +16,8 @@ bool HTU21DSensor::isPluggedIn() {
 	return htu.begin();
 }
 
-void HTU21DSensor::begin() {
-	if (!htu.begin()) {
-		Logger::getLogger()->error(F("Could not initialize HTU21D"));
-	}
+bool HTU21DSensor::begin() {
+	return htu.begin();
 }
 
 SensorData HTU21DSensor::read() {

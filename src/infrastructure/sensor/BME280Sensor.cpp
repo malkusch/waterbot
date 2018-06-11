@@ -24,7 +24,7 @@ bool BME280Sensor::isPluggedIn() {
 	return Wire.endTransmission() == 0;
 }
 
-void BME280Sensor::begin() {
+bool BME280Sensor::begin() {
 	String debug = F("Initializing BME280 with id ");
 	debug += String(BME280.readChipId(), HEX);
 	Logger::getLogger()->debug(debug);
@@ -34,6 +34,8 @@ void BME280Sensor::begin() {
 	BME280.writeOversamplingHumidity(os16x);
 	BME280.writeMode(smSleep);
 	// TODO retry on bus failure
+
+	return true;
 }
 
 SensorData BME280Sensor::read() {

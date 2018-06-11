@@ -17,7 +17,7 @@ public:
 	}
 	;
 	virtual SensorData read() = 0;
-	virtual void begin() {
+	virtual bool begin() {
 	}
 	;
 };

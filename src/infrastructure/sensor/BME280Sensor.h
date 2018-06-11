@@ -17,7 +17,7 @@ namespace sensor {
 class BME280Sensor: public Sensor {
 public:
 	virtual SensorData read();
-	virtual void begin();
+	virtual bool begin();
 	static bool isPluggedIn();
 };
 

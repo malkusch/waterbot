@@ -18,7 +18,7 @@ class PCF8574Sensor: public Sensor {
 public:
 	PCF8574Sensor(BusSwitch*);
 	virtual SensorData read();
-	virtual void begin();
+	virtual bool begin();
 
 private:
 	BusSwitch* busSwitch;

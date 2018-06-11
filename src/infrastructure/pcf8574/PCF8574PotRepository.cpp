@@ -67,18 +67,27 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		}
 	}
 
-	Sensor* sensors[size];
 	pots = new Pot*[size];
 	for (byte i = 0; i < size; i++) {
 		const byte id = extractId(addresses[i]);
 		PCF8574* expander = new PCF8574();
 		expander->begin(addresses[i]);
 
+		PCF8574SinkPin _ledPin(expander, ledPin);
+		_ledPin.begin();
+		LED led(&_ledPin);
+		led.turnOn();
+
 		PCF8574SinkPin* _sensorPin = new PCF8574SinkPin(expander, sensorPin);
 		_sensorPin->begin();
 		BusSwitch* busSwitch = new BusSwitch(_sensorPin);
 		Sensor* sensor = new PCF8574Sensor(busSwitch);
-		sensors[i] = sensor;
+		if (!sensor->begin()) {
+			String message = F("Could not initialize sensor at ");
+			message += String(id);
+			Logger::getLogger()->error(message);
+			led.turnOff();
+		}
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();
@@ -88,17 +97,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 
 		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump);
 
-		PCF8574SinkPin _ledPin(expander, ledPin);
-		_ledPin.begin();
-		LED led(&_ledPin);
-		led.turnOn();
-
 		pots[i] = pot;
-	}
-
-	// Sensors can only be detected when all bus switches are off
-	for (byte i = 0; i < size; i++) {
-		sensors[i]->begin();
 	}
 }
 
@@ -117,6 +116,10 @@ bool PCF8574PotRepository::probeAddress(const byte address) {
 		String message = F("Found PCF8574 at address B");
 		message += String(address, BIN);
 		Logger::getLogger()->info(message);
+
+		PCF8574 expander;
+		expander.begin(address);
+		expander.set();
 	}
 	return probed;
 }

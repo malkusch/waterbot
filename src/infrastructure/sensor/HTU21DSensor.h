@@ -19,7 +19,7 @@ namespace sensor {
 class HTU21DSensor: public Sensor {
 public:
 	virtual SensorData read();
-	virtual void begin();
+	virtual bool begin();
 	static bool isPluggedIn();
 
 private:

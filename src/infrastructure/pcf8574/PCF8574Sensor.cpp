@@ -32,8 +32,9 @@ PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
 	busSwitch->turnOff();
 }
 
-void PCF8574Sensor::begin() {
+bool PCF8574Sensor::begin() {
 	busSwitch->turnOn();
+	bool probed = true;
 	if (AM2321Sensor::isPluggedIn()) {
 		Logger::getLogger()->info(F("Found AM2321 sensor"));
 		sensor = new AM2321Sensor();
@@ -49,9 +50,12 @@ void PCF8574Sensor::begin() {
 	} else {
 		Logger::getLogger()->error(F("Could not probe sensor"));
 		sensor = new NullSensor();
+		probed = false;
 	}
-	sensor->begin();
+	const bool initialized = sensor->begin();
 	busSwitch->turnOff();
+
+	return probed && initialized;
 }
 
 SensorData PCF8574Sensor::read() {
