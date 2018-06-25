@@ -22,3 +22,6 @@
 [submodule "libraries/BME280"]
 	path = libraries/BME280
 	url = https://github.com/embeddedadventures/BME280.git
+[submodule "libraries/Adafruit_HTU21DF_Library"]
+	path = libraries/Adafruit_HTU21DF_Library
+	url = https://github.com/adafruit/Adafruit_HTU21DF_Library.git
