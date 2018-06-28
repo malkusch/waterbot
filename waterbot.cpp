@@ -35,7 +35,7 @@ SDLogger logger(LOG_FILE);
 using waterbot::infrastructure::LED;
 OnboardDigitalOutputPin builtinLEDPin(LED_BUILTIN);
 LED loggerLEDs(&builtinLEDPin);
-SerialLogger logger(&loggerLEDs, &loggerLEDs);
+SerialLogger logger(loggerLEDs, loggerLEDs);
 #endif
 
 #if PROFILE == PROFILE_DEV
@@ -44,8 +44,7 @@ MillisRTC rtc;
 
 #elif PROFILE == PROFILE_PRODUCTION
 #include "src/infrastructure/rtc/DS1307RTC.h"
-RTC_DS1307 ds1307;
-DS1307RTC rtc(&ds1307);
+DS1307RTC rtc;
 #endif
 
 OnboardDigitalOutputPin pumpPin(PIN_PUMP);

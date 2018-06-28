@@ -21,7 +21,7 @@ namespace model {
 
 class Pot {
 public:
-	Pot(const byte id, Sensor*, DryStrategy*, Valve*, Pump*);
+	Pot(const byte id, Sensor*, DryStrategy*, Valve, Pump*);
 	void water(byte seconds);
 	unsigned long getLastWaterTime() const;
 	byte getId();bool isDry();
@@ -30,7 +30,7 @@ private:
 	const byte id;
 	Sensor* sensor;
 	DryStrategy* dryStrategy;
-	Valve* valve;
+	Valve valve;
 	Pump* pump;
 	unsigned long lastWaterTime;
 

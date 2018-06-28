@@ -28,9 +28,8 @@ protected:
 	virtual void writeln(const String& message);
 
 private:
-	SdFat* fs;
-	SdFile file;bool openNewLogFile();
-	bool initCard();
+	SdFat fs;
+	SdFile file;bool openNewLogFile();bool initCard();
 	const char* filenameFormat;
 	const byte chipSelectPin;
 };

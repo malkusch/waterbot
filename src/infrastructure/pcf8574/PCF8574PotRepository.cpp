@@ -93,7 +93,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
 		_valvePin->begin();
-		Valve* valve = new Valve(_valvePin, valveDelayMillis);
+		Valve valve(_valvePin, valveDelayMillis);
 
 		DryStrategy* drystrategy = dryStrategyFactory->build();
 

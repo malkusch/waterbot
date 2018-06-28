@@ -16,7 +16,7 @@
 using waterbot::model::Pot;
 
 Pot::Pot(const byte id, Sensor* moistureSensor, DryStrategy* dryStrategy,
-		Valve* valve, Pump* pump) :
+		Valve valve, Pump* pump) :
 		id(id), sensor(moistureSensor), dryStrategy(dryStrategy), valve(valve), pump(
 				pump) {
 
@@ -30,9 +30,9 @@ void Pot::water(byte seconds) {
 		Logger::getLogger()->info(message);
 	}
 
-	valve->open();
+	valve.open();
 	pump->pump(seconds);
-	valve->close();
+	valve.close();
 	lastWaterTime = millis();
 }
 

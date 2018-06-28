@@ -15,13 +15,10 @@
 
 SDLogger::SDLogger(const char* filenameFormat, const byte chipSelectPin) :
 		filenameFormat(filenameFormat), chipSelectPin(chipSelectPin) {
-
-	fs = new SdFat();
 }
 
 SDLogger::~SDLogger() {
 	file.close();
-	delete fs;
 }
 
 void SDLogger::write(const String& message) {
@@ -51,7 +48,7 @@ void SDLogger::begin() {
 
 bool SDLogger::initCard() {
 	file.close();
-	if (!fs->begin(chipSelectPin)) {
+	if (!fs.begin(chipSelectPin)) {
 		return false;
 	}
 	if (!openNewLogFile()) {
@@ -64,7 +61,7 @@ bool SDLogger::openNewLogFile() {
 	char filename[20];
 	for (unsigned long index = 0; index < ULONG_MAX; index++) {
 		sprintf(filename, filenameFormat, index);
-		if (!fs->exists(filename)) {
+		if (!fs.exists(filename)) {
 			return file.open(filename, O_CREAT | O_WRITE);
 		}
 	}

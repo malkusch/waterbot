@@ -15,12 +15,12 @@
 
 class DS1307RTC: public RTC {
 public:
-	DS1307RTC(RTC_DS1307* ds1307);
+	DS1307RTC();
 	void begin();
 	virtual uint32_t timestamp() const;
 
 private:
-	RTC_DS1307* ds1307;
+	RTC_DS1307 ds1307;
 
 };
 

@@ -16,7 +16,7 @@ using waterbot::infrastructure::LED;
 
 class SerialLogger: public Logger {
 public:
-	SerialLogger(LED* warnLED, LED* errorLED);
+	SerialLogger(LED warnLED, LED errorLED);
 	void begin();
 	virtual void warn(const String& message);
 	virtual void error(const String& message);
@@ -27,7 +27,7 @@ protected:
 	virtual void writeln(const String& message);
 
 private:
-	LED* warnLED;
-	LED* errorLED;
+	LED warnLED;
+	LED errorLED;
 };
 
