@@ -8,13 +8,6 @@
 #include "AM2321Sensor.h"
 
 #include <AM2321/AM2321.h>
-#include <Arduino.h>
-#include <WString.h>
-
-#include "../logger/Logger.h"
-
-#define AM2321_SENSOR_RETRY_COUNT 10
-#define AM2321_SENSOR_RETRY_DELAY_MS 300
 
 namespace waterbot {
 namespace infrastructure {
@@ -27,15 +20,8 @@ bool AM2321Sensor::isPluggedIn() {
 
 SensorData AM2321Sensor::read() {
 	AM2321 am2321;
-	for (byte i = 0; i < AM2321_SENSOR_RETRY_COUNT; i++) {
-		if (am2321.read()) {
-			break;
-
-		} else {
-			Logger::getLogger()->warn(F("Failed reading sensor"));
-			delay(AM2321_SENSOR_RETRY_DELAY_MS);
-			continue;
-		}
+	if (!am2321.read()) {
+		return Sensor::ERROR;
 	}
 	SensorData data;
 	data.moisture = am2321.humidity / 1000.0;

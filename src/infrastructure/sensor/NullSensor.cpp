@@ -12,10 +12,7 @@ namespace infrastructure {
 namespace sensor {
 
 SensorData NullSensor::read() {
-	SensorData data;
-	data.moisture = 0;
-	data.temperature = 0;
-	return data;
+	return Sensor::ERROR;
 }
 
 }

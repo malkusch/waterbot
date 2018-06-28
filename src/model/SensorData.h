@@ -6,4 +6,15 @@ typedef struct {
 	float temperature;
 } SensorData;
 
+
+inline bool operator==(const SensorData& obj1, const SensorData& obj2) {
+	return obj1.moisture == obj2.moisture
+			&& obj1.temperature == obj2.temperature;
+}
+
+inline bool operator!=(const SensorData& obj1, const SensorData& obj2) {
+	return !(obj1 == obj2);
+}
+
+
 #endif

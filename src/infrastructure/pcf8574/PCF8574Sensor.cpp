@@ -7,7 +7,6 @@
 
 #include "PCF8574Sensor.h"
 
-#include <stddef.h>
 #include <WString.h>
 
 #include "../../model/SensorData.h"
@@ -16,11 +15,13 @@
 #include "../sensor/BME280Sensor.h"
 #include "../sensor/HTU21DSensor.h"
 #include "../sensor/NullSensor.h"
+#include "../sensor/RetryingSensor.h"
 
 using waterbot::infrastructure::sensor::AM2321Sensor;
 using waterbot::infrastructure::sensor::BME280Sensor;
 using waterbot::infrastructure::sensor::HTU21DSensor;
 using waterbot::infrastructure::sensor::NullSensor;
+using waterbot::infrastructure::sensor::RetryingSensor;
 
 namespace waterbot {
 namespace infrastructure {
@@ -60,7 +61,8 @@ bool PCF8574Sensor::begin() {
 
 SensorData PCF8574Sensor::read() {
 	busSwitch->turnOn();
-	SensorData data = sensor->read();
+	RetryingSensor retryable = RetryingSensor(sensor);
+	SensorData data = retryable.read();
 	busSwitch->turnOff();
 	return data;
 }

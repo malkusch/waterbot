@@ -1,25 +1,13 @@
-/*
- * MoistureSensor.h
- *
- *  Created on: 14.05.2017
- *      Author: malkusch
- */
-
-#ifndef MOISTURESENSOR_H_
-#define MOISTURESENSOR_H_
+#pragma once
 
 #include "SensorData.h"
 
 class Sensor {
 
 public:
-	virtual ~Sensor() {
-	}
-	;
+	const static SensorData ERROR;
+	virtual ~Sensor();
 	virtual SensorData read() = 0;
-	virtual bool begin() {
-	}
-	;
-};
+	virtual bool begin();
 
-#endif /* MOISTURESENSOR_H_ */
+};

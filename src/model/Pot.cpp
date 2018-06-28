@@ -52,6 +52,11 @@ bool Pot::isDry() {
 SensorData Pot::readSensor() {
 	SensorData data = sensor->read();
 
+	if (data == Sensor::ERROR) {
+		Logger::getLogger()->warn(F("Failed reading sensor"));
+		return Sensor::ERROR;
+	}
+
 	char message[20];
 	char temperature[8];
 	dtostrf(data.temperature, 7, 2, temperature);
