@@ -6,16 +6,16 @@
 
 #include <pins_arduino.h>
 #include <stddef.h>
-#include <Sleep_n0m1/Sleep_n0m1.h>
 
 #include "src/infrastructure/Debugger.h"
+#include "src/infrastructure/PauseService.h"
 #include "src/infrastructure/pin/onboard/OnboardDigitalOutputPin.h"
-#include "src/infrastructure/TimeUnits.h"
 #include "src/infrastructure/drystrategy/TimerDryStrategyFactory.h"
 #include "src/infrastructure/pcf8574/PCF8574PotRepository.h"
 #include "src/model/AutomaticWaterService.h"
 #include "src/model/Pump.h"
 #include "src/application/AutomaticWaterApplicationService.h"
+#include "src/application/PauseApplicationService.h"
 
 using waterbot::infrastructure::pin::onboard::OnboardDigitalOutputPin;
 using waterbot::infrastructure::drystrategy::TimerDryStrategyFactory;
@@ -23,7 +23,9 @@ using waterbot::model::Pump;
 using waterbot::model::AutomaticWaterService;
 using waterbot::model::Pot;
 using waterbot::application::AutomaticWaterApplicationService;
+using waterbot::application::PauseApplicationService;
 using waterbot::infrastructure::pcf8574::PCF8574PotRepository;
+using waterbot::infrastructure::PauseService;
 
 #if LOGGER == LOGGER_SD
 #include "src/infrastructure/logger/SDLogger.h"
@@ -60,6 +62,9 @@ PCF8574PotRepository potRepository;
 AutomaticWaterApplicationService automaticWaterApplicationService(
 		&potRepository, &automaticWaterService);
 
+PauseService pause;
+PauseApplicationService pauseApplicationService(&potRepository, pause);
+
 void setup() {
 	rtc.begin();
 	logger.begin();
@@ -80,15 +85,6 @@ void setup() {
 void loop() {
 	Debugger::logMemory();
 	automaticWaterApplicationService.waterAllPotsIfNeeded();
-	pause(PAUSE_SECONDS);
-}
-
-void pause(unsigned long seconds) {
-	logger.flush();
-	const byte delaySleepMillis = 100;
-	delay(delaySleepMillis); // Give serial data some time to print
-	Sleep sleep;
-	sleep.idleMode();
-	sleep.sleepDelay(TimeUnits::secondsToMillis(seconds) - delaySleepMillis);
+	pauseApplicationService.pause(PAUSE_SECONDS);
 }
 

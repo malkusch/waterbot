@@ -75,10 +75,9 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		PCF8574* expander = new PCF8574();
 		expander->begin(addresses[i]);
 
-		PCF8574SinkPin _ledPin(expander, ledPin);
-		_ledPin.begin();
-		LED led(&_ledPin);
-		led.turnOn();
+		PCF8574SinkPin* _ledPin = new PCF8574SinkPin(expander, ledPin);
+		_ledPin->begin();
+		LED led(_ledPin);
 
 		PCF8574SinkPin* _sensorPin = new PCF8574SinkPin(expander, sensorPin);
 		_sensorPin->begin();
@@ -88,7 +87,6 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 			String message = F("Could not initialize sensor at ");
 			message += String(id);
 			Logger::getLogger()->error(message);
-			led.turnOff();
 		}
 
 		PCF8574SinkPin* _valvePin = new PCF8574SinkPin(expander, valvePin);
@@ -97,7 +95,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 
 		DryStrategy* drystrategy = dryStrategyFactory->build();
 
-		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump);
+		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump, led);
 
 		pots[i] = pot;
 	}

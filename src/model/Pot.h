@@ -15,16 +15,20 @@
 #include "Sensor.h"
 #include "SensorData.h"
 #include "Valve.h"
+#include "../infrastructure/LED.h"
+
+using waterbot::infrastructure::LED;
 
 namespace waterbot {
 namespace model {
 
 class Pot {
 public:
-	Pot(const byte id, Sensor*, DryStrategy*, Valve, Pump*);
+	Pot(const byte id, Sensor*, DryStrategy*, Valve, Pump*, LED);
 	void water(byte seconds);
 	unsigned long getLastWaterTime() const;
-	byte getId();bool isDry();
+	byte getId();
+	void blink();bool isDry();
 
 private:
 	const byte id;
@@ -32,6 +36,7 @@ private:
 	DryStrategy* dryStrategy;
 	Valve valve;
 	Pump* pump;
+	LED led;
 	unsigned long lastWaterTime;
 
 	SensorData readSensor();

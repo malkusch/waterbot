@@ -34,5 +34,3 @@
 #define PAUSE_SECONDS 1200
 
 #endif
-
-void pause(unsigned long seconds);

@@ -20,9 +20,10 @@ public:
 	LED(DigitalOutputPin* pin);
 	void turnOn();
 	void turnOff();
+	void change();
 
 private:
-	DigitalOutputPin* pin;
+	DigitalOutputPin* pin;bool on;
 };
 
 }

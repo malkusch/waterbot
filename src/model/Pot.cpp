@@ -16,9 +16,9 @@
 using waterbot::model::Pot;
 
 Pot::Pot(const byte id, Sensor* moistureSensor, DryStrategy* dryStrategy,
-		Valve valve, Pump* pump) :
+		Valve valve, Pump* pump, LED led) :
 		id(id), sensor(moistureSensor), dryStrategy(dryStrategy), valve(valve), pump(
-				pump) {
+				pump), led(led) {
 
 	lastWaterTime = millis();
 }
@@ -34,6 +34,10 @@ void Pot::water(byte seconds) {
 	pump->pump(seconds);
 	valve.close();
 	lastWaterTime = millis();
+}
+
+void Pot::blink() {
+	led.change();
 }
 
 byte Pot::getId() {
