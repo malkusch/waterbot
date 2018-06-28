@@ -47,7 +47,7 @@ PCF8574PotRepository::~PCF8574PotRepository() {
 
 void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		Pump* pump, const byte valvePin, const unsigned int valveDelayMillis,
-		const byte sensorPin, const byte ledPin) {
+		const byte sensorPin, const byte ledPin, const byte errorLedPin) {
 
 	Wire.begin();
 	byte addresses[16];
@@ -79,6 +79,11 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 		_ledPin->begin();
 		LED led(_ledPin);
 
+		PCF8574SinkPin* _errorLedPin = new PCF8574SinkPin(expander,
+				errorLedPin);
+		_errorLedPin->begin();
+		LED errorLed(_errorLedPin);
+
 		PCF8574SinkPin* _sensorPin = new PCF8574SinkPin(expander, sensorPin);
 		_sensorPin->begin();
 		PCF8574BusSwitch* busSwitch = new PCF8574BusSwitch(_sensorPin);
@@ -95,7 +100,7 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 
 		DryStrategy* drystrategy = dryStrategyFactory->build();
 
-		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump, led);
+		Pot* pot = new Pot(id, sensor, drystrategy, valve, pump, led, errorLed);
 
 		pots[i] = pot;
 	}

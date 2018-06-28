@@ -16,9 +16,9 @@
 using waterbot::model::Pot;
 
 Pot::Pot(const byte id, Sensor* moistureSensor, DryStrategy* dryStrategy,
-		Valve valve, Pump* pump, LED led) :
+		Valve valve, Pump* pump, LED led, LED errorLed) :
 		id(id), sensor(moistureSensor), dryStrategy(dryStrategy), valve(valve), pump(
-				pump), led(led) {
+				pump), led(led), errorLed(errorLed) {
 
 	lastWaterTime = millis();
 }
@@ -57,9 +57,13 @@ SensorData Pot::readSensor() {
 	SensorData data = sensor->read();
 
 	if (data == Sensor::ERROR) {
-		Logger::getLogger()->warn(F("Failed reading sensor"));
+		setError();
+		String message = F("Failed reading sensor at pot ");
+		message += id;
+		Logger::getLogger()->warn(message);
 		return Sensor::ERROR;
 	}
+	clearError();
 
 	char message[20];
 	char temperature[8];
@@ -70,5 +74,13 @@ SensorData Pot::readSensor() {
 	Logger::getLogger()->info(message);
 
 	return data;
+}
+
+void Pot::clearError() {
+	errorLed.turnOff();
+}
+
+void Pot::setError() {
+	errorLed.turnOn();
 }
 

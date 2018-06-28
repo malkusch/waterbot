@@ -12,9 +12,8 @@ using waterbot::infrastructure::pin::ON;
 using waterbot::infrastructure::pin::OFF;
 
 LED::LED(DigitalOutputPin* pin) :
-		pin(pin) {
+		pin(pin), on(false) {
 
-	on = false;
 	turnOff();
 }
 

@@ -72,7 +72,7 @@ void setup() {
 
 	potRepository.begin(&dryTimerFactory, &pump,
 	PIN_PCF8574_VALVE, VALVE_DELAY_MILLIS,
-	PIN_PCF8574_SENSOR, PIN_PCF8574_LED);
+	PIN_PCF8574_SENSOR, PIN_PCF8574_LED, PIN_PCF8574_ERROR_LED);
 
 	// Water all pots, as a visual self test
 	Pot** pots = potRepository.findAll();

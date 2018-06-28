@@ -30,7 +30,7 @@ public:
 	~PCF8574PotRepository();
 	void begin(DryStrategyFactory*, Pump*, const byte valvePin,
 			const unsigned int valveDelayMillis, const byte sensorPin,
-			const byte ledPin);
+			const byte ledPin, const byte errorLedPin);
 	virtual byte count();
 	virtual Pot** findAll();
 
