@@ -7,21 +7,20 @@
 
 #pragma once
 
-#include "../pin/DigitalOutputPin.h"
+#include "pin/DigitalOutputPin.h"
 
 using waterbot::infrastructure::pin::DigitalOutputPin;
 
 namespace waterbot {
 namespace infrastructure {
-namespace pcf8574 {
 
 class BusSwitch {
 
 public:
 
 	BusSwitch(DigitalOutputPin*);
-	void turnOn();
-	void turnOff();
+	virtual void turnOn();
+	virtual void turnOff();
 
 private:
 
@@ -29,7 +28,6 @@ private:
 
 };
 
-} /* namespace pcf8574 */
 } /* namespace infrastructure */
 } /* namespace waterbot */
 

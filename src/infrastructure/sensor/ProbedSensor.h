@@ -7,16 +7,18 @@
 
 #pragma once
 
-#include "BusSwitch.h"
+#include "../BusSwitch.h"
 #include "../../model/Sensor.h"
+
+using waterbot::infrastructure::BusSwitch;
 
 namespace waterbot {
 namespace infrastructure {
-namespace pcf8574 {
+namespace sensor {
 
-class PCF8574Sensor: public Sensor {
+class ProbedSensor: public Sensor {
 public:
-	PCF8574Sensor(BusSwitch*);
+	ProbedSensor(BusSwitch*);
 	virtual SensorData read();
 	virtual bool begin();
 

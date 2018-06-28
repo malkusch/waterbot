@@ -21,11 +21,13 @@
 #include "../../model/Valve.h"
 #include "../logger/Logger.h"
 #include "../LED.h"
-#include "PCF8574Sensor.h"
+#include "../sensor/ProbedSensor.h"
 #include "PCF8574SinkPin.h"
+#include "PCF8574BusSwitch.h"
 
 using waterbot::model::Valve;
 using waterbot::infrastructure::LED;
+using waterbot::infrastructure::sensor::ProbedSensor;
 
 namespace waterbot {
 namespace infrastructure {
@@ -80,8 +82,8 @@ void PCF8574PotRepository::begin(DryStrategyFactory* dryStrategyFactory,
 
 		PCF8574SinkPin* _sensorPin = new PCF8574SinkPin(expander, sensorPin);
 		_sensorPin->begin();
-		BusSwitch* busSwitch = new BusSwitch(_sensorPin);
-		Sensor* sensor = new PCF8574Sensor(busSwitch);
+		PCF8574BusSwitch* busSwitch = new PCF8574BusSwitch(_sensorPin);
+		Sensor* sensor = new ProbedSensor(busSwitch);
 		if (!sensor->begin()) {
 			String message = F("Could not initialize sensor at ");
 			message += String(id);

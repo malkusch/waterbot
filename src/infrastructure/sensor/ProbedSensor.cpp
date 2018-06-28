@@ -5,35 +5,28 @@
  *      Author: malkusch
  */
 
-#include "PCF8574Sensor.h"
-
 #include <WString.h>
 
 #include "../../model/SensorData.h"
 #include "../logger/Logger.h"
-#include "../sensor/AM2321Sensor.h"
-#include "../sensor/BME280Sensor.h"
-#include "../sensor/HTU21DSensor.h"
-#include "../sensor/NullSensor.h"
-#include "../sensor/RetryingSensor.h"
-
-using waterbot::infrastructure::sensor::AM2321Sensor;
-using waterbot::infrastructure::sensor::BME280Sensor;
-using waterbot::infrastructure::sensor::HTU21DSensor;
-using waterbot::infrastructure::sensor::NullSensor;
-using waterbot::infrastructure::sensor::RetryingSensor;
+#include "AM2321Sensor.h"
+#include "BME280Sensor.h"
+#include "HTU21DSensor.h"
+#include "NullSensor.h"
+#include "RetryingSensor.h"
+#include "ProbedSensor.h"
 
 namespace waterbot {
 namespace infrastructure {
-namespace pcf8574 {
+namespace sensor {
 
-PCF8574Sensor::PCF8574Sensor(BusSwitch* busSwitch) :
+ProbedSensor::ProbedSensor(BusSwitch* busSwitch) :
 		busSwitch(busSwitch) {
 
 	busSwitch->turnOff();
 }
 
-bool PCF8574Sensor::begin() {
+bool ProbedSensor::begin() {
 	busSwitch->turnOn();
 	bool probed = true;
 	if (AM2321Sensor::isPluggedIn()) {
@@ -59,7 +52,7 @@ bool PCF8574Sensor::begin() {
 	return probed && initialized;
 }
 
-SensorData PCF8574Sensor::read() {
+SensorData ProbedSensor::read() {
 	busSwitch->turnOn();
 	RetryingSensor retryable = RetryingSensor(sensor);
 	SensorData data = retryable.read();
